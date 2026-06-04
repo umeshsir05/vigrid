@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,9 +28,14 @@
             <a href="#" data-i18n="nav_about">About Us</a>
             <a href="#" data-i18n="nav_products">Products</a>
             <a href="#" data-i18n="nav_contact">Contact</a>
+            <!-- Language switcher inside the mobile menu (visible on mobile only) -->
+            <div class="mobile-lang-switch" id="mobileLangSwitch">
+                <i class="fas fa-globe"></i>
+                <span id="mobileLangText" data-i18n="lang_switch">हिंदी</span>
+            </div>
         </div>
-        <!-- Language Toggle Icon -->
-        <button id="langToggleBtn" class="lang-switch" aria-label="Switch Language">
+        <!-- Language Toggle Icon for desktop (hidden on mobile) -->
+        <button id="langToggleBtn" class="lang-switch desktop-only" aria-label="Switch Language">
             <i class="fas fa-globe"></i>
             <span id="langToggleText">हिंदी</span>
         </button>
@@ -60,7 +64,7 @@
         </section>
     </div>
 
-    <!-- 4 Pillars: Innovation, Reliability, Teamwork, Sustainability -->
+    <!-- 4 Pillars -->
     <div class="container">
         <section>
             <div class="features-grid">
@@ -88,7 +92,7 @@
         </section>
     </div>
 
-    <!-- ONE KIT, COMPLETE SOLUTION -->
+    <!-- ONE KIT -->
     <div class="container">
         <section style="padding-top: 20px;">
             <div class="onekit-wrapper">
@@ -113,7 +117,7 @@
         </section>
     </div>
 
-    <!-- OUR IMPACT -->
+    <!-- IMPACT -->
     <div class="container">
         <section>
             <h2 class="section-title" data-i18n="impact_title">OUR IMPACT</h2>
@@ -138,7 +142,7 @@
         </section>
     </div>
 
-    <!-- Founder Quote: Vivek Kumar -->
+    <!-- Founder Quote -->
     <div class="container">
         <div class="founder-section">
             <div class="founder-flex">
@@ -154,7 +158,7 @@
     </div>
 </main>
 
-<!-- FOOTER with quick links, registration, newsletter -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -198,7 +202,6 @@
     </div>
 </footer>
 
-<!-- External JavaScript -->
 <script src="script.js"></script>
 </body>
 </html>
