@@ -5,6 +5,7 @@ const translations = {
         nav_about: "About Us",
         nav_products: "Products",
         nav_contact: "Contact",
+        lang_switch: "हिंदी",   // Text shown on mobile language switcher (target language)
         hero_highlight: "Light Today",
         hero_future: ", Bright Future.",
         hero_desc: "We provide innovative and sustainable solar solutions that empower rural families and build a brighter tomorrow.",
@@ -53,6 +54,7 @@ const translations = {
         nav_about: "हमारे बारे में",
         nav_products: "उत्पाद",
         nav_contact: "संपर्क करें",
+        lang_switch: "English",   // Text shown on mobile language switcher when Hindi is active
         hero_highlight: "आज रोशनी",
         hero_future: ", उज्ज्वल भविष्य।",
         hero_desc: "हम नवीन और टिकाऊ सौर समाधान प्रदान करते हैं जो ग्रामीण परिवारों को सशक्त बनाते हैं और एक उज्जवल कल का निर्माण करते हैं।",
@@ -101,6 +103,7 @@ const translations = {
 let currentLang = 'en';
 
 function updateLanguage(lang) {
+    // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -125,10 +128,20 @@ function updateLanguage(lang) {
             }
         }
     });
+    
+    // Update desktop language toggle text
     const langToggleSpan = document.getElementById('langToggleText');
     if (langToggleSpan) {
         langToggleSpan.textContent = lang === 'en' ? 'हिंदी' : 'English';
     }
+    
+    // Update mobile language switcher text
+    const mobileLangText = document.getElementById('mobileLangText');
+    if (mobileLangText) {
+        mobileLangText.textContent = translations[lang]['lang_switch'];
+    }
+    
+    // Update newsletter placeholder
     const emailInput = document.getElementById('newsletterEmail');
     if (emailInput) {
         emailInput.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
@@ -150,9 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateLanguage(currentLang);
     
-    // Language toggle button
+    // Desktop language toggle button
     const toggleBtn = document.getElementById('langToggleBtn');
     if (toggleBtn) toggleBtn.addEventListener('click', toggleLanguage);
+    
+    // Mobile language switcher (inside menu)
+    const mobileLangSwitch = document.getElementById('mobileLangSwitch');
+    if (mobileLangSwitch) mobileLangSwitch.addEventListener('click', toggleLanguage);
     
     // ===== MOBILE MENU TOGGLE =====
     const menuToggle = document.getElementById('menuToggle');
@@ -161,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             navLinks.classList.toggle('active');
-            // Change icon between bars and times
             const icon = menuToggle.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -171,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
-        // Close menu when clicking outside (optional)
+        // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -180,18 +196,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
-        // Close menu after clicking a link (for better UX)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
+        // Close menu after clicking a link (or mobile language switch)
+        const closeMenu = () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        };
+        navLinks.querySelectorAll('a, .mobile-lang-switch').forEach(item => {
+            item.addEventListener('click', closeMenu);
         });
     }
     
-    // Original interactive JS
+    // Original interactive JS (unchanged)
     const exploreBtn = document.getElementById('exploreBtn');
     if (exploreBtn) {
         exploreBtn.addEventListener('click', (e) => {
