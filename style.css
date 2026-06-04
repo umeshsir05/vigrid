@@ -185,15 +185,12 @@ section {
     border-radius: 4px;
 }
 
-/* Hero - now full width text only */
+/* Hero section with two columns */
 .hero {
-    display: flex;
-    justify-content: center;
-}
-.hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
 }
 .hero-content h1 {
     font-size: 3.2rem;
@@ -222,7 +219,18 @@ section {
     font-size: 0.9rem;
     gap: 8px;
     border: 1px solid #cde2c1;
-    justify-content: center;
+}
+
+/* Hero image styling - only background image, no red circle */
+.hero-image {
+    background-image: url("heroimage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 48px;
+    min-height: 400px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 /* Features grid */
@@ -454,7 +462,9 @@ footer {
 /* Mobile */
 @media (max-width: 800px) {
     .container { padding: 0 24px; }
+    .hero { grid-template-columns: 1fr; text-align: center; gap: 32px; }
     .hero-content h1 { font-size: 2.5rem; }
+    .hero-image { min-height: 250px; }
     .kit-badge { justify-content: center; }
     .section-title { font-size: 1.9rem; }
     .onekit-wrapper { flex-direction: column; text-align: center; }
