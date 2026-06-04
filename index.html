@@ -9,456 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #fefef7;
-            color: #1a2e1f;
-            line-height: 1.4;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        /* BUTTONS & LINKS */
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #eab308;
-            color: #1e3a1e;
-            font-weight: 700;
-            padding: 12px 28px;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-        .btn-primary:hover {
-            background: #facc15;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px -12px rgba(234,179,8,0.4);
-        }
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: 2px solid #eab308;
-            color: #2d5a2c;
-            font-weight: 700;
-            padding: 10px 26px;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        .btn-outline:hover {
-            background: #eab30810;
-            border-color: #ca8a04;
-        }
-
-        /* HEADER */
-        .site-header {
-            padding: 24px 0;
-            border-bottom: 1px solid #e0e7cf;
-            background: #ffffffcc;
-            backdrop-filter: blur(4px);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #2c5e2a;
-        }
-        .logo i {
-            font-size: 2rem;
-            color: #eab308;
-        }
-        .logo span {
-            background: linear-gradient(135deg, #2b5e2a, #5f8b4c);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: #2a4b2a;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #eab308;
-        }
-        /* language toggle button */
-        .lang-toggle {
-            background: #eef5ea;
-            border: 1px solid #cde0c1;
-            border-radius: 60px;
-            padding: 8px 18px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #2c5e2a;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-        .lang-toggle i {
-            font-size: 1.1rem;
-            color: #eab308;
-        }
-        .lang-toggle:hover {
-            background: #eab30820;
-            border-color: #eab308;
-        }
-
-        /* sections */
-        section {
-            padding: 70px 0;
-        }
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 48px;
-            text-align: center;
-            letter-spacing: -0.3px;
-            color: #1e3a1e;
-            position: relative;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 4px;
-            background: #eab308;
-            margin: 14px auto 0;
-            border-radius: 4px;
-        }
-
-        /* hero */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .hero-content h1 span {
-            color: #eab308;
-        }
-        .hero-content p {
-            font-size: 1.12rem;
-            color: #2c4727;
-            margin: 20px 0 28px;
-            line-height: 1.5;
-        }
-        .kit-badge {
-            margin-top: 32px;
-            display: inline-flex;
-            align-items: center;
-            background: #ecf7e7;
-            padding: 8px 18px;
-            border-radius: 80px;
-            font-weight: 600;
-            color: #2a6b2a;
-            font-size: 0.9rem;
-            gap: 8px;
-            border: 1px solid #cde2c1;
-        }
-        /* fixed hero image with clean background, no foreground icons */
-        .hero-image {
-            background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&h=500&fit=crop');
-            background-size: cover;
-            background-position: center 30%;
-            background-repeat: no-repeat;
-            border-radius: 48px;
-            min-height: 380px;
-            width: 100%;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .hero-image:hover {
-            transform: scale(1.01);
-        }
-
-        /* features grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 32px;
-            margin-top: 20px;
-        }
-        .feature-card {
-            background: white;
-            padding: 32px 20px;
-            border-radius: 32px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            transition: all 0.25s;
-            border: 1px solid #e8f0e2;
-        }
-        .feature-card:hover {
-            transform: translateY(-6px);
-            border-color: #eab30860;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
-        }
-        .feature-icon {
-            font-size: 2.8rem;
-            color: #eab308;
-            margin-bottom: 20px;
-        }
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .feature-card p {
-            color: #3a5a36;
-            line-height: 1.4;
-        }
-
-        /* one kit section */
-        .onekit-wrapper {
-            background: #f2f9ec;
-            border-radius: 56px;
-            padding: 48px 40px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        .onekit-info {
-            flex: 2;
-        }
-        .onekit-info h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-        .kit-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin: 24px 0 28px;
-        }
-        .kit-features span {
-            background: white;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-        }
-        .onekit-illustration {
-            flex: 1;
-            text-align: center;
-            background: #ffffffb3;
-            border-radius: 40px;
-            padding: 24px;
-        }
-        .onekit-illustration i {
-            font-size: 5rem;
-            color: #4f8a3c;
-        }
-
-        /* impact stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 32px;
-            text-align: center;
-        }
-        .stat-card {
-            background: white;
-            border-radius: 36px;
-            padding: 32px 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-            border: 1px solid #ddecd2;
-        }
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #eab308;
-            margin-bottom: 12px;
-        }
-        .stat-label {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #2a5526;
-        }
-
-        /* founder quote */
-        .founder-section {
-            background: #eaf4e4;
-            border-radius: 48px;
-            margin: 20px 0;
-            padding: 56px 44px;
-        }
-        .founder-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            justify-content: center;
-        }
-        .founder-avatar {
-            background: #cbdbaa;
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #3b6e2b;
-            border: 4px solid #eab308;
-        }
-        .founder-quote {
-            flex: 1;
-            font-size: 1.3rem;
-            font-weight: 500;
-            line-height: 1.45;
-            font-style: normal;
-            color: #1e3a1e;
-        }
-        .founder-name {
-            margin-top: 28px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: #ad7b0a;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #0f2c0d;
-            color: #e2f0db;
-            padding: 56px 0 24px;
-            border-radius: 48px 48px 0 0;
-            margin-top: 40px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 44px;
-            margin-bottom: 48px;
-        }
-        .footer-col h4 {
-            color: #facc15;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        .footer-col p, .footer-col a {
-            color: #d1e3c7;
-            text-decoration: none;
-            line-height: 1.8;
-            display: block;
-            transition: 0.2s;
-        }
-        .footer-col a:hover {
-            color: #facc15;
-            transform: translateX(3px);
-        }
-        .reg-number {
-            background: #1f421c;
-            display: inline-block;
-            padding: 8px 14px;
-            border-radius: 28px;
-            font-weight: 600;
-            font-family: monospace;
-            margin: 8px 0;
-        }
-        .newsletter-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 14px;
-        }
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 16px;
-            border-radius: 60px;
-            border: none;
-            outline: none;
-            background: #fff6e5;
-            font-family: inherit;
-        }
-        .newsletter-form button {
-            background: #eab308;
-            border: none;
-            padding: 0 24px;
-            border-radius: 60px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.2s;
-            color: #1f3d1a;
-        }
-        .newsletter-form button:hover {
-            background: #ffcd4a;
-        }
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #3e6238;
-            padding-top: 28px;
-            font-size: 0.85rem;
-            color: #bdd7b2;
-        }
-        @media (max-width: 800px) {
-            .container { padding: 0 24px; }
-            .hero { grid-template-columns: 1fr; text-align: center; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .kit-badge { justify-content: center; }
-            .section-title { font-size: 1.9rem; }
-            .onekit-wrapper { flex-direction: column; text-align: center; }
-            .founder-quote { font-size: 1.1rem; text-align: center; }
-            .founder-flex { flex-direction: column; text-align: center; }
-            .header-inner { flex-direction: column; }
-            .nav-links { justify-content: center; flex-wrap: wrap; }
-        }
-        button, .btn-primary, .btn-outline { cursor: pointer; }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -469,13 +21,16 @@
             <span>VIGRID</span>
         </div>
         <div class="nav-links">
-            <a href="#" data-i18n-key="nav_home">Home</a>
-            <a href="#" data-i18n-key="nav_about">About Us</a>
-            <a href="#" data-i18n-key="nav_products">Products</a>
-            <a href="#" data-i18n-key="nav_contact">Contact</a>
-            <!-- Language Toggle Icon -->
-            <button class="lang-toggle" id="languageToggleBtn"><i class="fas fa-language"></i> <span id="langLabel">English</span></button>
+            <a href="#" data-i18n="nav_home">Home</a>
+            <a href="#" data-i18n="nav_about">About Us</a>
+            <a href="#" data-i18n="nav_products">Products</a>
+            <a href="#" data-i18n="nav_contact">Contact</a>
         </div>
+        <!-- Language Toggle Icon -->
+        <button id="langToggleBtn" class="lang-switch" aria-label="Switch Language">
+            <i class="fas fa-globe"></i>
+            <span id="langToggleText">हिंदी</span>
+        </button>
     </div>
 </header>
 
@@ -485,97 +40,101 @@
         <section style="padding-top: 40px; padding-bottom: 40px;">
             <div class="hero">
                 <div class="hero-content">
-                    <h1><span data-i18n-key="hero_title_1">Light Today,</span> <span data-i18n-key="hero_title_2">Bright Future.</span></h1>
-                    <p data-i18n-key="hero_desc">We provide innovative and sustainable solar solutions that empower rural families and build a brighter tomorrow.</p>
-                    <a href="#" class="btn-primary" id="exploreBtn" data-i18n-key="explore_btn">EXPLORE MORE <i class="fas fa-arrow-right"></i></a>
+                    <h1><span data-i18n="hero_highlight">Light Today</span><span data-i18n="hero_future">, Bright Future.</span></h1>
+                    <p data-i18n="hero_desc">We provide innovative and sustainable solar solutions that empower rural families and build a brighter tomorrow.</p>
+                    <a href="#" class="btn-primary" id="exploreBtn"><span data-i18n="explore_btn">EXPLORE MORE</span> <i class="fas fa-arrow-right"></i></a>
                     <div class="kit-badge">
-                        <i class="fas fa-box-open"></i> <span data-i18n-key="kit_badge">7-in-1 Solar Home Kit for Rural India</span>
+                        <i class="fas fa-box-open"></i> <span data-i18n="kit_badge">7-in-1 Solar Home Kit for Rural India</span>
                     </div>
                 </div>
-                <div class="hero-image"></div> <!-- clean background image, no foreground icons -->
+                <div class="hero-image">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-bolt" style="font-size: 3.5rem; margin-left: -10px;"></i>
+                    <p data-i18n="hero_energy">⚡ Clean Energy for Every Home</p>
+                </div>
             </div>
         </section>
     </div>
 
-    <!-- 4 Pillars -->
+    <!-- 4 Pillars: Innovation, Reliability, Teamwork, Sustainability -->
     <div class="container">
         <section>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3 data-i18n-key="feature1_title">INNOVATION</h3>
-                    <p data-i18n-key="feature1_desc">Creative solutions for a better tomorrow.</p>
+                    <h3 data-i18n="pillar1_title">INNOVATION</h3>
+                    <p data-i18n="pillar1_desc">Creative solutions for a better tomorrow.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 data-i18n-key="feature2_title">RELIABILITY</h3>
-                    <p data-i18n-key="feature2_desc">Trusted by clients, delivering excellence.</p>
+                    <h3 data-i18n="pillar2_title">RELIABILITY</h3>
+                    <p data-i18n="pillar2_desc">Trusted by clients, delivering excellence.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-users"></i></div>
-                    <h3 data-i18n-key="feature3_title">TEAMWORK</h3>
-                    <p data-i18n-key="feature3_desc">Together, we build stronger futures.</p>
+                    <h3 data-i18n="pillar3_title">TEAMWORK</h3>
+                    <p data-i18n="pillar3_desc">Together, we build stronger futures.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-leaf"></i></div>
-                    <h3 data-i18n-key="feature4_title">SUSTAINABILITY</h3>
-                    <p data-i18n-key="feature4_desc">Committed to a cleaner, brighter future.</p>
+                    <h3 data-i18n="pillar4_title">SUSTAINABILITY</h3>
+                    <p data-i18n="pillar4_desc">Committed to a cleaner, brighter future.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- ONE KIT SECTION -->
+    <!-- ONE KIT, COMPLETE SOLUTION -->
     <div class="container">
         <section style="padding-top: 20px;">
             <div class="onekit-wrapper">
                 <div class="onekit-info">
-                    <h2 data-i18n-key="onekit_title">ONE KIT, COMPLETE SOLUTION</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 8px;" data-i18n-key="onekit_sub">Lighting, charging, fan, entertainment and safety – everything in one solar kit.</p>
+                    <h2 data-i18n="onekit_title">ONE KIT, COMPLETE SOLUTION</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 8px;" data-i18n="onekit_sub">Lighting, charging, fan, entertainment and safety – everything in one solar kit.</p>
                     <div class="kit-features">
-                        <span><i class="fas fa-lightbulb"></i> <span data-i18n-key="kit_feature1">LED Lights</span></span>
-                        <span><i class="fas fa-mobile-alt"></i> <span data-i18n-key="kit_feature2">Phone Charging</span></span>
-                        <span><i class="fas fa-fan"></i> <span data-i18n-key="kit_feature3">Energy Fan</span></span>
-                        <span><i class="fas fa-tv"></i> <span data-i18n-key="kit_feature4">Digital Access</span></span>
-                        <span><i class="fas fa-shield-alt"></i> <span data-i18n-key="kit_feature5">Safety Alarm</span></span>
+                        <span><i class="fas fa-lightbulb"></i> <span data-i18n="kit_led">LED Lights</span></span>
+                        <span><i class="fas fa-mobile-alt"></i> <span data-i18n="kit_charge">Phone Charging</span></span>
+                        <span><i class="fas fa-fan"></i> <span data-i18n="kit_fan">Energy Fan</span></span>
+                        <span><i class="fas fa-tv"></i> <span data-i18n="kit_digital">Digital Access</span></span>
+                        <span><i class="fas fa-shield-alt"></i> <span data-i18n="kit_safety">Safety Alarm</span></span>
                     </div>
-                    <a href="#" class="btn-outline" id="discoverKitBtn" data-i18n-key="discover_btn">DISCOVER OUR KIT <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn-outline" id="discoverKitBtn"><span data-i18n="discover_btn">DISCOVER OUR KIT</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="onekit-illustration">
                     <i class="fas fa-solar-panel"></i>
                     <i class="fas fa-charging-station" style="font-size: 3rem; display: block; margin-top: 10px;"></i>
-                    <p style="margin-top: 14px; font-weight: 500;" data-i18n-key="plug_text">Plug & Play Solar Home System</p>
+                    <p style="margin-top: 14px; font-weight: 500;" data-i18n="plug_play">Plug & Play Solar Home System</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- IMPACT STATS -->
+    <!-- OUR IMPACT -->
     <div class="container">
         <section>
-            <h2 class="section-title" data-i18n-key="impact_title">OUR IMPACT</h2>
+            <h2 class="section-title" data-i18n="impact_title">OUR IMPACT</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">250+</div>
-                    <div class="stat-label" data-i18n-key="stat1_label">Villages Electrified</div>
+                    <div class="stat-label" data-i18n="stat1">Villages Electrified</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">15,000+</div>
-                    <div class="stat-label" data-i18n-key="stat2_label">Families Empowered</div>
+                    <div class="stat-label" data-i18n="stat2">Families Empowered</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">1,200+</div>
-                    <div class="stat-label" data-i18n-key="stat3_label">Tons of CO₂ Saved</div>
+                    <div class="stat-label" data-i18n="stat3">Tons of CO₂ Saved</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">25,000+</div>
-                    <div class="stat-label" data-i18n-key="stat4_label">Children’s Education Supported</div>
+                    <div class="stat-label" data-i18n="stat4">Children’s Education Supported</div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Founder Quote -->
+    <!-- Founder Quote: Vivek Kumar -->
     <div class="container">
         <div class="founder-section">
             <div class="founder-flex">
@@ -583,48 +142,48 @@
                     <i class="fas fa-seedling"></i>
                 </div>
                 <div class="founder-quote">
-                    <span data-i18n-key="founder_quote">“Seeing the power problems in villages, I dreamed of a solution that brings light, safety and happiness to every home. That’s how VIGRID was born.”</span>
-                    <div class="founder-name" data-i18n-key="founder_name">— VIVEK KUMAR, Founder, VIGRID</div>
+                    <span data-i18n="founder_quote">“Seeing the power problems in villages, I dreamed of a solution that brings light, safety and happiness to every home. That’s how VIGRID was born.”</span>
+                    <div class="founder-name" data-i18n="founder_name">— VIVEK KUMAR, Founder, VIGRID</div>
                 </div>
             </div>
         </div>
     </div>
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER with quick links, registration, newsletter -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4 data-i18n-key="footer_quick">QUICK LINKS</h4>
-                <a href="#" data-i18n-key="footer_home">Home</a>
-                <a href="#" data-i18n-key="footer_about">About Us</a>
-                <a href="#" data-i18n-key="footer_products">Products</a>
-                <a href="#" data-i18n-key="footer_contact">Contact</a>
+                <h4 data-i18n="footer_quick">QUICK LINKS</h4>
+                <a href="#" data-i18n="footer_home">Home</a>
+                <a href="#" data-i18n="footer_about">About Us</a>
+                <a href="#" data-i18n="footer_products">Products</a>
+                <a href="#" data-i18n="footer_contact">Contact</a>
             </div>
             <div class="footer-col">
-                <h4 data-i18n-key="footer_reg_title">REGISTRATION</h4>
-                <p data-i18n-key="footer_reg_label">LOVYAM REGISTRATION NUMBER</p>
+                <h4 data-i18n="footer_reg">REGISTRATION</h4>
+                <p data-i18n="footer_reg_label">LOVYAM REGISTRATION NUMBER</p>
                 <p class="reg-number"><i class="fas fa-id-card"></i> LOVYAM-BR-26-0001234</p>
                 <p><i class="fas fa-map-marker-alt"></i> India</p>
                 <div style="margin-top: 24px;">
                     <i class="fas fa-solar-panel" style="font-size: 2rem; color: #eab308;"></i>
                     <p style="margin-top: 8px; font-weight: 600;">VIGRID</p>
-                    <small data-i18n-key="footer_tagline">Light Today, Bright Future.</small>
+                    <small data-i18n="footer_tagline">Light Today, Bright Future.</small>
                 </div>
             </div>
             <div class="footer-col">
-                <h4 data-i18n-key="footer_newsletter">NEWSLETTER</h4>
-                <p data-i18n-key="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
+                <h4 data-i18n="footer_newsletter">NEWSLETTER</h4>
+                <p data-i18n="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
                 <div class="newsletter-form">
-                    <input type="email" id="newsletterEmail" placeholder="Enter your email" data-i18n-placeholder-key="email_placeholder">
-                    <button id="subscribeBtn" data-i18n-key="subscribe_btn">SUBSCRIBE</button>
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                    <button id="subscribeBtn"><span data-i18n="subscribe_btn">SUBSCRIBE</span></button>
                 </div>
                 <p id="subscribeFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
             </div>
         </div>
         <div class="copyright">
-            <p data-i18n-key="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
+            <p data-i18n="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
             <div style="margin-top: 8px; display: flex; justify-content: center; gap: 20px;">
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-twitter"></i>
@@ -635,181 +194,7 @@
     </div>
 </footer>
 
-<script>
-    // Translation Dictionary (English & Hindi)
-    const translations = {
-        en: {
-            nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_contact: "Contact",
-            hero_title_1: "Light Today,", hero_title_2: "Bright Future.",
-            hero_desc: "We provide innovative and sustainable solar solutions that empower rural families and build a brighter tomorrow.",
-            explore_btn: "EXPLORE MORE", kit_badge: "7-in-1 Solar Home Kit for Rural India",
-            feature1_title: "INNOVATION", feature1_desc: "Creative solutions for a better tomorrow.",
-            feature2_title: "RELIABILITY", feature2_desc: "Trusted by clients, delivering excellence.",
-            feature3_title: "TEAMWORK", feature3_desc: "Together, we build stronger futures.",
-            feature4_title: "SUSTAINABILITY", feature4_desc: "Committed to a cleaner, brighter future.",
-            onekit_title: "ONE KIT, COMPLETE SOLUTION", onekit_sub: "Lighting, charging, fan, entertainment and safety – everything in one solar kit.",
-            kit_feature1: "LED Lights", kit_feature2: "Phone Charging", kit_feature3: "Energy Fan", kit_feature4: "Digital Access", kit_feature5: "Safety Alarm",
-            discover_btn: "DISCOVER OUR KIT", plug_text: "Plug & Play Solar Home System",
-            impact_title: "OUR IMPACT",
-            stat1_label: "Villages Electrified", stat2_label: "Families Empowered", stat3_label: "Tons of CO₂ Saved", stat4_label: "Children’s Education Supported",
-            founder_quote: "“Seeing the power problems in villages, I dreamed of a solution that brings light, safety and happiness to every home. That’s how VIGRID was born.”",
-            founder_name: "— VIVEK KUMAR, Founder, VIGRID",
-            footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_contact: "Contact",
-            footer_reg_title: "REGISTRATION", footer_reg_label: "LOVYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
-            footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
-            email_placeholder: "Enter your email", subscribe_btn: "SUBSCRIBE",
-            copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
-        },
-        hi: {
-            nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_contact: "संपर्क करें",
-            hero_title_1: "आज रोशनी,", hero_title_2: "उज्ज्वल भविष्य।",
-            hero_desc: "हम नवीन और टिकाऊ सौर समाधान प्रदान करते हैं जो ग्रामीण परिवारों को सशक्त बनाते हैं और एक उज्जवल कल का निर्माण करते हैं।",
-            explore_btn: "और जानें", kit_badge: "ग्रामीण भारत के लिए 7-इन-1 सोलर होम किट",
-            feature1_title: "नवाचार", feature1_desc: "बेहतर कल के लिए रचनात्मक समाधान।",
-            feature2_title: "विश्वसनीयता", feature2_desc: "ग्राहकों द्वारा भरोसा प्राप्त, उत्कृष्टता प्रदान करना।",
-            feature3_title: "टीम भावना", feature3_desc: "मिलकर, हम मजबूत भविष्य का निर्माण करते हैं।",
-            feature4_title: "स्थिरता", feature4_desc: "स्वच्छ, उज्जवल भविष्य के लिए प्रतिबद्ध।",
-            onekit_title: "एक किट, संपूर्ण समाधान", onekit_sub: "रोशनी, चार्जिंग, पंखा, मनोरंजन और सुरक्षा – सब कुछ एक सौर किट में।",
-            kit_feature1: "एलईडी लाइटें", kit_feature2: "फ़ोन चार्जिंग", kit_feature3: "एनर्जी फैन", kit_feature4: "डिजिटल एक्सेस", kit_feature5: "सेफ्टी अलार्म",
-            discover_btn: "हमारी किट खोजें", plug_text: "प्लग एंड प्ले सोलर होम सिस्टम",
-            impact_title: "हमारा प्रभाव",
-            stat1_label: "गाँव विद्युतीकृत", stat2_label: "परिवार सशक्त", stat3_label: "टन CO₂ बचत", stat4_label: "बच्चों की शिक्षा समर्थित",
-            founder_quote: "“गाँवों में बिजली की समस्याओं को देखकर, मैंने एक ऐसे समाधान का सपना देखा जो हर घर में रोशनी, सुरक्षा और खुशियाँ लाए। इसी तरह VIGRID का जन्म हुआ।”",
-            founder_name: "— विवेक कुमार, संस्थापक, विग्रिड",
-            footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_contact: "संपर्क करें",
-            footer_reg_title: "पंजीकरण", footer_reg_label: "लव्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
-            footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
-            email_placeholder: "अपना ईमेल डालें", subscribe_btn: "सदस्यता लें",
-            copyright_text: "© 2024 विग्रिड। सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
-        }
-    };
-
-    let currentLang = 'en';
-
-    function setLanguage(lang) {
-        currentLang = lang;
-        // update all elements with data-i18n-key
-        const elements = document.querySelectorAll('[data-i18n-key]');
-        elements.forEach(el => {
-            const key = el.getAttribute('data-i18n-key');
-            if (translations[lang] && translations[lang][key]) {
-                // handle inner content (plain text or HTML? preserve simple text)
-                if (el.tagName === 'INPUT' && el.hasAttribute('data-i18n-placeholder-key')) {
-                    const placeholderKey = el.getAttribute('data-i18n-placeholder-key');
-                    if (placeholderKey && translations[lang][placeholderKey]) {
-                        el.placeholder = translations[lang][placeholderKey];
-                    }
-                } else {
-                    el.innerText = translations[lang][key];
-                }
-            }
-        });
-        // special handling for placeholder in newsletter input
-        const emailInput = document.getElementById('newsletterEmail');
-        if (emailInput && translations[lang].email_placeholder) {
-            emailInput.placeholder = translations[lang].email_placeholder;
-        }
-        // update language toggle button text
-        const langLabelSpan = document.getElementById('langLabel');
-        if (langLabelSpan) {
-            langLabelSpan.innerText = lang === 'en' ? 'English' : 'हिंदी';
-        }
-        // update any button that might have inner HTML with icons (preserve icons but update text)
-        const exploreBtn = document.getElementById('exploreBtn');
-        if (exploreBtn) {
-            const originalIcon = '<i class="fas fa-arrow-right"></i>';
-            const newText = translations[lang].explore_btn;
-            exploreBtn.innerHTML = `${newText} ${originalIcon}`;
-        }
-        const discoverBtn = document.getElementById('discoverKitBtn');
-        if (discoverBtn) {
-            const icon = '<i class="fas fa-arrow-right"></i>';
-            discoverBtn.innerHTML = `${translations[lang].discover_btn} ${icon}`;
-        }
-        const subscribeButton = document.getElementById('subscribeBtn');
-        if (subscribeButton) {
-            subscribeButton.innerText = translations[lang].subscribe_btn;
-        }
-        // Update any special dynamic title (section-title already covered by data-i18n-key)
-        document.querySelectorAll('.stat-label').forEach(label => {
-            const key = label.getAttribute('data-i18n-key');
-            if (key && translations[lang][key]) label.innerText = translations[lang][key];
-        });
-        // for founder name and quote also already handled via attributes.
-        localStorage.setItem('vigrid_lang', lang);
-    }
-
-    // Toggle language on click
-    const toggleBtn = document.getElementById('languageToggleBtn');
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-            const newLang = currentLang === 'en' ? 'hi' : 'en';
-            setLanguage(newLang);
-        });
-    }
-
-    // initial load: get saved preference or default english
-    const savedLang = localStorage.getItem('vigrid_lang');
-    if (savedLang && (savedLang === 'en' || savedLang === 'hi')) {
-        setLanguage(savedLang);
-    } else {
-        setLanguage('en');
-    }
-
-    // Interactive demo for buttons, social, quicklinks etc.
-    document.addEventListener('DOMContentLoaded', () => {
-        const exploreBtn = document.getElementById('exploreBtn');
-        if (exploreBtn) {
-            exploreBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert(currentLang === 'en' ? "✨ Thank you for exploring VIGRID! Together we bring light to every village." : "✨ विग्रिड की खोज के लिए धन्यवाद! हम मिलकर हर गाँव में रोशनी लाते हैं।");
-            });
-        }
-        const discoverBtn = document.getElementById('discoverKitBtn');
-        if (discoverBtn) {
-            discoverBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert(currentLang === 'en' ? "🔆 The 7-in-1 Solar Home Kit includes: Lighting, Phone charging, DC Fan, Radio/Entertainment, Torch, Power Bank & Safety Light. Contact us for bulk orders!" : "🔆 7-इन-1 सोलर होम किट में शामिल: लाइटिंग, फ़ोन चार्जिंग, डीसी फैन, रेडियो/मनोरंजन, टॉर्च, पॉवर बैंक और सेफ्टी लाइट। थोक ऑर्डर के लिए संपर्क करें!");
-            });
-        }
-        const subscribeButton = document.getElementById('subscribeBtn');
-        const emailInput = document.getElementById('newsletterEmail');
-        const feedbackSpan = document.getElementById('subscribeFeedback');
-        if (subscribeButton && emailInput) {
-            subscribeButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                const email = emailInput.value.trim();
-                const emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
-                if (!email) {
-                    feedbackSpan.innerHTML = currentLang === 'en' ? '<span style="color:#ffcc80;">❄️ Please enter your email address.</span>' : '<span style="color:#ffcc80;">❄️ कृपया अपना ईमेल पता दर्ज करें।</span>';
-                    return;
-                }
-                if (!emailRegex.test(email)) {
-                    feedbackSpan.innerHTML = currentLang === 'en' ? '<span style="color:#ffcc80;">⚠️ Please enter a valid email (e.g., name@example.com).</span>' : '<span style="color:#ffcc80;">⚠️ कृपया मान्य ईमेल दर्ज करें (जैसे name@example.com)।</span>';
-                    return;
-                }
-                feedbackSpan.innerHTML = currentLang === 'en' ? '<span style="color:#c8e6b5;">✅ Thank you! You\'re now subscribed to VIGRID updates.</span>' : '<span style="color:#c8e6b5;">✅ धन्यवाद! आप विग्रिड अपडेट के लिए सदस्यता ले चुके हैं।</span>';
-                emailInput.value = '';
-                setTimeout(() => feedbackSpan.innerHTML = '', 4000);
-            });
-        }
-        const socialIcons = document.querySelectorAll('.copyright i');
-        socialIcons.forEach(icon => {
-            icon.style.cursor = 'pointer';
-            icon.addEventListener('click', () => {
-                alert(currentLang === 'en' ? '🌍 Connect with VIGRID on social media for latest solar innovations!' : '🌍 नवीनतम सौर नवाचारों के लिए सोशल मीडिया पर विग्रिड से जुड़ें!');
-            });
-        });
-        const quickLinks = document.querySelectorAll('.footer-col a');
-        quickLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.getAttribute('href') === '#') {
-                    e.preventDefault();
-                    alert(currentLang === 'en' ? `📌 ${link.innerText} - VIGRID is dedicated to bringing solar solutions. Reach out to us for more info.` : `📌 ${link.innerText} - विग्रिड सौर समाधान लाने के लिए समर्पित है। अधिक जानकारी के लिए हमसे संपर्क करें।`);
-                }
-            });
-        });
-    });
-</script>
+<!-- External JavaScript -->
+<script src="script.js"></script>
 </body>
 </html>
