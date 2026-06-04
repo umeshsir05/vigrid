@@ -110,7 +110,7 @@ body {
     color: #eab308;
 }
 
-/* Language Toggle Button */
+/* Language Toggle Button (Desktop) */
 .lang-switch {
     background: #eab30820;
     border: 1px solid #eab308;
@@ -131,6 +131,27 @@ body {
 }
 .lang-switch i {
     font-size: 1.1rem;
+}
+
+/* Mobile language switcher inside menu */
+.mobile-lang-switch {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #2a4b2a;
+    cursor: pointer;
+    border-top: 1px solid #e0e7cf;
+    margin-top: 8px;
+}
+.mobile-lang-switch i {
+    font-size: 1.3rem;
+    color: #eab308;
+}
+.mobile-lang-switch:hover {
+    color: #eab308;
 }
 
 /* Menu Toggle Button (Hamburger) */
@@ -453,6 +474,17 @@ footer {
     .founder-quote { font-size: 1.1rem; text-align: center; }
     .founder-flex { flex-direction: column; text-align: center; }
     .header-inner { flex-direction: row; flex-wrap: wrap; position: relative; }
+    
+    /* Hide desktop language button on mobile */
+    .desktop-only {
+        display: none !important;
+    }
+    
+    /* Show mobile language switcher inside menu */
+    .mobile-lang-switch {
+        display: flex;
+    }
+    
     .nav-links { 
         position: fixed;
         top: 80px;
@@ -483,10 +515,6 @@ footer {
     .menu-toggle {
         display: block;
         order: 2;
-    }
-    .lang-switch {
-        order: 3;
-        margin-left: auto;
     }
     .logo {
         order: 1;
