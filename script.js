@@ -5,13 +5,12 @@ const translations = {
         nav_about: "About Us",
         nav_products: "Products",
         nav_contact: "Contact",
-        lang_switch: "हिंदी",   // Text shown on mobile language switcher (target language)
+        lang_switch: "हिंदी",
         hero_highlight: "Light Today",
         hero_future: ", Bright Future.",
         hero_desc: "We provide innovative and sustainable solar solutions that empower rural families and build a brighter tomorrow.",
         explore_btn: "EXPLORE MORE",
         kit_badge: "7-in-1 Solar Home Kit for Rural India",
-        hero_energy: "⚡ Clean Energy for Every Home",
         pillar1_title: "INNOVATION",
         pillar1_desc: "Creative solutions for a better tomorrow.",
         pillar2_title: "RELIABILITY",
@@ -54,13 +53,12 @@ const translations = {
         nav_about: "हमारे बारे में",
         nav_products: "उत्पाद",
         nav_contact: "संपर्क करें",
-        lang_switch: "English",   // Text shown on mobile language switcher when Hindi is active
+        lang_switch: "English",
         hero_highlight: "आज रोशनी",
         hero_future: ", उज्ज्वल भविष्य।",
         hero_desc: "हम नवीन और टिकाऊ सौर समाधान प्रदान करते हैं जो ग्रामीण परिवारों को सशक्त बनाते हैं और एक उज्जवल कल का निर्माण करते हैं।",
         explore_btn: "और जानें",
         kit_badge: "ग्रामीण भारत के लिए 7-इन-1 सोलर होम किट",
-        hero_energy: "⚡ हर घर के लिए स्वच्छ ऊर्जा",
         pillar1_title: "नवाचार",
         pillar1_desc: "बेहतर कल के लिए रचनात्मक समाधान।",
         pillar2_title: "विश्वसनीयता",
@@ -103,7 +101,6 @@ const translations = {
 let currentLang = 'en';
 
 function updateLanguage(lang) {
-    // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -128,24 +125,12 @@ function updateLanguage(lang) {
             }
         }
     });
-    
-    // Update desktop language toggle text
     const langToggleSpan = document.getElementById('langToggleText');
-    if (langToggleSpan) {
-        langToggleSpan.textContent = lang === 'en' ? 'हिंदी' : 'English';
-    }
-    
-    // Update mobile language switcher text
+    if (langToggleSpan) langToggleSpan.textContent = lang === 'en' ? 'हिंदी' : 'English';
     const mobileLangText = document.getElementById('mobileLangText');
-    if (mobileLangText) {
-        mobileLangText.textContent = translations[lang]['lang_switch'];
-    }
-    
-    // Update newsletter placeholder
+    if (mobileLangText) mobileLangText.textContent = translations[lang]['lang_switch'];
     const emailInput = document.getElementById('newsletterEmail');
-    if (emailInput) {
-        emailInput.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
-    }
+    if (emailInput) emailInput.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
 }
 
 function toggleLanguage() {
@@ -154,24 +139,16 @@ function toggleLanguage() {
     localStorage.setItem('vigrid_lang', currentLang);
 }
 
-// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
-    // Load saved language
     const savedLang = localStorage.getItem('vigrid_lang');
-    if (savedLang && (savedLang === 'en' || savedLang === 'hi')) {
-        currentLang = savedLang;
-    }
+    if (savedLang && (savedLang === 'en' || savedLang === 'hi')) currentLang = savedLang;
     updateLanguage(currentLang);
     
-    // Desktop language toggle button
     const toggleBtn = document.getElementById('langToggleBtn');
     if (toggleBtn) toggleBtn.addEventListener('click', toggleLanguage);
-    
-    // Mobile language switcher (inside menu)
     const mobileLangSwitch = document.getElementById('mobileLangSwitch');
     if (mobileLangSwitch) mobileLangSwitch.addEventListener('click', toggleLanguage);
     
-    // ===== MOBILE MENU TOGGLE =====
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {
@@ -187,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
-        // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -196,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
-        // Close menu after clicking a link (or mobile language switch)
         const closeMenu = () => {
             navLinks.classList.remove('active');
             const icon = menuToggle.querySelector('i');
@@ -208,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Original interactive JS (unchanged)
     const exploreBtn = document.getElementById('exploreBtn');
     if (exploreBtn) {
         exploreBtn.addEventListener('click', (e) => {
@@ -217,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     }
-    
     const discoverBtn = document.getElementById('discoverKitBtn');
     if (discoverBtn) {
         discoverBtn.addEventListener('click', (e) => {
@@ -226,15 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     }
-    
     const subscribeButton = document.getElementById('subscribeBtn');
     const emailInput = document.getElementById('newsletterEmail');
     const feedbackSpan = document.getElementById('subscribeFeedback');
-    
-    function validateEmail(email) {
-        return /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email);
-    }
-    
+    function validateEmail(email) { return /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email); }
     if (subscribeButton && emailInput) {
         subscribeButton.addEventListener('click', (e) => {
             e.preventDefault();
@@ -255,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => feedbackSpan.innerHTML = '', 4000);
         });
     }
-    
     const socialIcons = document.querySelectorAll('.copyright i');
     socialIcons.forEach(icon => {
         icon.style.cursor = 'pointer';
@@ -264,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     });
-    
     const quickLinks = document.querySelectorAll('.footer-col a');
     quickLinks.forEach(link => {
         link.addEventListener('click', (e) => {
