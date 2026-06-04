@@ -18,7 +18,6 @@ body {
     padding: 0 32px;
 }
 
-/* BUTTONS & LINKS */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -60,7 +59,6 @@ body {
     border-color: #ca8a04;
 }
 
-/* HEADER */
 .site-header {
     padding: 24px 0;
     border-bottom: 1px solid #e0e7cf;
@@ -110,7 +108,6 @@ body {
     color: #eab308;
 }
 
-/* Language Toggle Button (Desktop) */
 .lang-switch {
     background: #eab30820;
     border: 1px solid #eab308;
@@ -133,7 +130,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Mobile language switcher inside menu */
 .mobile-lang-switch {
     display: none;
     align-items: center;
@@ -154,7 +150,6 @@ body {
     color: #eab308;
 }
 
-/* Menu Toggle Button (Hamburger) */
 .menu-toggle {
     background: transparent;
     border: none;
@@ -168,7 +163,6 @@ body {
     color: #eab308;
 }
 
-/* sections */
 section {
     padding: 70px 0;
 }
@@ -191,12 +185,15 @@ section {
     border-radius: 4px;
 }
 
-/* hero */
+/* Hero - now full width text only */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 .hero-content h1 {
     font-size: 3.2rem;
@@ -225,19 +222,10 @@ section {
     font-size: 0.9rem;
     gap: 8px;
     border: 1px solid #cde2c1;
-}
-.hero-image {
-    background-image: url("heroimage.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 48px;
-    padding: 20px;
-    text-align: center;
-    min-height: 400px;
+    justify-content: center;
 }
 
-/* features grid */
+/* Features grid */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -273,7 +261,7 @@ section {
     line-height: 1.4;
 }
 
-/* one kit section */
+/* One kit */
 .onekit-wrapper {
     background: #f2f9ec;
     border-radius: 56px;
@@ -320,7 +308,7 @@ section {
     color: #4f8a3c;
 }
 
-/* impact stats */
+/* Stats */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -346,7 +334,7 @@ section {
     color: #2a5526;
 }
 
-/* founder quote */
+/* Founder */
 .founder-section {
     background: #eaf4e4;
     border-radius: 48px;
@@ -387,7 +375,7 @@ section {
     color: #ad7b0a;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
     background: #0f2c0d;
     color: #e2f0db;
@@ -463,28 +451,22 @@ footer {
     color: #bdd7b2;
 }
 
-/* Mobile responsive adjustments */
+/* Mobile */
 @media (max-width: 800px) {
     .container { padding: 0 24px; }
-    .hero { grid-template-columns: 1fr; text-align: center; }
     .hero-content h1 { font-size: 2.5rem; }
     .kit-badge { justify-content: center; }
     .section-title { font-size: 1.9rem; }
     .onekit-wrapper { flex-direction: column; text-align: center; }
     .founder-quote { font-size: 1.1rem; text-align: center; }
     .founder-flex { flex-direction: column; text-align: center; }
-    .header-inner { flex-direction: row; flex-wrap: wrap; position: relative; }
     
-    /* Hide desktop language button on mobile */
     .desktop-only {
         display: none !important;
     }
-    
-    /* Show mobile language switcher inside menu */
     .mobile-lang-switch {
         display: flex;
     }
-    
     .nav-links { 
         position: fixed;
         top: 80px;
