@@ -264,9 +264,10 @@ section {
     box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
 }
 .feature-icon {
-    font-size: 2.8rem;
-    color: #eab308;
+    font-size: 3rem;
+    color: #2e7d32;  /* गहरा हरा, या आप चाहें तो #4caf50, #388e3c */
     margin-bottom: 20px;
+}
 }
 .feature-card h3 {
     font-size: 1.5rem;
