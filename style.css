@@ -193,11 +193,12 @@ section {
     align-items: center;
 }
 */
+
 /* Hero section with 40% left (content) and 60% right (image) */
 .hero {
     display: grid;
     grid-template-columns: 2fr 3fr;  /* 2fr = 40%, 3fr = 60% */
-    gap: 48px;
+    gap: 16px;
     align-items: center;
 }
 
