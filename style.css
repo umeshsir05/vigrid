@@ -278,11 +278,14 @@ section {
     line-height: 1.4;
 }
 */
+.features-section {
+    padding: 30px 0;  /* pehle 70px 0 tha – ab kam */
+}
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 .feature-card {
     background: white;
