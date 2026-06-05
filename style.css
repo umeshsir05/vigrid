@@ -185,13 +185,22 @@ section {
     border-radius: 4px;
 }
 
-/* Hero section with two columns */
+/* Hero section with two columns 
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
 }
+*/
+/* Hero section with 40% left (content) and 60% right (image) */
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 3fr;  /* 2fr = 40%, 3fr = 60% */
+    gap: 48px;
+    align-items: center;
+}
+
 .hero-content h1 {
     font-size: 3.2rem;
     font-weight: 800;
