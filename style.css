@@ -242,7 +242,7 @@ section {
     /* border-radius aur box-shadow dono hataye */
 }
 
-/* Features grid */
+/* Features grid 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -277,6 +277,43 @@ section {
     color: #3a5a36;
     line-height: 1.4;
 }
+*/
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+.feature-card {
+    background: white;
+    padding: 24px 16px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    transition: all 0.25s;
+    border: 1px solid #e8f0e2;
+}
+.feature-card:hover {
+    transform: translateY(-6px);
+    border-color: #eab30860;
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+}
+.feature-icon {
+    font-size: 2.4rem;
+    color: #eab308;
+    margin-bottom: 16px;
+}
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.feature-card p {
+    font-size: 0.9rem;
+    color: #3a5a36;
+    line-height: 1.4;
+}
+
 
 /* One kit */
 .onekit-wrapper {
