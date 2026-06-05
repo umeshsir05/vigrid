@@ -185,14 +185,6 @@ section {
     border-radius: 4px;
 }
 
-/* Hero section with two columns 
-.hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-}
-*/
 
 /* Hero section with 40% left (content) and 60% right (image) */
 .hero {
