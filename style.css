@@ -202,13 +202,13 @@ section {
     align-items: center;
 }
 
-.hero-content h1 {
+.hero-content h2 {
     font-size: 3.2rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-.hero-content h1 span {
+.hero-content h2 span {
     color: #eab308;
 }
 .hero-content p {
