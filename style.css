@@ -194,14 +194,19 @@ section {
     align-items: center;
 }
 
-.hero-content h2 {
-    font-size: 3.2rem;
+.hero-content h1 {
+    font-size: 2.8rem;  /* pehle 3.2rem tha – ab kam */
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-.hero-content h2 span {
-    color: #eab308;
+
+.hero-content h1 span:first-child {
+    color: #000000;  /* pehla part black */
+}
+
+.hero-content h1 span:last-child {
+    color: #2c5e2a;  /* dusra part green (aapke brand green ke according) */
 }
 .hero-content p {
     font-size: 1.12rem;
