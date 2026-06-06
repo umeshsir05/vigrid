@@ -579,3 +579,11 @@ button, .btn-primary, .btn-outline { cursor: pointer; }
     display: inline-block;
     margin: 0 2px;
 }
+
+.additional-kit-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    display: block;
+}
