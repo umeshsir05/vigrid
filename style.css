@@ -572,3 +572,10 @@ footer {
     }
 }
 button, .btn-primary, .btn-outline { cursor: pointer; }
+
+.kit-icon-item i {
+    font-size: 2rem;
+    color: #2c5e2a;  /* green colour – aap ise dark ya light koi bhi green de sakte hain */
+    display: inline-block;
+    margin: 0 2px;
+}
