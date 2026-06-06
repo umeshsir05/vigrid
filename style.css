@@ -598,3 +598,17 @@ button, .btn-primary, .btn-outline { cursor: pointer; }
     border-radius: 20px;
     display: block;
 }
+@media (max-width: 700px) {
+    .stats-grid {
+        gap: 12px;
+    }
+    .stat-card {
+        padding: 16px 8px;
+    }
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    .stat-label {
+        font-size: 0.75rem;
+    }
+}
