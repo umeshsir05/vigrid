@@ -22,7 +22,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #eab308;
+    background: #008000;
     color: #1e3a1e;
     font-weight: 700;
     padding: 12px 28px;
@@ -216,7 +216,7 @@ section {
 }
 
 .hero-content h2 span:last-child {
-    color: #2c5e2a;  /* dusra part green (aapke brand green ke according) */
+    color: #008000;  /* dusra part green (aapke brand green ke according) */
 }
 .hero-content p {
     font-size: 1.12rem;
@@ -272,7 +272,7 @@ section {
 }
 .feature-icon {
     font-size: 3rem;
-    color: #2d6a2b;  /* गहरा हरा,*/
+    color: #008000;  /* गहरा हरा,*/
     margin-bottom: 20px;
 }
 }
@@ -311,7 +311,7 @@ section {
 }
 .feature-icon {
     font-size: 2.4rem;
-    color: #eab308;
+    color: #008000;
     margin-bottom: 16px;
 }
 .feature-card h3 {
