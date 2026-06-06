@@ -319,7 +319,7 @@ section {
 /* One kit */
 /* Image below ONE KIT section */
 .kit-image-container {
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
 }
 .kit-image {
@@ -335,7 +335,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
 }*/
 .onekit-wrapper {
     background: transparent;
