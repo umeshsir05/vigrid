@@ -343,7 +343,7 @@ section {
 .onekit-wrapper {
     background: transparent;
     border-radius: 0;
-    padding: 20px 0;  /* ya jitna chahiye utna */
+    padding: 0px 0;  /* ya jitna chahiye utna */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
