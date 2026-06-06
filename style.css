@@ -448,9 +448,15 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
-    color: #3b6e2b;
+    overflow: hidden;  /* ensure image stays inside circle */
     border: 4px solid #eab308;
+}
+
+.founder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* image circle ke andar fit ho jayegi */
+    display: block;
 }
 .founder-quote {
     flex: 1;
