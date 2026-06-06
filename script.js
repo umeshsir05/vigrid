@@ -1,6 +1,13 @@
 // Bilingual dictionary: English (default) and Hindi
 const translations = {
-    en: {
+    en: {kit_icon_solar: "Solar Power",
+kit_icon_mobile: "Mobile Charging",
+kit_icon_fanlight: "Fan + Light",
+kit_icon_led: "LED Lights",
+kit_icon_speaker: "Bluetooth Speaker",
+kit_icon_emergency: "Emergency Light",
+kit_icon_multipurpose: "Multipurpose Board",
+
         nav_home: "Home",
         nav_about: "About Us",
         nav_products: "Products",
