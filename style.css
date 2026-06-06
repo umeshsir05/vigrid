@@ -319,7 +319,7 @@ section {
 /* One kit */
 /* Image below ONE KIT section */
 .kit-image-container {
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: center;
 }
 .kit-image {
@@ -330,7 +330,7 @@ section {
 /*
 .onekit-wrapper {
     background: #f2f9ec;
-    padding: 48px 40px;
+    padding: 24px 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -345,7 +345,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 15px;
 }
 .onekit-info {
     flex: 2;
@@ -395,9 +395,9 @@ section {
 /* Individual stat card - size kam */
 .stat-card {
     background: white;
-    border-radius: 28px;  /* pehle 36px se kam */
+    border-radius: 0px;  /* pehle 36px se kam */
     padding: 20px 12px;   /* pehle 32px 20px – ab kam */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    
     border: 1px solid #ddecd2;
 }
 
