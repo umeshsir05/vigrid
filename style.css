@@ -95,7 +95,7 @@ body {
     width: 50px;
     height: 50px;
     width: auto;
-    max-height: 150px;  /* aap height limit kar sakte hain */
+    max-height: 50px;  /* aap height limit kar sakte hain */
     display: inline-block;
 }
 .logo span {
