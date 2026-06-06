@@ -1,6 +1,8 @@
 // Bilingual dictionary: English (default) and Hindi
 const translations = {
-    en: {kit_icon_solar: "Solar Power",
+
+    en: {
+kit_icon_solar: "Solar Power",
 kit_icon_mobile: "Mobile Charging",
 kit_icon_fanlight: "Fan + Light",
 kit_icon_led: "LED Lights",
@@ -55,7 +57,16 @@ kit_icon_multipurpose: "Multipurpose Board",
         subscribe_btn: "SUBSCRIBE",
         copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
     },
+
     hi: {
+kit_icon_solar: "सोलर पॉवर",
+kit_icon_mobile: "मोबाइल चार्जिंग",
+kit_icon_fanlight: "पंखा + लाइट",
+kit_icon_led: "एलईडी लाइटें",
+kit_icon_speaker: "ब्लूटूथ स्पीकर",
+kit_icon_emergency: "इमरजेंसी लाइट",
+kit_icon_multipurpose: "मल्टीपर्पस बोर्ड",
+
         nav_home: "होम",
         nav_about: "हमारे बारे में",
         nav_products: "उत्पाद",
