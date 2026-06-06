@@ -386,29 +386,35 @@ section {
     color: #4f8a3c;
 }
 
-/* Stats */
+/* Impact stats grid - 4 boxes in one line */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);  /* chaaro ek line me */
+    gap: 20px;  /* boxes ke beech gap thoda kam */
     text-align: center;
 }
+
+/* Individual stat card - size kam */
 .stat-card {
     background: white;
-    border-radius: 36px;
-    padding: 32px 20px;
+    border-radius: 28px;  /* pehle 36px se kam */
+    padding: 20px 12px;   /* pehle 32px 20px – ab kam */
     box-shadow: 0 5px 15px rgba(0,0,0,0.02);
     border: 1px solid #ddecd2;
 }
+
+/* Stat number ka size kam */
 .stat-number {
-    font-size: 3rem;
+    font-size: 2rem;      /* pehle 3rem tha – ab kam */
     font-weight: 800;
     color: #eab308;
-    margin-bottom: 12px;
+    margin-bottom: 8px;   /* pehle 12px */
 }
+
+/* Label ka size thoda adjust */
 .stat-label {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.9rem;    /* pehle 1.1rem – ab kam */
     color: #2a5526;
 }
 
