@@ -329,10 +329,21 @@ section {
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     display: inline-block;
 }
+/*
 .onekit-wrapper {
     background: #f2f9ec;
     border-radius: 56px;
     padding: 48px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}*/
+.onekit-wrapper {
+    background: transparent;
+    border-radius: 0;
+    padding: 20px 0;  /* ya jitna chahiye utna */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
