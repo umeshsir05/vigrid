@@ -84,9 +84,19 @@ body {
     letter-spacing: -0.5px;
     color: #2c5e2a;
 }
-.logo i {
-    font-size: 2rem;
-    color: #eab308;
+/* Logo Section */
+.logo-section {
+    text-align: center;
+    padding: 40px 0;
+    background: transparent; /* ya koi light background chahe to */
+}
+
+.logo-image {
+    max-width: 80%;
+    height: auto;
+    width: auto;
+    max-height: 150px;  /* aap height limit kar sakte hain */
+    display: inline-block;
 }
 .logo span {
     background: linear-gradient(135deg, #2b5e2a, #5f8b4c);
@@ -614,5 +624,15 @@ button, .btn-primary, .btn-outline { cursor: pointer; }
     }
     .stat-label {
         font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .logo-section {
+        padding: 30px 0;
+    }
+    .logo-image {
+        max-width: 90%;
+        max-height: 100px;
     }
 }
