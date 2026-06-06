@@ -325,14 +325,11 @@ section {
 .kit-image {
     max-width: 100%;
     height: auto;
-    border-radius: 24px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     display: inline-block;
 }
 /*
 .onekit-wrapper {
     background: #f2f9ec;
-    border-radius: 56px;
     padding: 48px 40px;
     display: flex;
     flex-wrap: wrap;
@@ -387,6 +384,7 @@ section {
 }
 
 /* Impact stats grid - 4 boxes in one line */
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);  /* chaaro ek line me */
