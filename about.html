@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>VIGRID | About Us – Powering Rural India</title>
-    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Main stylesheet (reuse from index) -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional about page styles – matches image layout */
+        /* About page specific styles */
         .about-hero {
             text-align: center;
             padding: 40px 0 20px;
@@ -80,6 +78,12 @@
         .about-card p {
             color: #3a5a36;
             font-size: 0.95rem;
+        }
+        .about-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 12px;
         }
         .story-content, .why-content, .values-list, .message-content, .built-content {
             background: #fafdf5;
@@ -172,6 +176,15 @@
             font-weight: bold;
             cursor: pointer;
         }
+        .mini-solar-image {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .mini-solar-image img {
+            max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
         @media (max-width: 800px) {
             .about-hero h1 { font-size: 2.2rem; }
             .about-section h2 { font-size: 1.7rem; }
@@ -221,7 +234,7 @@
             </p>
         </div>
 
-        <!-- Four points: Clean Energy, Affordable, Reliable, Impact Driven -->
+        <!-- Four points: Clean Energy, Affordable, Reliable, Impact Driven (Impact Driven card now contains the image) -->
         <div class="about-section">
             <div class="about-grid-list">
                 <div class="about-card">
@@ -240,7 +253,8 @@
                     <p data-i18n="about_reliable_desc">Built for rural needs, made to last.</p>
                 </div>
                 <div class="about-card">
-                    <i class="fas fa-heart"></i>
+                    <!-- Impact Driven image inserted here -->
+                    <img src="1000526411.jpg" alt="Impact Driven" style="width: 100%; border-radius: 20px;">
                     <h3 data-i18n="about_impact_title">Impact Driven</h3>
                     <p data-i18n="about_impact_desc">Creating real change in communities.</p>
                 </div>
@@ -283,7 +297,7 @@
             </div>
         </div>
 
-        <!-- BUILT IN INDIA. MADE FOR INDIA. -->
+        <!-- BUILT IN INDIA. MADE FOR INDIA. + MINI OFF-GRID SOLAR SYSTEM IMAGE -->
         <div class="about-section">
             <div style="background: #eaf4e4; border-radius: 48px; padding: 40px 24px; text-align: center;">
                 <i class="fas fa-flag-india" style="font-size: 3rem; color: #eab308;"></i>
@@ -294,6 +308,10 @@
                     <div><i class="fas fa-industry" style="color:#eab308"></i> <span data-i18n="built_point2">Made in India</span></div>
                     <div><i class="fas fa-home" style="color:#eab308"></i> <span data-i18n="built_point3">For Rural India</span></div>
                     <div><i class="fas fa-chart-line" style="color:#eab308"></i> <span data-i18n="built_point4">For a Better India</span></div>
+                </div>
+                <!-- Mini Off-Grid Solar System Image -->
+                <div class="mini-solar-image">
+                    <img src="1000526413.jpg" alt="Mini Off-Grid Solar System">
                 </div>
             </div>
         </div>
@@ -340,7 +358,7 @@
     </div>
 </main>
 
-<!-- FOOTER (similar to index) -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -384,9 +402,8 @@
     </div>
 </footer>
 
-<!-- Bilingual translations & interactive logic (self-contained for about page) -->
+<!-- Bilingual translations & interactive logic -->
 <script>
-    // Translations for about page (English + Hindi)
     const aboutTranslations = {
         en: {
             nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_contact: "Contact", impact_link: "Impact",
@@ -421,8 +438,7 @@
             subscribe_btn: "SUBSCRIBE", chat_now: "CHAT NOW",
             footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_contact: "Contact",
             footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
-            footer_newsletter: "NEWSLETTER", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy",
-            lang_switch_text: "हिंदी"
+            footer_newsletter: "NEWSLETTER", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
         },
         hi: {
             nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_contact: "संपर्क करें", impact_link: "प्रभाव",
@@ -457,8 +473,7 @@
             subscribe_btn: "सदस्यता लें", chat_now: "अभी चैट करें",
             footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_contact: "संपर्क करें",
             footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
-            footer_newsletter: "न्यूज़लेटर", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना",
-            lang_switch_text: "English"
+            footer_newsletter: "न्यूज़लेटर", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
         }
     };
 
@@ -470,7 +485,6 @@
                 if (el.children.length === 0 || el.tagName === 'BUTTON') {
                     el.textContent = aboutTranslations[lang][key];
                 } else {
-                    // preserve icons if any
                     const textNode = Array.from(el.childNodes).find(n => n.nodeType === 3);
                     if (textNode) textNode.textContent = aboutTranslations[lang][key];
                     else el.innerHTML = aboutTranslations[lang][key];
@@ -479,9 +493,7 @@
         });
         document.getElementById('langToggleText').innerText = lang === 'en' ? 'हिंदी' : 'English';
         document.getElementById('mobileLangText').innerText = lang === 'en' ? 'हिंदी' : 'English';
-        // update placeholders
-        const inputs = document.querySelectorAll('#aboutNewsEmail, #footerNewsEmail');
-        inputs.forEach(inp => inp.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें');
+        document.querySelectorAll('#aboutNewsEmail, #footerNewsEmail').forEach(inp => inp.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें');
     }
 
     function toggleLang() {
