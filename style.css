@@ -429,7 +429,7 @@ section {
 /* Founder */
 .founder-section {
     background: #eaf4e4;
-    border-radius: 48px;
+    border-radius: 0px;
     margin: 20px 0;
     padding: 56px 44px;
 }
