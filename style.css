@@ -253,7 +253,7 @@ section {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 32px;
+    gap: 10px;
     margin-top: 0px;
 }
 .feature-card {
@@ -273,7 +273,7 @@ section {
 .feature-icon {
     font-size: 3rem;
     color: #008000;  /* गहरा हरा,*/
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 }
 .feature-card h3 {
@@ -287,12 +287,12 @@ section {
 }
 */
 .features-section {
-    padding: 30px 0;  /* pehle 70px 0 tha – ab kam */
+    padding: 20px 0;  /* pehle 70px 0 tha – ab kam */
 }
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 12px;
     margin-top: 0px;
 }
 .feature-card {
