@@ -63,6 +63,7 @@
             background: #eab308;
             margin-top: 8px;
         }
+/*
         .about-grid-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -101,7 +102,71 @@
             height: auto;
             border-radius: 20px;
             margin-bottom: 12px;
-        }
+        } */
+
+/* Four cards grid - smaller size */
+.about-grid-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+/* Card styling - compact */
+.about-card {
+    background: white;
+    padding: 16px 12px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+}
+
+.about-card:hover {
+    transform: translateY(-3px);
+    border-color: #eab308;
+}
+
+/* Icons - green colour */
+.about-card i {
+    font-size: 2rem;
+    color: #2c5e2a;  /* green colour */
+    margin-bottom: 10px;
+}
+
+/* Heading smaller */
+.about-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* Paragraph smaller */
+.about-card p {
+    color: #3a5a36;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Image inside card (for Impact Driven) - adjust size if needed */
+.about-card img {
+    max-width: 80px;
+    margin-bottom: 8px;
+}
+
+/* Mobile: 2 columns on smaller screens */
+@media (max-width: 700px) {
+    .about-grid-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+@media (max-width: 480px) {
+    .about-grid-list {
+        grid-template-columns: 1fr;
+    }
+}
         .story-content, .why-content, .values-list, .message-content, .built-content {
             background: #fafdf5;
             padding: 32px;
