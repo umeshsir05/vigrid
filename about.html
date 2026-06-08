@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Main stylesheet (same as index) -->
+    <!-- Main stylesheet (reuse from index) -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional about page specific styles */
+        /* Additional about page styles – matches image layout */
         .about-hero {
             text-align: center;
             padding: 40px 0 20px;
@@ -24,9 +24,10 @@
             margin-bottom: 8px;
         }
         .about-hero .tagline {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #eab308;
-            font-weight: 600;
+            line-height: 1.3;
         }
         .about-section {
             margin-bottom: 60px;
@@ -47,7 +48,7 @@
             background: #eab308;
             margin-top: 8px;
         }
-        .about-grid {
+        .about-grid-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
@@ -80,53 +81,101 @@
             color: #3a5a36;
             font-size: 0.95rem;
         }
-        .story-content, .why-content, .values-content, .message-content {
+        .story-content, .why-content, .values-list, .message-content, .built-content {
             background: #fafdf5;
             padding: 32px;
             border-radius: 32px;
             margin: 20px 0;
         }
-        .inline-icon {
-            color: #eab308;
-            margin-right: 8px;
+        .values-list ul, .built-list ul {
+            list-style: none;
+            padding-left: 0;
         }
-        .contact-info {
+        .values-list li, .built-list li {
+            margin-bottom: 20px;
+            padding-left: 28px;
+            position: relative;
+        }
+        .values-list li:before, .built-list li:before {
+            content: "⚡";
+            color: #eab308;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .contact-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             background: #eef5e9;
             border-radius: 32px;
-            padding: 32px;
-            text-align: center;
+            padding: 40px 30px;
+            margin-top: 20px;
         }
-        .contact-info p {
-            font-size: 1.1rem;
+        .contact-col h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1e3a1e;
+        }
+        .contact-col a {
+            display: block;
+            color: #2a4b2a;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: 0.2s;
+        }
+        .contact-col a:hover {
+            color: #eab308;
+            transform: translateX(4px);
+        }
+        .reg-number {
+            background: #1f421c;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 28px;
+            font-weight: 600;
+            font-family: monospace;
+            color: #e2f0db;
             margin: 8px 0;
         }
-        .whatsapp-btn {
+        .whatsapp-chat {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: #25D366;
             color: white;
             font-weight: 700;
-            padding: 12px 28px;
+            padding: 10px 24px;
             border-radius: 60px;
             text-decoration: none;
-            margin: 20px 0;
-            transition: 0.2s;
+            margin-top: 16px;
         }
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: scale(1.02);
+        .newsletter-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
         }
-        .footer-note {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #3a5a36;
+        .newsletter-inline input {
+            flex: 1;
+            padding: 10px 16px;
+            border-radius: 60px;
+            border: none;
+            outline: none;
+        }
+        .newsletter-inline button {
+            background: #eab308;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-weight: bold;
+            cursor: pointer;
         }
         @media (max-width: 800px) {
             .about-hero h1 { font-size: 2.2rem; }
             .about-section h2 { font-size: 1.7rem; }
-            .about-card { padding: 16px; }
+            .contact-row { grid-template-columns: 1fr; gap: 40px; }
         }
     </style>
 </head>
@@ -142,10 +191,10 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About Us</a>
-            <a href="#">Products</a>
-            <a href="#">Contact</a>
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="about.html" class="active" data-i18n="nav_about">About Us</a>
+            <a href="#" data-i18n="nav_products">Products</a>
+            <a href="#" data-i18n="nav_contact">Contact</a>
             <div class="mobile-lang-switch" id="mobileLangSwitch">
                 <i class="fas fa-globe"></i>
                 <span id="mobileLangText">हिंदी</span>
@@ -162,164 +211,169 @@
     <div class="container">
         <!-- About Hero -->
         <div class="about-hero">
-            <h1>ABOUT VIGRID</h1>
-            <div class="tagline">Powering Rural India. Empowering Lives.</div>
-            <p style="max-width: 750px; margin: 20px auto; font-size: 1.1rem; color: #2c4727;">VIGRID is on a mission to bring clean, reliable and affordable solar energy to every rural home in India. We design innovative 7-in-1 solar home kits that provide light, power and comfort – where it’s needed the most.</p>
+            <h1 data-i18n="about_heading">ABOUT VIGRID</h1>
+            <div class="tagline">
+                <span data-i18n="about_tagline1">Powering Rural India.</span><br>
+                <span data-i18n="about_tagline2">Empowering Lives.</span>
+            </div>
+            <p style="max-width: 750px; margin: 24px auto; font-size: 1.1rem; color: #2c4727;" data-i18n="about_desc">
+                VIGRID is on a mission to bring clean, reliable and affordable solar energy to every rural home in India. We design innovative 7-in-1 solar home kits that provide light, power and comfort – where it’s needed the most.
+            </p>
         </div>
 
-        <!-- 4 pillars: Clean Energy, Affordable, Reliable, Impact Driven -->
+        <!-- Four points: Clean Energy, Affordable, Reliable, Impact Driven -->
         <div class="about-section">
-            <div class="about-grid">
+            <div class="about-grid-list">
                 <div class="about-card">
                     <i class="fas fa-leaf"></i>
-                    <h3>Clean Energy</h3>
-                    <p>Sustainable future for every home.</p>
+                    <h3 data-i18n="about_clean_title">Clean Energy</h3>
+                    <p data-i18n="about_clean_desc">Sustainable future for every home.</p>
                 </div>
                 <div class="about-card">
                     <i class="fas fa-rupee-sign"></i>
-                    <h3>Affordable</h3>
-                    <p>High-quality solutions at the right price.</p>
+                    <h3 data-i18n="about_affordable_title">Affordable</h3>
+                    <p data-i18n="about_affordable_desc">High-quality solutions at the right price.</p>
                 </div>
                 <div class="about-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Reliable</h3>
-                    <p>Built for rural needs, made to last.</p>
+                    <h3 data-i18n="about_reliable_title">Reliable</h3>
+                    <p data-i18n="about_reliable_desc">Built for rural needs, made to last.</p>
                 </div>
                 <div class="about-card">
                     <i class="fas fa-heart"></i>
-                    <h3>Impact Driven</h3>
-                    <p>Creating real change in communities.</p>
+                    <h3 data-i18n="about_impact_title">Impact Driven</h3>
+                    <p data-i18n="about_impact_desc">Creating real change in communities.</p>
                 </div>
             </div>
         </div>
 
         <!-- OUR STORY -->
         <div class="about-section">
-            <h2>OUR STORY</h2>
+            <h2 data-i18n="story_heading">OUR STORY</h2>
             <div class="story-content">
-                <h3 style="color: #eab308; margin-bottom: 12px;">From a Village Dream to a National Mission</h3>
-                <p>VIGRID was founded with a simple but powerful dream – to solve the power problems in villages with smart, sustainable and affordable solutions.</p>
-                <p style="margin-top: 16px;">Our founder, Vivek Kumar, grew up seeing the challenges rural families face – no electricity, no light for studies, limited opportunities.</p>
-                <p style="margin-top: 16px;">With 8+ years of experience in electronics and a passion for innovation, he built VIGRID – a brand that delivers complete solar energy solutions in one box.</p>
+                <h3 data-i18n="story_sub" style="color: #eab308; margin-bottom: 12px;">From a Village Dream to a National Mission</h3>
+                <p data-i18n="story_p1">VIGRID was founded with a simple but powerful dream – to solve the power problems in villages with smart, sustainable and affordable solutions.</p>
+                <p data-i18n="story_p2" style="margin-top: 16px;">Our founder, Vivek Kumar, grew up seeing the challenges rural families face – no electricity, no light for studies, limited opportunities.</p>
+                <p data-i18n="story_p3" style="margin-top: 16px;">With 8+ years of experience in electronics and a passion for innovation, he built VIGRID – a brand that delivers complete solar energy solutions in one box.</p>
             </div>
         </div>
 
         <!-- WHY WE EXIST -->
         <div class="about-section">
-            <h2>WHY WE EXIST</h2>
+            <h2 data-i18n="why_heading">WHY WE EXIST</h2>
             <div class="why-content">
-                <h3 style="color: #eab308;">Because Every Home Deserves Light</h3>
-                <p>Millions of rural homes still live without reliable electricity. Children study in the dark, families struggle with daily tasks.</p>
-                <p>We believe clean energy should be a right, not a privilege. VIGRID is here to bridge that gap – one home at a time.</p>
+                <h3 data-i18n="why_sub" style="color: #eab308;">Because Every Home Deserves Light</h3>
+                <p data-i18n="why_p1">Millions of rural homes still live without reliable electricity.</p>
+                <p data-i18n="why_p2">Children study in the dark, families struggle with daily tasks.</p>
+                <p data-i18n="why_p3">We believe clean energy should be a right, not a privilege.</p>
+                <p data-i18n="why_p4">VIGRID is here to bridge that gap – one home at a time.</p>
             </div>
         </div>
 
-        <!-- OUR VALUES -->
+        <!-- OUR VALUES (list) -->
         <div class="about-section">
-            <h2>OUR VALUES</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Sustainability</h3>
-                    <p>We promote clean, green and sustainable energy for a better tomorrow.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>Integrity</h3>
-                    <p>We are honest, transparent and committed to our customers and communities.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovation</h3>
-                    <p>We continuously innovate to create smart and reliable solar solutions.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Empathy</h3>
-                    <p>We care about people and work for their betterment with passion.</p>
-                </div>
+            <h2 data-i18n="values_heading">OUR VALUES</h2>
+            <div class="values-list story-content">
+                <ul>
+                    <li><strong data-i18n="value1_title">Sustainability</strong> – <span data-i18n="value1_desc">We promote clean, green and sustainable energy for a better tomorrow.</span></li>
+                    <li><strong data-i18n="value2_title">Integrity</strong> – <span data-i18n="value2_desc">We are honest, transparent and committed to our customers and communities.</span></li>
+                    <li><strong data-i18n="value3_title">Innovation</strong> – <span data-i18n="value3_desc">We continuously innovate to create smart and reliable solar solutions.</span></li>
+                    <li><strong data-i18n="value4_title">Empathy</strong> – <span data-i18n="value4_desc">We care about people and work for their betterment with passion.</span></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Built in India -->
-        <div class="about-section" style="text-align: center;">
-            <div style="background: #eaf4e4; border-radius: 48px; padding: 40px 24px;">
+        <!-- BUILT IN INDIA. MADE FOR INDIA. -->
+        <div class="about-section">
+            <div style="background: #eaf4e4; border-radius: 48px; padding: 40px 24px; text-align: center;">
                 <i class="fas fa-flag-india" style="font-size: 3rem; color: #eab308;"></i>
-                <h2 style="margin-top: 16px;">BUILT IN INDIA. MADE FOR INDIA.</h2>
-                <p style="max-width: 700px; margin: 16px auto;">Every VIGRID product is designed, developed and assembled in India to suit the real needs of rural families.</p>
+                <h2 style="margin-top: 16px;" data-i18n="built_heading">BUILT IN INDIA. MADE FOR INDIA.</h2>
+                <p data-i18n="built_desc" style="max-width: 700px; margin: 16px auto;">Every VIGRID product is designed, developed and assembled in India to suit the real needs of rural families.</p>
+                <div class="built-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 24px;">
+                    <div><i class="fas fa-drafting-compass" style="color:#eab308"></i> <span data-i18n="built_point1">Designed in India</span></div>
+                    <div><i class="fas fa-industry" style="color:#eab308"></i> <span data-i18n="built_point2">Made in India</span></div>
+                    <div><i class="fas fa-home" style="color:#eab308"></i> <span data-i18n="built_point3">For Rural India</span></div>
+                    <div><i class="fas fa-chart-line" style="color:#eab308"></i> <span data-i18n="built_point4">For a Better India</span></div>
+                </div>
             </div>
         </div>
 
         <!-- Founder Message -->
         <div class="about-section">
-            <h2>A Message from our Founder</h2>
+            <h2 data-i18n="founder_msg_heading">A Message from our Founder</h2>
             <div class="message-content" style="background: #fef5e7;">
                 <i class="fas fa-quote-left" style="font-size: 2rem; color: #eab308; opacity: 0.5;"></i>
-                <p style="font-size: 1.2rem; font-style: italic; margin: 16px 0;">“VIGRID is not just a product – it’s a promise. A promise of light, hope and a better future for every rural family in India.”</p>
-                <p style="font-weight: 800; margin-top: 16px;">– Vivek Kumar<br><span style="font-weight: normal;">Founder, VIGRID</span></p>
+                <p style="font-size: 1.2rem; font-style: italic; margin: 16px 0;" data-i18n="founder_quote_text">“VIGRID is not just a product – it’s a promise. A promise of light, hope and a better future for every rural family in India.”</p>
+                <p style="font-weight: 800; margin-top: 16px;"><span data-i18n="founder_name">– Vivek Kumar</span><br><span data-i18n="founder_title">Founder, VIGRID</span></p>
             </div>
         </div>
 
-        <!-- Get in Touch + WhatsApp -->
+        <!-- Get in Touch (with Quick Links, Registration, Newsletter, Chat Now) -->
         <div class="about-section">
-            <div class="contact-info">
-                <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Get in Touch</h3>
-                <p><i class="fas fa-phone-alt inline-icon"></i> 📞 +91 12345 67890</p>
-                <p><i class="fas fa-envelope inline-icon"></i> 📧 info@vigrid.com</p>
-                <p><i class="fas fa-map-marker-alt inline-icon"></i> 📅 India</p>
-                <a href="#" class="whatsapp-btn" id="whatsappChatBtn"><i class="fab fa-whatsapp"></i> Chat with us on WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Newsletter (inline with same style as footer but not duplicate footer) -->
-        <div class="about-section" style="background: #0f2c0d; color: white; border-radius: 40px; padding: 40px 32px; margin-bottom: 40px;">
-            <div style="max-width: 500px; margin: 0 auto; text-align: center;">
-                <h3 style="color: #facc15; margin-bottom: 12px;">NEWSLETTER</h3>
-                <p>Subscribe to get the latest updates and news from VIGRID.</p>
-                <div class="newsletter-form" style="margin-top: 20px;">
-                    <input type="email" id="aboutNewsletterEmail" placeholder="Enter your email" style="background: white; border-radius: 60px; padding: 12px 20px; flex:1;">
-                    <button id="aboutSubscribeBtn" style="background: #eab308; border: none; border-radius: 60px; padding: 12px 24px; font-weight: bold; cursor: pointer;">SUBSCRIBE</button>
+            <h2 data-i18n="contact_heading">Get in Touch</h2>
+            <div class="contact-row">
+                <div class="contact-col">
+                    <h4 data-i18n="quick_links_title">QUICK LINKS</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="about.html" data-i18n="nav_about">About Us</a>
+                    <a href="#" data-i18n="nav_products">Products</a>
+                    <a href="#" data-i18n="impact_link">Impact</a>
+                    <a href="#" data-i18n="nav_contact">Contact</a>
                 </div>
-                <p id="aboutSubscribeFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
+                <div class="contact-col">
+                    <h4 data-i18n="registration_title">REGISTRATION</h4>
+                    <p data-i18n="reg_label">UDYAM REGISTRATION NUMBER</p>
+                    <p class="reg-number"><i class="fas fa-id-card"></i> UDYAM-BR-26-0001234</p>
+                </div>
+                <div class="contact-col">
+                    <h4 data-i18n="newsletter_title">NEWSLETTER</h4>
+                    <p data-i18n="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
+                    <div class="newsletter-inline">
+                        <input type="email" id="aboutNewsEmail" placeholder="Enter your email">
+                        <button id="aboutNewsBtn" data-i18n="subscribe_btn">SUBSCRIBE</button>
+                    </div>
+                    <p id="aboutNewsFeedback" style="margin-top: 8px; font-size: 0.8rem;"></p>
+                    <a href="#" id="chatNowBtn" class="whatsapp-chat"><i class="fab fa-whatsapp"></i> <span data-i18n="chat_now">CHAT NOW</span></a>
+                </div>
             </div>
         </div>
     </div>
 </main>
 
-<!-- FOOTER (same as index, but small adjust) -->
+<!-- FOOTER (similar to index) -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>QUICK LINKS</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="#">Products</a>
-                <a href="#">Contact</a>
+                <h4 data-i18n="footer_quick">QUICK LINKS</h4>
+                <a href="index.html" data-i18n="footer_home">Home</a>
+                <a href="about.html" data-i18n="footer_about">About Us</a>
+                <a href="#" data-i18n="footer_products">Products</a>
+                <a href="#" data-i18n="footer_contact">Contact</a>
             </div>
             <div class="footer-col">
-                <h4>REGISTRATION</h4>
-                <p>LOVYAM REGISTRATION NUMBER</p>
-                <p class="reg-number"><i class="fas fa-id-card"></i> LOVYAM-BR-26-0001234</p>
+                <h4 data-i18n="footer_reg">REGISTRATION</h4>
+                <p data-i18n="footer_reg_label">UDYAM REGISTRATION NUMBER</p>
+                <p class="reg-number"><i class="fas fa-id-card"></i> UDYAM-BR-26-0001234</p>
                 <p><i class="fas fa-map-marker-alt"></i> India</p>
                 <div style="margin-top: 24px;">
                     <i class="fas fa-solar-panel" style="font-size: 2rem; color: #eab308;"></i>
                     <p style="margin-top: 8px; font-weight: 600;">VIGRID</p>
-                    <small>Light Today, Bright Future.</small>
+                    <small data-i18n="footer_tagline">Light Today, Bright Future.</small>
                 </div>
             </div>
             <div class="footer-col">
-                <h4>NEWSLETTER</h4>
-                <p>Subscribe to get the latest updates and news from VIGRID.</p>
+                <h4 data-i18n="footer_newsletter">NEWSLETTER</h4>
+                <p data-i18n="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
                 <div class="newsletter-form">
-                    <input type="email" id="footerNewsletterEmail" placeholder="Enter your email" required>
-                    <button id="footerSubscribeBtn">SUBSCRIBE</button>
+                    <input type="email" id="footerNewsEmail" placeholder="Enter your email">
+                    <button id="footerNewsBtn" data-i18n="subscribe_btn">SUBSCRIBE</button>
                 </div>
-                <p id="footerSubscribeFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
+                <p id="footerNewsFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
             </div>
         </div>
         <div class="copyright">
-            <p>© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
+            <p data-i18n="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
             <div style="margin-top: 8px; display: flex; justify-content: center; gap: 20px;">
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-twitter"></i>
@@ -330,99 +384,175 @@
     </div>
 </footer>
 
+<!-- Bilingual translations & interactive logic (self-contained for about page) -->
 <script>
-    // Simple interactive for about page (newsletter, whatsapp)
-    document.addEventListener('DOMContentLoaded', () => {
-        // WhatsApp chat button
-        const whatsappBtn = document.getElementById('whatsappChatBtn');
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert("📱 Chat with VIGRID on WhatsApp: +91 12345 67890 (Demo)");
-            });
+    // Translations for about page (English + Hindi)
+    const aboutTranslations = {
+        en: {
+            nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_contact: "Contact", impact_link: "Impact",
+            about_heading: "ABOUT VIGRID", about_tagline1: "Powering Rural India.", about_tagline2: "Empowering Lives.",
+            about_desc: "VIGRID is on a mission to bring clean, reliable and affordable solar energy to every rural home in India. We design innovative 7-in-1 solar home kits that provide light, power and comfort – where it’s needed the most.",
+            about_clean_title: "Clean Energy", about_clean_desc: "Sustainable future for every home.",
+            about_affordable_title: "Affordable", about_affordable_desc: "High-quality solutions at the right price.",
+            about_reliable_title: "Reliable", about_reliable_desc: "Built for rural needs, made to last.",
+            about_impact_title: "Impact Driven", about_impact_desc: "Creating real change in communities.",
+            story_heading: "OUR STORY", story_sub: "From a Village Dream to a National Mission",
+            story_p1: "VIGRID was founded with a simple but powerful dream – to solve the power problems in villages with smart, sustainable and affordable solutions.",
+            story_p2: "Our founder, Vivek Kumar, grew up seeing the challenges rural families face – no electricity, no light for studies, limited opportunities.",
+            story_p3: "With 8+ years of experience in electronics and a passion for innovation, he built VIGRID – a brand that delivers complete solar energy solutions in one box.",
+            why_heading: "WHY WE EXIST", why_sub: "Because Every Home Deserves Light",
+            why_p1: "Millions of rural homes still live without reliable electricity.",
+            why_p2: "Children study in the dark, families struggle with daily tasks.",
+            why_p3: "We believe clean energy should be a right, not a privilege.",
+            why_p4: "VIGRID is here to bridge that gap – one home at a time.",
+            values_heading: "OUR VALUES",
+            value1_title: "Sustainability", value1_desc: "We promote clean, green and sustainable energy for a better tomorrow.",
+            value2_title: "Integrity", value2_desc: "We are honest, transparent and committed to our customers and communities.",
+            value3_title: "Innovation", value3_desc: "We continuously innovate to create smart and reliable solar solutions.",
+            value4_title: "Empathy", value4_desc: "We care about people and work for their betterment with passion.",
+            built_heading: "BUILT IN INDIA. MADE FOR INDIA.",
+            built_desc: "Every VIGRID product is designed, developed and assembled in India to suit the real needs of rural families.",
+            built_point1: "Designed in India", built_point2: "Made in India", built_point3: "For Rural India", built_point4: "For a Better India",
+            founder_msg_heading: "A Message from our Founder",
+            founder_quote_text: "“VIGRID is not just a product – it’s a promise. A promise of light, hope and a better future for every rural family in India.”",
+            founder_name: "– Vivek Kumar", founder_title: "Founder, VIGRID",
+            contact_heading: "Get in Touch", quick_links_title: "QUICK LINKS", registration_title: "REGISTRATION",
+            reg_label: "UDYAM REGISTRATION NUMBER", newsletter_title: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
+            subscribe_btn: "SUBSCRIBE", chat_now: "CHAT NOW",
+            footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_contact: "Contact",
+            footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
+            footer_newsletter: "NEWSLETTER", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy",
+            lang_switch_text: "हिंदी"
+        },
+        hi: {
+            nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_contact: "संपर्क करें", impact_link: "प्रभाव",
+            about_heading: "विग्रिड के बारे में", about_tagline1: "ग्रामीण भारत को सशक्त बनाना।", about_tagline2: "जीवन को सशक्त बनाना।",
+            about_desc: "विग्रिड का मिशन भारत के हर ग्रामीण घर में स्वच्छ, विश्वसनीय और किफायती सौर ऊर्जा पहुंचाना है। हम अभिनव 7-इन-1 सोलर होम किट डिजाइन करते हैं जो प्रकाश, शक्ति और आराम प्रदान करते हैं – जहां इसकी सबसे अधिक आवश्यकता है।",
+            about_clean_title: "स्वच्छ ऊर्जा", about_clean_desc: "हर घर के लिए स्थायी भविष्य।",
+            about_affordable_title: "किफायती", about_affordable_desc: "सही कीमत पर उच्च गुणवत्ता वाले समाधान।",
+            about_reliable_title: "विश्वसनीय", about_reliable_desc: "ग्रामीण जरूरतों के लिए निर्मित, लंबे समय तक चलने वाला।",
+            about_impact_title: "प्रभाव संचालित", about_impact_desc: "समुदायों में वास्तविक बदलाव लाना।",
+            story_heading: "हमारी कहानी", story_sub: "एक गाँव के सपने से राष्ट्रीय मिशन तक",
+            story_p1: "विग्रिड की स्थापना एक सरल लेकिन शक्तिशाली सपने के साथ हुई – गांवों में बिजली की समस्याओं को स्मार्ट, टिकाऊ और किफायती समाधानों से हल करना।",
+            story_p2: "हमारे संस्थापक, विवेक कुमार, ग्रामीण परिवारों के सामने आने वाली चुनौतियों को देखकर बड़े हुए – बिजली नहीं, पढ़ाई के लिए रोशनी नहीं, सीमित अवसर।",
+            story_p3: "इलेक्ट्रॉनिक्स में 8+ वर्षों के अनुभव और नवाचार के जुनून के साथ, उन्होंने विग्रिड का निर्माण किया – एक ब्रांड जो एक बॉक्स में संपूर्ण सौर ऊर्जा समाधान प्रदान करता है।",
+            why_heading: "हम क्यों मौजूद हैं", why_sub: "क्योंकि हर घर रोशनी का हकदार है",
+            why_p1: "करोड़ों ग्रामीण घर आज भी विश्वसनीय बिजली के बिना रहते हैं।",
+            why_p2: "बच्चे अंधेरे में पढ़ते हैं, परिवार दैनिक कार्यों के लिए संघर्ष करते हैं।",
+            why_p3: "हम मानते हैं कि स्वच्छ ऊर्जा एक अधिकार होना चाहिए, विशेषाधिकार नहीं।",
+            why_p4: "विग्रिड उस अंतर को पाटने के लिए यहाँ है – एक घर, एक समय।",
+            values_heading: "हमारे मूल्य",
+            value1_title: "स्थिरता", value1_desc: "हम बेहतर कल के लिए स्वच्छ, हरित और टिकाऊ ऊर्जा को बढ़ावा देते हैं।",
+            value2_title: "ईमानदारी", value2_desc: "हम अपने ग्राहकों और समुदायों के प्रति ईमानदार, पारदर्शी और प्रतिबद्ध हैं।",
+            value3_title: "नवाचार", value3_desc: "हम स्मार्ट और विश्वसनीय सौर समाधान बनाने के लिए लगातार नवाचार करते हैं।",
+            value4_title: "सहानुभूति", value4_desc: "हम लोगों की परवाह करते हैं और जुनून के साथ उनके उत्थान के लिए काम करते हैं।",
+            built_heading: "भारत में निर्मित। भारत के लिए बनाया गया।",
+            built_desc: "हर विग्रिड उत्पाद भारत में डिजाइन, विकसित और असेंबल किया जाता है ताकि ग्रामीण परिवारों की वास्तविक जरूरतों को पूरा किया जा सके।",
+            built_point1: "भारत में डिज़ाइन", built_point2: "भारत में निर्मित", built_point3: "ग्रामीण भारत के लिए", built_point4: "एक बेहतर भारत के लिए",
+            founder_msg_heading: "संस्थापक का संदेश",
+            founder_quote_text: "“विग्रिड सिर्फ एक उत्पाद नहीं है – यह एक वादा है। भारत के हर ग्रामीण परिवार के लिए रोशनी, आशा और बेहतर भविष्य का वादा।”",
+            founder_name: "– विवेक कुमार", founder_title: "संस्थापक, विग्रिड",
+            contact_heading: "संपर्क करें", quick_links_title: "त्वरित लिंक", registration_title: "पंजीकरण",
+            reg_label: "उद्यम पंजीकरण संख्या", newsletter_title: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
+            subscribe_btn: "सदस्यता लें", chat_now: "अभी चैट करें",
+            footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_contact: "संपर्क करें",
+            footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
+            footer_newsletter: "न्यूज़लेटर", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना",
+            lang_switch_text: "English"
         }
+    };
 
-        // Newsletter subscription inside about main section
-        const aboutSubBtn = document.getElementById('aboutSubscribeBtn');
-        const aboutEmail = document.getElementById('aboutNewsletterEmail');
-        const aboutFeedback = document.getElementById('aboutSubscribeFeedback');
-        if (aboutSubBtn && aboutEmail) {
-            aboutSubBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const email = aboutEmail.value.trim();
-                if (!email) {
-                    aboutFeedback.innerHTML = '<span style="color:#ffcc80;">❄️ Please enter your email address.</span>';
-                    return;
-                }
-                if (!/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
-                    aboutFeedback.innerHTML = '<span style="color:#ffcc80;">⚠️ Valid email required.</span>';
-                    return;
-                }
-                aboutFeedback.innerHTML = '<span style="color:#c8e6b5;">✅ Thank you! Subscribed.</span>';
-                aboutEmail.value = '';
-                setTimeout(() => aboutFeedback.innerHTML = '', 3000);
-            });
-        }
-
-        // Footer newsletter
-        const footerSubBtn = document.getElementById('footerSubscribeBtn');
-        const footerEmail = document.getElementById('footerNewsletterEmail');
-        const footerFeedback = document.getElementById('footerSubscribeFeedback');
-        if (footerSubBtn && footerEmail) {
-            footerSubBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const email = footerEmail.value.trim();
-                if (!email) {
-                    footerFeedback.innerHTML = '<span style="color:#ffcc80;">❄️ Enter email.</span>';
-                    return;
-                }
-                if (!/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
-                    footerFeedback.innerHTML = '<span style="color:#ffcc80;">⚠️ Valid email please.</span>';
-                    return;
-                }
-                footerFeedback.innerHTML = '<span style="color:#c8e6b5;">✅ Subscribed!</span>';
-                footerEmail.value = '';
-                setTimeout(() => footerFeedback.innerHTML = '', 3000);
-            });
-        }
-
-        // Simple mobile menu toggle (without language switching complexity for about)
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const icon = menuToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
+    let currentLang = 'en';
+    function updateAboutPage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (aboutTranslations[lang] && aboutTranslations[lang][key]) {
+                if (el.children.length === 0 || el.tagName === 'BUTTON') {
+                    el.textContent = aboutTranslations[lang][key];
                 } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    // preserve icons if any
+                    const textNode = Array.from(el.childNodes).find(n => n.nodeType === 3);
+                    if (textNode) textNode.textContent = aboutTranslations[lang][key];
+                    else el.innerHTML = aboutTranslations[lang][key];
                 }
+            }
+        });
+        document.getElementById('langToggleText').innerText = lang === 'en' ? 'हिंदी' : 'English';
+        document.getElementById('mobileLangText').innerText = lang === 'en' ? 'हिंदी' : 'English';
+        // update placeholders
+        const inputs = document.querySelectorAll('#aboutNewsEmail, #footerNewsEmail');
+        inputs.forEach(inp => inp.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें');
+    }
+
+    function toggleLang() {
+        currentLang = currentLang === 'en' ? 'hi' : 'en';
+        updateAboutPage(currentLang);
+        localStorage.setItem('vigrid_lang_about', currentLang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('vigrid_lang_about');
+        if (saved && (saved === 'en' || saved === 'hi')) currentLang = saved;
+        updateAboutPage(currentLang);
+        document.getElementById('langToggleBtn')?.addEventListener('click', toggleLang);
+        document.getElementById('mobileLangSwitch')?.addEventListener('click', toggleLang);
+        // Mobile menu toggle
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('navLinks');
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                const icon = toggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             });
-            document.addEventListener('click', (event) => {
-                if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
+            document.addEventListener('click', (e) => {
+                if (!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    const icon = toggle.querySelector('i');
                     icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
                 }
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
             });
         }
-
-        // Social icons alert
-        document.querySelectorAll('.copyright i').forEach(icon => {
-            icon.style.cursor = 'pointer';
-            icon.addEventListener('click', () => alert('🌍 Connect with VIGRID on social media!'));
+        // Newsletter subscriptions
+        const aboutBtn = document.getElementById('aboutNewsBtn');
+        const aboutEmail = document.getElementById('aboutNewsEmail');
+        const aboutFeed = document.getElementById('aboutNewsFeedback');
+        if (aboutBtn) {
+            aboutBtn.addEventListener('click', () => {
+                const email = aboutEmail.value.trim();
+                if (!email || !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
+                    aboutFeed.innerHTML = '<span style="color:#ffcc80;">⚠️ Valid email required</span>';
+                    return;
+                }
+                aboutFeed.innerHTML = '<span style="color:#c8e6b5;">✅ Subscribed!</span>';
+                aboutEmail.value = '';
+                setTimeout(() => aboutFeed.innerHTML = '', 3000);
+            });
+        }
+        const footerBtn = document.getElementById('footerNewsBtn');
+        const footerEmail = document.getElementById('footerNewsEmail');
+        const footerFeed = document.getElementById('footerNewsFeedback');
+        if (footerBtn) {
+            footerBtn.addEventListener('click', () => {
+                const email = footerEmail.value.trim();
+                if (!email || !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
+                    footerFeed.innerHTML = '<span style="color:#ffcc80;">⚠️ Valid email required</span>';
+                    return;
+                }
+                footerFeed.innerHTML = '<span style="color:#c8e6b5;">✅ Subscribed!</span>';
+                footerEmail.value = '';
+                setTimeout(() => footerFeed.innerHTML = '', 3000);
+            });
+        }
+        document.getElementById('chatNowBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? '📱 Chat with VIGRID on WhatsApp: +91 12345 67890' : '📱 व्हाट्सएप पर विग्रिड से बात करें: +91 12345 67890');
+        });
+        document.querySelectorAll('.copyright i').forEach(i => {
+            i.style.cursor = 'pointer';
+            i.addEventListener('click', () => alert('🌍 ' + (currentLang === 'en' ? 'Connect with VIGRID on social media!' : 'सोशल मीडिया पर विग्रिड से जुड़ें!')));
         });
     });
 </script>
