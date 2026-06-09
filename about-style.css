@@ -357,11 +357,11 @@ margin-top:0px;
     gap: 10px;
     align-items: center;
     background: #eaf4e4;
-    border-radius: 48px;
-    padding: 20px 16px;
+    border-radius: 24px;
+    padding: 10px 8px;
     margin: 10px 0;
 }
-.built-content-left h2 {
+.built-content-left h3 {
     font-size: 1.8rem;
     font-weight: 800;
     color: #1e3a1e;
@@ -374,13 +374,13 @@ margin-top:0px;
 .built-icons-right {
     display: grid;
     grid-template-columns: repeat(4, 1fr);  /* 4 icons in one row */
-    gap: 20px;
+    gap: 10px;
 }
 .built-icon-item {
     text-align: center;
     background: white;
-    padding: 20px 12px;
-    border-radius: 28px;
+    padding: 10px 6px;
+    border-radius: 14px;
     transition: 0.2s;
     border: 1px solid #d4e2ca;
 }
