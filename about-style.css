@@ -348,3 +348,79 @@ margin-top:0px;
         grid-template-columns: 1fr;  /* 500px se neeche 1 column */
     }
 }
+
+
+/* BUILT IN INDIA - Two Columns */
+.built-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: #eaf4e4;
+    border-radius: 48px;
+    padding: 40px 32px;
+    margin: 20px 0;
+}
+.built-content-left h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1e3a1e;
+}
+.built-content-left p {
+    font-size: 1rem;
+    color: #2c4727;
+    line-height: 1.5;
+}
+.built-icons-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.built-icon-item {
+    text-align: center;
+    background: white;
+    padding: 20px 12px;
+    border-radius: 28px;
+    transition: 0.2s;
+    border: 1px solid #d4e2ca;
+}
+.built-icon-item:hover {
+    transform: translateY(-4px);
+    border-color: #eab308;
+}
+.built-icon-item i {
+    font-size: 2rem;
+    color: #2c5e2a;  /* green */
+    margin-bottom: 10px;
+    display: block;
+}
+.built-icon-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1e3a1e;
+}
+.mini-solar-image {
+    margin-top: 30px;
+    text-align: center;
+}
+.mini-solar-image img {
+    max-width: 100%;
+    border-radius: 32px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+@media (max-width: 800px) {
+    .built-two-columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    .built-icons-right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+@media (max-width: 500px) {
+    .built-icons-right {
+        grid-template-columns: 1fr;
+    }
+}
