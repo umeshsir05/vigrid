@@ -373,8 +373,8 @@ margin-top:0px;
 }
 .built-icons-right {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);  /* 4 icons in one row */
+    gap: 20px;
 }
 .built-icon-item {
     text-align: center;
