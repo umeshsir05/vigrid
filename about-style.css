@@ -302,12 +302,11 @@ margin-top:0px;
     
 
 /* OUR VALUES - 2x2 grid */
-./* OUR VALUES - 4 cards in one horizontal row */
-/* OUR VALUES - vertical layout */
+
 .values-grid {
-        display: grid;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 24px;
     margin: 10px 0;
 }
 
