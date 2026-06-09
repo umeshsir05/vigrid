@@ -379,43 +379,6 @@ margin-top:0px;
     display: block;
 }
 
-/* .built-icons-right {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 icons in one row */
-    gap: 10px;
-}
-.built-icon-item {
-    text-align: center;
-    background: white;
-    padding: 10px 6px;
-    border-radius: 14px;
-    transition: 0.2s;
-    border: 1px solid #d4e2ca;
-}
-.built-icon-item:hover {
-    transform: translateY(-4px);
-    border-color: #eab308;
-}
-.built-icon-item i {
-    font-size: 2rem;
-    color: #2c5e2a;  /* green */
-    margin-bottom: 10px;
-    display: block;
-}
-.built-icon-item span {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #1e3a1e;
-} */
-.mini-solar-image {
-    margin-top: 30px;
-    text-align: center;
-}
-.mini-solar-image img {
-    max-width: 100%;
-    border-radius: 32px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
 @media (max-width: 800px) {
     .built-two-columns {
         grid-template-columns: 1fr;
