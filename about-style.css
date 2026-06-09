@@ -302,12 +302,14 @@ margin-top:0px;
     
 
 /* OUR VALUES - 2x2 grid */
+./* OUR VALUES - 4 cards in one horizontal row */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);  /* chaaro ek line mein */
     gap: 24px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
+
 .value-card {
     background: white;
     padding: 24px 20px;
@@ -336,9 +338,13 @@ margin-top:0px;
     color: #3a5a36;
     line-height: 1.4;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .values-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);  /* 900px se neeche 2 columns */
+    }
+}
+@media (max-width: 500px) {
+    .values-grid {
+        grid-template-columns: 1fr;  /* 500px se neeche 1 column */
     }
 }
