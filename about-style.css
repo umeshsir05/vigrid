@@ -300,3 +300,45 @@ margin-top:0px;
     }
 }
     
+
+/* OUR VALUES - 2x2 grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 20px 0;
+}
+.value-card {
+    background: white;
+    padding: 24px 20px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+}
+.value-card:hover {
+    transform: translateY(-4px);
+    border-color: #eab308;
+}
+.value-card i {
+    font-size: 2.2rem;
+    color: #2c5e2a;  /* green */
+    margin-bottom: 12px;
+}
+.value-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.value-card p {
+    font-size: 0.9rem;
+    color: #3a5a36;
+    line-height: 1.4;
+}
+@media (max-width: 700px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
