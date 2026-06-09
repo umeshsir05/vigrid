@@ -240,7 +240,7 @@ section {
 
 /* Hero image styling - only background image, no red circle */
 .hero-image {
-    background-image: url("heroimage.jpg");
+    background-image: url("heroimage.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
