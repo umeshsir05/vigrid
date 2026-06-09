@@ -371,7 +371,15 @@ margin-top:0px;
     color: #2c4727;
     line-height: 1.5;
 }
-.built-icons-right {
+
+.built-image-right img {
+    width: 100%;
+    border-radius: 32px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* .built-icons-right {
     display: grid;
     grid-template-columns: repeat(4, 1fr);  /* 4 icons in one row */
     gap: 10px;
@@ -398,7 +406,7 @@ margin-top:0px;
     font-weight: 600;
     font-size: 0.9rem;
     color: #1e3a1e;
-}
+} */
 .mini-solar-image {
     margin-top: 30px;
     text-align: center;
