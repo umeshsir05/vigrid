@@ -305,8 +305,8 @@ margin-top:0px;
 ./* OUR VALUES - 4 cards in one horizontal row */
 /* OUR VALUES - vertical layout */
 .values-grid {
-    display: flex;
-    flex-direction: column;
+        display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin: 10px 0;
 }
