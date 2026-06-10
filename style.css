@@ -60,7 +60,7 @@ body {
 }
 
 .site-header {
-    padding: 24px 0;
+    padding: 2px 0;
     border-bottom: 1px solid #e0e7cf;
     background: #ffffffcc;
     backdrop-filter: blur(4px);
@@ -95,7 +95,7 @@ body {
     width: 30px;
     height: 30px;
     
-    max-height: 40px;  /* aap height limit kar sakte hain */
+    max-height: 35px;  /* aap height limit kar sakte hain */
     display: inline-block;
 }
 .logo span {
