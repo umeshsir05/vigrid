@@ -143,7 +143,7 @@
         }
         /* Complete Kit Overview - 8 parts (7x10%, 1x30%) */
         
-/* .kit-parts-container {
+.kit-parts-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -182,47 +182,11 @@
 }
 *//* Complete Kit Overview - Fixed widths, no row break */
 
-/* Complete Kit Overview - Desktop fixed widths, mobile scroll */
-.kit-parts-container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 16px;
-    margin: 5px 0;
-    overflow-x: auto;
-    padding-bottom: 10px;  /* space for scrollbar */
-    -webkit-overflow-scrolling: touch;
-}
 
-.kit-part {
-    background: white;
-    border-radius: 20px;
-    padding: 4px 4px;
-    text-align: center;
-    border: 1px solid #e8f0e2;
-    transition: 0.2s;
-    flex-shrink: 0;
-    box-sizing: border-box;
-}
 
-.kit-part:hover {
-    transform: translateY(-4px);
-    border-color: #eab308;
-}
 
-.kit-part img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 12px;
-}
 
-.kit-part p {
-    font-size: 0.85rem;
-    color: #2c4727;
-    line-height: 1.4;
-    margin: 0;
-}
-
+        
 /* Desktop: 7 parts 10% width, 8th part 30% width */
 @media (min-width: 901px) {
     .kit-part {
