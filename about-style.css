@@ -46,88 +46,95 @@
             
 
 
-/* Four Cards - Always One Row (New Classes) */
-.four-cards-wrapper {
+/* FORCE FOUR CARDS IN ONE HORIZONTAL ROW */
+.four-cards-container {
+    width: 100%;
     margin: 30px 0;
 }
 
-.four-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns, always one row */
-    gap: 24px;
+.four-cards-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
-.card-item {
+.single-card {
+    flex: 1;
+    min-width: 0;  /* prevents overflow */
     background: white;
-    padding: 24px 16px;
+    padding: 20px 12px;
     border-radius: 24px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     border: 1px solid #e8f0e2;
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
-.card-item:hover {
-    transform: translateY(-5px);
+.single-card:hover {
+    transform: translateY(-4px);
     border-color: #eab308;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-.card-item i {
-    font-size: 2.2rem;
-    color: #2c5e2a;  /* green */
-    margin-bottom: 12px;
+.single-card i {
+    font-size: 2rem;
+    color: #2c5e2a;
+    margin-bottom: 10px;
 }
 
-.card-item h3 {
-    font-size: 1.2rem;
+.single-card h3 {
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: #1e3a1e;
 }
 
-.card-item p {
-    font-size: 0.85rem;
+.single-card p {
+    font-size: 0.8rem;
     color: #3a5a36;
     line-height: 1.4;
 }
 
-/* Mobile: still one row, but smaller spacing & font */
+/* Mobile: still horizontal row, just smaller */
 @media (max-width: 700px) {
-    .four-cards-grid {
+    .four-cards-row {
         gap: 12px;
     }
-    .card-item {
-        padding: 12px 8px;
+    .single-card {
+        padding: 12px 6px;
     }
-    .card-item i {
-        font-size: 1.6rem;
+    .single-card i {
+        font-size: 1.5rem;
     }
-    .card-item h3 {
-        font-size: 0.9rem;
+    .single-card h3 {
+        font-size: 0.85rem;
     }
-    .card-item p {
+    .single-card p {
         font-size: 0.7rem;
     }
 }
 
 @media (max-width: 500px) {
-    .four-cards-grid {
+    .four-cards-row {
         gap: 8px;
     }
-    .card-item {
+    .single-card {
         padding: 8px 4px;
     }
-    .card-item i {
-        font-size: 1.3rem;
+    .single-card i {
+        font-size: 1.2rem;
     }
-    .card-item h3 {
-        font-size: 0.75rem;
+    .single-card h3 {
+        font-size: 0.7rem;
     }
-    .card-item p {
+    .single-card p {
         font-size: 0.6rem;
     }
 }
+    
+        
        
         
     
