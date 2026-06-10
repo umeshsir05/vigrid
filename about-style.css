@@ -51,7 +51,7 @@
 /* Four Cards - Always one horizontal row */
 .about-grid-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    grid-template-columns: repeat(1, 4fr);  /* 4 equal columns */
     gap: 10px;
     margin: 10px 0;
 }
