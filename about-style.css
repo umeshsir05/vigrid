@@ -7,6 +7,15 @@
 .about-two-columns {
     padding-top: 0;
 }
+section {
+    padding-top: 0;
+}
+.container {
+    padding-top: 0;
+}
+.about-two-columns {
+    align-items: flex-start;  /* top se start karega */
+}
 .about-two-columns {
     display: grid;
     grid-template-columns: 1fr 2fr;
