@@ -141,6 +141,104 @@
             .products-grid { grid-template-columns: 1fr; }
             .how-it-works { flex-direction: column; }
         }
+        /* Complete Kit Overview - 8 parts (7x10%, 1x30%) */
+.kit-parts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 30px 0;
+    align-items: stretch;
+}
+
+.kit-part {
+    background: white;
+    border-radius: 20px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.kit-part:hover {
+    transform: translateY(-4px);
+    border-color: #eab308;
+}
+
+.kit-part img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.kit-part p {
+    font-size: 0.85rem;
+    color: #2c4727;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Individual widths */
+.part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
+    flex: 0 0 calc(10% - 16px); /* 10% width minus gap adjustment */
+    min-width: 100px; /* fallback for very small screens */
+}
+.part-8 {
+    flex: 0 0 calc(30% - 16px);
+}
+
+/* Responsive: on smaller screens, maintain ratio but allow shrink */
+@media (max-width: 900px) {
+    .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
+        flex: 0 0 calc(12% - 16px);
+        min-width: 80px;
+    }
+    .part-8 {
+        flex: 0 0 calc(28% - 16px);
+    }
+    .kit-part img {
+        max-width: 80px;
+    }
+    .kit-part p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .kit-parts-container {
+        gap: 12px;
+    }
+    .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
+        flex: 0 0 calc(15% - 12px);
+        min-width: 70px;
+    }
+    .part-8 {
+        flex: 0 0 calc(25% - 12px);
+    }
+    .kit-part img {
+        max-width: 60px;
+    }
+    .kit-part p {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 550px) {
+    /* On very small screens, wrap into two rows but preserve ratios roughly */
+    .kit-parts-container {
+        justify-content: center;
+    }
+    .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
+        flex: 0 0 calc(22% - 10px);
+    }
+    .part-8 {
+        flex: 0 0 calc(40% - 10px);
+    }
+}
+
+        
     </style>
 </head>
 <body>
