@@ -10,6 +10,9 @@
     color: #1e3a1e;
     margin-bottom: 8px;
 }
+.tagline{
+    font-size: 2rem;
+}
 .about-content .tagline {
     font-size: 1.5rem;
     font-weight: 700;
