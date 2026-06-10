@@ -180,22 +180,26 @@
     margin: 0;
 }
 *//* Complete Kit Overview - Fixed widths, no row break */
+
+/* Complete Kit Overview - Desktop fixed widths, mobile scroll */
 .kit-parts-container {
-    display: grid;
-    grid-template-columns: repeat(7, 11%) 18%;  /* 7*11=77 + 18 = 95% */
-    gap: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
     margin: 30px 0;
-    align-items: stretch;
-    justify-content: start;
+    overflow-x: auto;
+    padding-bottom: 10px;  /* space for scrollbar */
+    -webkit-overflow-scrolling: touch;
 }
 
 .kit-part {
     background: white;
     border-radius: 20px;
-    padding: 12px 8px;
+    padding: 16px 12px;
     text-align: center;
     border: 1px solid #e8f0e2;
     transition: 0.2s;
+    flex-shrink: 0;
     box-sizing: border-box;
 }
 
@@ -206,46 +210,56 @@
 
 .kit-part img {
     width: 100%;
-    max-width: 100px;
     height: auto;
     margin-bottom: 10px;
     border-radius: 12px;
 }
 
 .kit-part p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #2c4727;
-    line-height: 1.3;
+    line-height: 1.4;
     margin: 0;
 }
 
-/* Responsive: width kam hoti rahegi, but row maintain */
-@media (max-width: 900px) {
-    .kit-parts-container {
-        gap: 10px;
+/* Desktop: 7 parts 10% width, 8th part 30% width */
+@media (min-width: 901px) {
+    .kit-part {
+        width: calc(10% - 16px); /* 10% minus gap adjustment */
+    }
+    .kit-part:last-child {
+        width: calc(30% - 16px);
+    }
+}
+
+/* Tablet: fixed width for readability */
+@media (max-width: 900px) and (min-width: 601px) {
+    .kit-part {
+        width: 140px;
     }
     .kit-part img {
-        max-width: 75px;
+        max-width: 100px;
+    }
+}
+
+/* Mobile: fixed smaller width, horizontal scroll */
+@media (max-width: 600px) {
+    .kit-parts-container {
+        gap: 12px;
+    }
+    .kit-part {
+        width: 130px;
+        padding: 12px 8px;
+    }
+    .kit-part img {
+        max-width: 80px;
     }
     .kit-part p {
         font-size: 0.7rem;
     }
 }
 
-@media (max-width: 700px) {
-    .kit-parts-container {
-        gap: 8px;
-    }
-    .kit-part {
-        padding: 8px 4px;
-    }
-    .kit-part img {
-        max-width: 55px;
-    }
-    .kit-part p {
-        font-size: 0.6rem;
-    }
-}
+        
         
 /* Individual widths */
 .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
