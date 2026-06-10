@@ -16,6 +16,10 @@ section {
 .about-two-columns {
     align-items: flex-start;  /* top se start karega */
 }
+.about-content {
+    position: relative;
+    top: -20px;  /* negative margin se upar uthayega */
+}
 .about-two-columns {
     display: grid;
     grid-template-columns: 1fr 2fr;
