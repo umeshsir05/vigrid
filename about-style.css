@@ -45,13 +45,12 @@
 }
             
 
-/* Four cards grid - smaller size */
-
 
 /* Four Cards - Always one horizontal row */
+
 .about-grid-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     margin: 10px 0;
 }
