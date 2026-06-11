@@ -9,20 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="about-style.css">
-   
+    <link rel="stylesheet" href="about-style.css">
 </head>
 <body>
 
 <header class="site-header">
     <div class="container header-inner">
         <div class="logo">
-            <!-- Logo Section -->
-
-    <div class="logo-section">
-        <img src="logo.png" alt="VIGRID Logo" class="logo-image">
-
-</div>
+            <div class="logo-section">
+                <img src="logo.png" alt="VIGRID Logo" class="logo-image">
+            </div>
             <span>VIGRID</span>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
@@ -35,7 +31,7 @@
             <a href="contact.html" data-i18n="nav_contact">Contact</a>
             <div class="mobile-lang-switch" id="mobileLangSwitch">
                 <i class="fas fa-globe"></i>
-                <span id="mobileLangText" data-i18n="lang_switch">हिंदी</span>
+                <span id="mobileLangText">हिंदी</span>
             </div>
         </div>
         <button id="langToggleBtn" class="lang-switch desktop-only" aria-label="Switch Language">
@@ -48,138 +44,120 @@
 <main>
     <div class="container">
         <!-- About Hero - Two Columns -->
-<div class="about-hero">
-    <div class="about-two-columns">
-        <div class="about-content">
-            <section style="padding-top: 10px; padding-bottom: 10px;">
-            <h1 data-i18n="about_heading">ABOUT VIGRID</h1>
-            <div class="tagline">
-                <span data-i18n="about_tagline1">Powering Rural India.</span><br>
-                <span data-i18n="about_tagline2">Empowering Lives.</span>
+        <div class="about-hero">
+            <div class="about-two-columns">
+                <div class="about-content">
+                    <h1 data-i18n="about_heading">ABOUT VIGRID</h1>
+                    <div class="tagline">
+                        <span data-i18n="about_tagline1">Powering Rural India.</span><br>
+                        <span data-i18n="about_tagline2">Empowering Lives.</span>
+                    </div>
+                    <p data-i18n="about_desc">
+                        VIGRID is on a mission to bring clean, reliable and affordable solar energy to every rural home in India. We design innovative 7-in-1 solar home kits that provide light, power and comfort – where it’s needed the most.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="hut.jpg" alt="Rural hut with solar" id="hutImage">
+                </div>
             </div>
-            <p data-i18n="about_desc">
-                VIGRID is on a mission to bring clean, reliable and affordable solar energy to every rural home in India. We design innovative 7-in-1 solar home kits that provide light, power and comfort – where it’s needed the most.
-            </p>
-        </div>
-        <div class="about-image">
-            <img src="hut.jpg" alt="Rural hut with solar" id="hutImage">
-        </div>
-    </div>
-</div>
-
-        <!-- Four Cards Section -->
-
-<!-- Four Cards Section - Single Image -->
-<div class="four-cards-wrapper">
-    <div class="single-image-container">
-        <img src="fourcards.jpg" alt="VIGRID Four Pillars" class="four-cards-image">
-    </div>
-</div>
-
-                    
-    
-       <!-- OUR STORY - Two Columns -->
-<div class="about-section">
-    <h2 data-i18n="story_heading">OUR STORY</h2>
-    <div class="story-two-columns">
-        <div class="story-content-left">
-            <h3 data-i18n="story_sub" style="color: #eab308; margin-bottom: 12px;">From a Village Dream to a National Mission</h3>
-            <p data-i18n="story_p1">VIGRID was founded with a simple but powerful dream – to solve the power problems in villages with smart, sustainable and affordable solutions.</p>
-            <p data-i18n="story_p2" style="margin-top: 16px;">Our founder, Vivek Kumar, grew up seeing the challenges rural families face – no electricity, no light for studies, limited opportunities.</p>
-            <p data-i18n="story_p3" style="margin-top: 16px;">With 8+ years of experience in electronics and a passion for innovation, he built VIGRID – a brand that delivers complete solar energy solutions in one box.</p>
-        </div>
-        <div class="story-image-right">
-            <img src="vigriditems.jpg" alt="VIGRID Products" class="story-img">
-        </div>
-    </div>
-</div>
-
-        
-        <!-- WHY WE EXIST - Two Columns -->
-<div class="about-section">
-    <h2 data-i18n="why_heading">WHY WE EXIST</h2>
-    <div class="why-two-columns">
-        <div class="why-text-left">
-            <h3 data-i18n="why_sub" style="color: #eab308; margin-bottom: 16px;">Because Every Home Deserves Light</h3>
-            
-        </div>
-        <div class="why-image-right">
-            <img src="whywe.jpg" alt="Why we exist - rural electrification" class="why-img">
-        </div>
-    </div>
-</div>
-
-        
-        <!-- OUR VALUES - 2x2 Grid Cards -->
-<div class="about-section">
-    <h2 data-i18n="values_heading">OUR VALUES</h2>
-    <div class="values-grid">
-        <div class="value-card">
-            <i class="fas fa-leaf"></i>
-            <h3 data-i18n="value1_title">Sustainability</h3>
-            <p data-i18n="value1_desc">We promote clean, green and sustainable energy for a better tomorrow.</p>
-        </div>
-        <div class="value-card">
-            <i class="fas fa-hand-holding-heart"></i>
-            <h3 data-i18n="value2_title">Integrity</h3>
-            <p data-i18n="value2_desc">We are honest, transparent and committed to our customers and communities.</p>
-        </div>
-        <div class="value-card">
-            <i class="fas fa-lightbulb"></i>
-            <h3 data-i18n="value3_title">Innovation</h3>
-            <p data-i18n="value3_desc">We continuously innovate to create smart and reliable solar solutions.</p>
-        </div>
-        <div class="value-card">
-            <i class="fas fa-heart"></i>
-            <h3 data-i18n="value4_title">Empathy</h3>
-            <p data-i18n="value4_desc">We care about people and work for their betterment with passion.</p>
-        </div>
-    </div>
-</div>
-
-
-<!-- BUILT IN INDIA. MADE FOR INDIA. - Two Columns -->
-<div class="about-section">
-    <div class="built-two-columns">
-        <div class="built-content-left">
-            <i class="fas fa-flag-india" style="font-size: 2.5rem; color: #eab308; margin-bottom: 16px;"></i>
-            <h2 style="margin: 0 0 16px 0;" data-i18n="built_heading">BUILT IN INDIA. MADE FOR INDIA.</h2>
-            <p data-i18n="built_desc">Every VIGRID product is designed, developed and assembled in India to suit the real needs of rural families.</p>
         </div>
 
-
-<div class="built-image-right">
-            <img src="builtinindia.jpg" alt="Built in India - Made in India" class="built-img">
+        <!-- Four Cards Section - Single Image -->
+        <div class="four-cards-wrapper">
+            <div class="single-image-container">
+                <img src="fourcards.jpg" alt="VIGRID Four Pillars" class="four-cards-image">
+            </div>
         </div>
-           </div>
+
+        <!-- OUR STORY - Two Columns -->
+        <div class="about-section">
+            <h2 data-i18n="story_heading">OUR STORY</h2>
+            <div class="story-two-columns">
+                <div class="story-content-left">
+                    <h3 data-i18n="story_sub" style="color: #eab308; margin-bottom: 12px;">From a Village Dream to a National Mission</h3>
+                    <p data-i18n="story_p1">VIGRID was founded with a simple but powerful dream – to solve the power problems in villages with smart, sustainable and affordable solutions.</p>
+                    <p data-i18n="story_p2" style="margin-top: 16px;">Our founder, Vivek Kumar, grew up seeing the challenges rural families face – no electricity, no light for studies, limited opportunities.</p>
+                    <p data-i18n="story_p3" style="margin-top: 16px;">With 8+ years of experience in electronics and a passion for innovation, he built VIGRID – a brand that delivers complete solar energy solutions in one box.</p>
+                </div>
+                <div class="story-image-right">
+                    <img src="vigriditems.jpg" alt="VIGRID Products" class="story-img">
+                </div>
+            </div>
         </div>
-    </div>
-    
 
+        <!-- WHY WE EXIST - Two Columns with bullet points -->
+        <div class="about-section">
+            <h2 data-i18n="why_heading">WHY WE EXIST</h2>
+            <div class="why-two-columns">
+                <div class="why-text-left">
+                    <h3 data-i18n="why_sub" style="color: #eab308; margin-bottom: 16px;">Because Every Home Deserves Light</h3>
+                    <p data-i18n="why_p1">Millions of rural homes still live without reliable electricity.</p>
+                    <p data-i18n="why_p2">Children study in the dark, families struggle with daily tasks.</p>
+                    <p data-i18n="why_p3">We believe clean energy should be a right, not a privilege.</p>
+                    <p data-i18n="why_p4">VIGRID is here to bridge that gap – one home at a time.</p>
+                </div>
+                <div class="why-image-right">
+                    <img src="whywe.jpg" alt="Why we exist - rural electrification" class="why-img">
+                </div>
+            </div>
+        </div>
 
-        <!-- Founder Message -->
-            <!-- Founder Quote -->
-    <div class="container">
+        <!-- OUR VALUES - 4 Cards in a row (responsive) -->
+        <div class="about-section">
+            <h2 data-i18n="values_heading">OUR VALUES</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3 data-i18n="value1_title">Sustainability</h3>
+                    <p data-i18n="value1_desc">We promote clean, green and sustainable energy for a better tomorrow.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3 data-i18n="value2_title">Integrity</h3>
+                    <p data-i18n="value2_desc">We are honest, transparent and committed to our customers and communities.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3 data-i18n="value3_title">Innovation</h3>
+                    <p data-i18n="value3_desc">We continuously innovate to create smart and reliable solar solutions.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3 data-i18n="value4_title">Empathy</h3>
+                    <p data-i18n="value4_desc">We care about people and work for their betterment with passion.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUILT IN INDIA. MADE FOR INDIA. - Two Columns -->
+        <div class="about-section">
+            <div class="built-two-columns">
+                <div class="built-content-left">
+                    <i class="fas fa-flag-india" style="font-size: 2.5rem; color: #eab308; margin-bottom: 16px;"></i>
+                    <h2 style="margin: 0 0 16px 0;" data-i18n="built_heading">BUILT IN INDIA. MADE FOR INDIA.</h2>
+                    <p data-i18n="built_desc">Every VIGRID product is designed, developed and assembled in India to suit the real needs of rural families.</p>
+                </div>
+                <div class="built-image-right">
+                    <img src="builtinindia.jpg" alt="Built in India - Made in India" class="built-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Founder Message (no extra container) -->
         <div class="founder-section">
             <div class="founder-flex">
                 <div class="founder-avatar">
-
-            <img src="founder2.png" alt="Vivek Kumar, Founder VIGRID" class="founder-img">
-        </div>
-        <div class="founder-quote">
-            <span data-i18n="founder_quote">“<strong>A Message from our Founder-</strong>
-“VIGRID is not just a product – it’s a promise.
-A promise of light, hope and a better future
-for every rural family in India.”</span>
-            <div class="founder-name" data-i18n="founder_name">— VIVEK KUMAR, Founder, VIGRID</div>
-        </div>
-    </div>
-</div>
+                    <img src="founder2.png" alt="Vivek Kumar, Founder VIGRID" class="founder-img">
                 </div>
-
+                <div class="founder-quote">
+                    <span data-i18n="founder_quote"><strong>A Message from our Founder-</strong><br>
+                    “VIGRID is not just a product – it’s a promise.<br>
+                    A promise of light, hope and a better future<br>
+                    for every rural family in India.”</span>
+                    <div class="founder-name" data-i18n="founder_name">— VIVEK KUMAR, Founder, VIGRID</div>
+                </div>
             </div>
-        
- 
+        </div>
 
         <!-- Get in Touch -->
         <div class="about-section">
@@ -189,7 +167,7 @@ for every rural family in India.”</span>
                     <h4 data-i18n="quick_links_title">QUICK LINKS</h4>
                     <a href="index.html" data-i18n="nav_home">Home</a>
                     <a href="about.html" data-i18n="nav_about">About Us</a>
-                    <a href="#" data-i18n="nav_products">Products</a>
+                    <a href="products.html" data-i18n="nav_products">Products</a>
                     <a href="#" data-i18n="impact_link">Impact</a>
                     <a href="#" data-i18n="nav_contact">Contact</a>
                 </div>
@@ -213,7 +191,7 @@ for every rural family in India.”</span>
     </div>
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER (same) -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -221,7 +199,7 @@ for every rural family in India.”</span>
                 <h4 data-i18n="footer_quick">QUICK LINKS</h4>
                 <a href="index.html" data-i18n="footer_home">Home</a>
                 <a href="about.html" data-i18n="footer_about">About Us</a>
-                <a href="#" data-i18n="footer_products">Products</a>
+                <a href="products.html" data-i18n="footer_products">Products</a>
                 <a href="#" data-i18n="footer_contact">Contact</a>
             </div>
             <div class="footer-col">
@@ -258,7 +236,7 @@ for every rural family in India.”</span>
 </footer>
 
 <script>
-    // Translations for about page (English + Hindi)
+    // Translations for about page (English + Hindi) – same as before, unchanged
     const aboutTranslations = {
         en: {
             nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_contact: "Contact", impact_link: "Impact",
@@ -286,14 +264,14 @@ for every rural family in India.”</span>
             built_desc: "Every VIGRID product is designed, developed and assembled in India to suit the real needs of rural families.",
             built_point1: "Designed in India", built_point2: "Made in India", built_point3: "For Rural India", built_point4: "For a Better India",
             founder_msg_heading: "A Message from our Founder",
-            founder_quote_text: "“VIGRID is not just a product – it’s a promise. A promise of light, hope and a better future for every rural family in India.”",
-            founder_name: "– Vivek Kumar", founder_title: "Founder, VIGRID",
+            founder_quote: "A Message from our Founder-\n“VIGRID is not just a product – it’s a promise.\nA promise of light, hope and a better future\nfor every rural family in India.”",
+            founder_name: "– Vivek Kumar, Founder, VIGRID",
             contact_heading: "Get in Touch", quick_links_title: "QUICK LINKS", registration_title: "REGISTRATION",
             reg_label: "UDYAM REGISTRATION NUMBER", newsletter_title: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
             subscribe_btn: "SUBSCRIBE", chat_now: "CHAT NOW",
             footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_contact: "Contact",
             footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
-            footer_newsletter: "NEWSLETTER", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
+            footer_newsletter: "NEWSLETTER", copyright_text: "© 2026 VIGRID. All rights reserved. | Empowering rural India with clean energy"
         },
         hi: {
             nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_contact: "संपर्क करें", impact_link: "प्रभाव",
@@ -321,14 +299,14 @@ for every rural family in India.”</span>
             built_desc: "हर विग्रिड उत्पाद भारत में डिजाइन, विकसित और असेंबल किया जाता है ताकि ग्रामीण परिवारों की वास्तविक जरूरतों को पूरा किया जा सके।",
             built_point1: "भारत में डिज़ाइन", built_point2: "भारत में निर्मित", built_point3: "ग्रामीण भारत के लिए", built_point4: "एक बेहतर भारत के लिए",
             founder_msg_heading: "संस्थापक का संदेश",
-            founder_quote_text: "“विग्रिड सिर्फ एक उत्पाद नहीं है – यह एक वादा है। भारत के हर ग्रामीण परिवार के लिए रोशनी, आशा और बेहतर भविष्य का वादा।”",
-            founder_name: "– विवेक कुमार", founder_title: "संस्थापक, विग्रिड",
+            founder_quote: "संस्थापक का संदेश-\n“विग्रिड सिर्फ एक उत्पाद नहीं है – यह एक वादा है।\nरोशनी, आशा और बेहतर भविष्य का वादा\nभारत के हर ग्रामीण परिवार के लिए।”",
+            founder_name: "– विवेक कुमार, संस्थापक, विग्रिड",
             contact_heading: "संपर्क करें", quick_links_title: "त्वरित लिंक", registration_title: "पंजीकरण",
             reg_label: "उद्यम पंजीकरण संख्या", newsletter_title: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
             subscribe_btn: "सदस्यता लें", chat_now: "अभी चैट करें",
             footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_contact: "संपर्क करें",
             footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
-            footer_newsletter: "न्यूज़लेटर", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
+            footer_newsletter: "न्यूज़लेटर", copyright_text: "© 2026 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
         }
     };
 
