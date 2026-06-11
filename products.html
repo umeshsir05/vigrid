@@ -594,6 +594,8 @@
         </div>
     </div>
 </footer>
+
+
 <script>
     // Translations for Products page (English + Hindi)
     const productsTranslations = {
@@ -633,6 +635,15 @@
             kit_desc6: "Torch – 3000mAh, long range beam, 2 modes",
             kit_desc7: "LED Bulbs (2 Pcs) – 5W each, low power",
             kit_desc8: "Complete 7-in-1 Solar Home Kit – Everything included",
+            // New: Our 7 Products section
+            our_7_products_title: "OUR 7 PRODUCTS",
+            prod7_name1: "Solar Panel (35W)", prod7_desc1: "High-efficiency monocrystalline panel, weather resistant.",
+            prod7_name2: "Multipurpose Board", prod7_desc2: "20000mAh battery, dual input, 2 USB outputs.",
+            prod7_name3: "Fan + Light", prod7_desc3: "3-speed fan, LED light, 10000mAh battery.",
+            prod7_name4: "Bluetooth Speaker", prod7_desc4: "5000mAh battery, FM, USB, loud & clear sound.",
+            prod7_name5: "Emergency Light", prod7_desc5: "4000mAh, hanging hook, 4-6 hrs backup.",
+            prod7_name6: "Torch", prod7_desc6: "3000mAh, long range beam, 2 light modes.",
+            prod7_name7: "LED Bulbs (2 Pcs)", prod7_desc7: "5W each, low power, long life.",
             footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_impact: "Impact", footer_contact: "Contact",
             footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
             footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
@@ -674,6 +685,15 @@
             kit_desc6: "टॉर्च – 3000mAh, लंबी रेंज बीम, 2 मोड",
             kit_desc7: "एलईडी बल्ब (2 पीस) – 5W प्रत्येक, कम बिजली खपत",
             kit_desc8: "संपूर्ण 7-इन-1 सोलर होम किट – सब कुछ शामिल",
+            // Hindi for Our 7 Products section
+            our_7_products_title: "हमारे 7 उत्पाद",
+            prod7_name1: "सोलर पैनल (35W)", prod7_desc1: "उच्च दक्षता मोनोक्रिस्टलाइन, मौसम प्रतिरोधी।",
+            prod7_name2: "मल्टीपर्पस बोर्ड", prod7_desc2: "20000mAh बैटरी, ड्युअल इनपुट, 2 यूएसबी आउटपुट।",
+            prod7_name3: "पंखा + लाइट", prod7_desc3: "3 स्पीड पंखा, एलईडी लाइट, 10000mAh बैटरी।",
+            prod7_name4: "ब्लूटूथ स्पीकर", prod7_desc4: "5000mAh बैटरी, एफएम, यूएसबी, तेज आवाज।",
+            prod7_name5: "इमरजेंसी लाइट", prod7_desc5: "4000mAh, हुक के साथ, 4-6 घंटे बैकअप।",
+            prod7_name6: "टॉर्च", prod7_desc6: "3000mAh, लंबी रेंज बीम, 2 लाइट मोड।",
+            prod7_name7: "एलईडी बल्ब (2 पीस)", prod7_desc7: "5W प्रत्येक, कम बिजली खपत, लंबा जीवन।",
             footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_impact: "प्रभाव", footer_contact: "संपर्क करें",
             footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
             footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
@@ -689,7 +709,6 @@
                 if (el.children.length === 0 || el.tagName === 'BUTTON' || el.tagName === 'INPUT') {
                     el.textContent = productsTranslations[lang][key];
                 } else {
-                    // preserve possible icons, only change text nodes
                     const textNode = Array.from(el.childNodes).find(n => n.nodeType === 3);
                     if (textNode) textNode.textContent = productsTranslations[lang][key];
                     else if (el.tagName === 'TH' || el.tagName === 'TD') el.innerHTML = productsTranslations[lang][key];
@@ -804,6 +823,10 @@
         });
     });
 </script>
+
+
+
+   
             
 </body>
 </html>
