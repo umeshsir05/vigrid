@@ -339,6 +339,70 @@
     }
 }
 
+
+/* Combined Technical Specifications + How It Works */
+.combined-spec-how {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin: 40px 0;
+}
+.spec-left {
+    overflow-x: auto;
+}
+.how-right {
+    text-align: center;
+}
+.how-right h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a1e;
+    position: relative;
+    display: inline-block;
+}
+.how-right h2:after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: #eab308;
+    margin: 8px auto 0;
+}
+.howitworks-img {
+    max-width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-top: 16px;
+}
+/* Spec table styling (already exists, keep as is) */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.spec-table th, .spec-table td {
+    border: 1px solid #ddecd2;
+    padding: 12px 16px;
+    text-align: left;
+}
+.spec-table th {
+    background: #eaf4e4;
+    font-weight: 700;
+    color: #1e3a1e;
+}
+@media (max-width: 800px) {
+    .combined-spec-how {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .how-right {
+        order: 2;
+    }
+}
      
 
         
