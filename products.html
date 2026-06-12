@@ -79,18 +79,19 @@
         }
 
         /* Complete Kit Overview - clean grid (last part 3x larger) */
+
         .kit-parts-container {
             display: grid;
             grid-template-columns: repeat(7, 1fr) 3fr;
-            gap: 12px;
-            margin: 10px 0;
+            gap: 6px;
+            margin: 5px 0;
             overflow-x: auto;
             align-items: stretch;
         }
         .kit-part {
             background: white;
             border-radius: 8px;
-            padding: 8px 4px;
+            padding: 4px 2px;
             text-align: center;
             border: 1px solid #e8f0e2;
             transition: 0.2s;
@@ -124,7 +125,7 @@
     flex-direction: column;
     justify-content: flex-end;       /* push text to bottom if needed */
     align-items: center;
-    min-height: 150px;               /* adjust as needed */
+    min-height: 155px;               /* adjust as needed */
 }
 /* Hide the <img> inside the last part so only background shows */
 .kit-part:last-child img {
