@@ -491,6 +491,92 @@
     }
 }
 
+/* Product Gallery + FAQ Section */
+.product-faq-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 60px 0;
+    align-items: start;
+}
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a1e;
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+}
+.section-heading:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #eab308;
+    margin-top: 8px;
+    border-radius: 4px;
+}
+/* Gallery Grid: 7 images in a responsive grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+}
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: 0.2s;
+    border: 1px solid #e8f0e2;
+}
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    border-color: #eab308;
+}
+/* FAQ styling */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.faq-item {
+    background: white;
+    border-radius: 20px;
+    padding: 16px 20px;
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+}
+.faq-item:hover {
+    border-color: #eab308;
+}
+.faq-question {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1e3a1e;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.faq-answer {
+    font-size: 0.9rem;
+    color: #3a5a36;
+    line-height: 1.4;
+}
+@media (max-width: 800px) {
+    .product-faq-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
         
     </style>
 </head>
@@ -693,7 +779,46 @@
     </div>
 </div>
 
-           
+    <!-- Section 7: Product Gallery + FAQs -->
+<div class="product-faq-section">
+    <div class="gallery-left">
+        <h3 class="section-heading" data-i18n="product_gallery_title">PRODUCT GALLERY</h3>
+        <div class="gallery-grid">
+            <img src="image1.jpg" alt="Product 1">
+            <img src="image2.jpg" alt="Product 2">
+            <img src="image3.jpg" alt="Product 3">
+            <img src="image4.jpg" alt="Product 4">
+            <img src="image5.jpg" alt="Product 5">
+            <img src="image6.jpg" alt="Product 6">
+            <img src="image7.jpg" alt="Product 7">
+        </div>
+    </div>
+    <div class="faq-right">
+        <h3 class="section-heading" data-i18n="faq_title">FREQUENTLY ASKED QUESTIONS</h3>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="faq_q1">Q1. Will it work without electricity?</div>
+                <div class="faq-answer" data-i18n="faq_a1">Yes, VIGRID works completely on solar power.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="faq_q2">Q2. How long will the products run on a full charge?</div>
+                <div class="faq-answer" data-i18n="faq_a2">Depending on usage, you can get 4–6 hours backup.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="faq_q3">Q3. Can we charge mobile phones?</div>
+                <div class="faq-answer" data-i18n="faq_a3">Yes, the multipurpose board has USB output for mobile charging.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="faq_q4">Q4. How long does it take to charge the kit?</div>
+                <div class="faq-answer" data-i18n="faq_a4">It takes 4–5 hours of good sunlight to fully charge.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="faq_q5">Q5. Is it safe for children?</div>
+                <div class="faq-answer" data-i18n="faq_a5">Yes, all products are safe, durable and designed for family use.</div>
+            </div>
+        </div>
+    </div>
+</div>       
         
 
        
