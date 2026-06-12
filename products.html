@@ -419,6 +419,65 @@
     }
 }
 
+
+/* Use Cases Section - Two equal columns */
+.usecases-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 40px 0;
+}
+.usecase-left {
+    text-align: center;
+}
+.usecase-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a1e;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+.usecase-heading:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #eab308;
+    margin: 8px auto 0;
+    border-radius: 4px;
+}
+.usecase-img {
+    max-width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.usecase-right p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2c4727;
+    margin-bottom: 16px;
+}
+.usecase-right p:last-child {
+    font-weight: 500;
+    line-height: 1.8;
+}
+@media (max-width: 800px) {
+    .usecases-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .usecase-left {
+        order: 1;
+    }
+    .usecase-right {
+        order: 2;
+        text-align: left;
+    }
+}
+
         
     </style>
 </head>
