@@ -11,576 +11,392 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Products page specific styles */
-        /* Products Hero - Two Columns */
-.products-hero {
-    padding: 20px 0 10px;
-}
-.hero-two-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-}
-.hero-content-left {
-    text-align: left;
-}
-.hero-content-left h3 {
-    color: #2a6b2a;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1e3a1e;
-    margin-bottom: 16px;
-}
-.kit-badge-large {
-   /* background: #ecf7e7; 
-    display: inline-block; */
-    padding: 16px 0px;
-   /* border-radius: 60px; */
-    font-weight: 700;
-    font-size: 1.2rem;
- /*   color: #2a6b2a; */
-    margin: 16px 0;
-}
-.kit-description {
-    font-size: 1.05rem;
-    color: #2c4727;
-    line-height: 1.5;
-    margin-bottom: 24px;
-}
-.btn-group {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.hero-image-right img {
-    width: 100%;
-    border-radius: 32px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    display: block;
-}
-/* Mobile responsive */
-@media (max-width: 800px) {
-    .hero-two-columns {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        text-align: center;
-    }
-    .hero-content-left {
-        text-align: center;
-    }
-    .btn-group {
-        justify-content: center;
-    }
-    .hero-content-left h1 {
-        font-size: 2.2rem;
-    }
-}
-       
-       
-     
+        .products-hero {
+            padding: 20px 0 10px;
+        }
+        .hero-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero-content-left {
+            text-align: left;
+        }
+        .hero-content-left h3 {
+            color: #1e3a1e;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .kit-badge-large {
+            padding: 16px 0px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 16px 0;
+        }
+        .kit-description {
+            font-size: 1.05rem;
+            color: #2c4727;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .hero-image-right img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            display: block;
+        }
+        @media (max-width: 800px) {
+            .hero-two-columns {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+            .hero-content-left {
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+        }
+
+        /* Features highlight single image */
+        .features-highlight-single {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .features-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Complete Kit Overview - clean grid (last part 3x larger) */
+        .kit-parts-container {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr) 3fr;
+            gap: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            align-items: stretch;
+        }
+        .kit-part {
+            background: white;
+            border-radius: 8px;
+            padding: 8px 4px;
+            text-align: center;
+            border: 1px solid #e8f0e2;
+            transition: 0.2s;
+        }
+        .kit-part:hover {
+            transform: translateY(-4px);
+            border-color: #eab308;
+        }
+        .kit-part img {
+            width: 80%;
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 6px;
+            border-radius: 6px;
+        }
+        .kit-part p {
+            font-size: 0.75rem;
+            color: #2c4727;
+            line-height: 1.3;
+            margin: 0;
+        }
+        @media (max-width: 900px) {
+            .kit-parts-container {
+                gap: 8px;
+            }
+            .kit-part img {
+                max-width: 60px;
+            }
+            .kit-part p {
+                font-size: 0.65rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .kit-parts-container {
+                gap: 6px;
+            }
+            .kit-part {
+                padding: 4px 2px;
+            }
+        }
+
+        /* OUR 7 PRODUCTS grid */
+        .seven-products-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .product-seven-item {
+            background: white;
+            border-radius: 12px;
+            padding: 8px 6px;
+            text-align: center;
+            border: 1px solid #e8f0e2;
+            transition: 0.2s;
+        }
+        .product-seven-item:hover {
+            transform: translateY(-4px);
+            border-color: #eab308;
+        }
+        .product-seven-item img {
+            width: 100%;
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 12px;
+            border-radius: 12px;
+        }
+        .product-seven-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e3a1e;
+        }
+        .product-seven-item p {
+            font-size: 0.8rem;
+            color: #3a5a36;
+            line-height: 1.4;
+        }
+        @media (max-width: 1000px) {
+            .seven-products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+        }
+        @media (max-width: 700px) {
+            .seven-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .seven-products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Combined Technical Specifications + How It Works */
+        .combined-spec-how {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            align-items: start;
+            margin: 5px 0;
+        }
+        .spec-left {
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 500px;
+        }
         .spec-table {
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border-radius: 24px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-size: 0.75rem;
         }
         .spec-table th, .spec-table td {
             border: 1px solid #ddecd2;
-            padding: 12px 16px;
+            padding: 2px 4px;
             text-align: left;
+            line-height: 1.3;
         }
         .spec-table th {
             background: #eaf4e4;
             font-weight: 700;
             color: #1e3a1e;
         }
-        .use-cases-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-            margin: 30px 0;
-        }
-        .use-case-tag {
-            background: #ecf7e7;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 500;
-        }
-        .how-it-works {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            margin: 30px 0;
-        }
-        .step {
-            flex: 1;
+        .how-right {
             text-align: center;
-            background: #fafdf5;
-            padding: 20px;
-            border-radius: 28px;
         }
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: #eab308;
+        .how-works-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #1e3a1e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            margin: 0 auto 12px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .how-works-heading:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #eab308;
+            margin: 8px auto 0;
+            border-radius: 4px;
+        }
+        .howitworks-img {
+            max-width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            max-height: 400px;
+            object-fit: contain;
         }
         @media (max-width: 800px) {
-            .products-hero h1 { font-size: 2.2rem; }
-            .section-title { font-size: 1.6rem; }
-            .products-grid { grid-template-columns: 1fr; }
-            .how-it-works { flex-direction: column; }
+            .combined-spec-how {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .how-right {
+                order: 2;
+            }
+            .spec-left {
+                max-height: none;
+            }
         }
 
-/* Features Highlight - Single Image */
-.features-highlight-single {
-    text-align: center;
-    margin: 30px 0;
-}
-.features-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+        /* Use Cases Section */
+        .usecases-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+        .usecase-left {
+            text-align: center;
+        }
+        .usecase-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a1e;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .usecase-heading:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #eab308;
+            margin: 8px auto 0;
+            border-radius: 4px;
+        }
+        .usecase-img {
+            max-width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .whychoose-list {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #2c4727;
+        }
+        @media (max-width: 800px) {
+            .usecases-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .usecase-left {
+                order: 1;
+            }
+            .usecase-right {
+                order: 2;
+                text-align: left;
+            }
+        }
 
-
- /* - - - - - - - - - - - - - - - - - - - - - */       
-   /* Complete Kit Overview - 8 parts (7x10%, 1x30%) */
-        
-
-       .kit-parts-container {
-    display: grid;
-    grid-template-columns: repeat(7, 8%) 40%; /* 7×8% = 56% + 40% = 96% */
-    gap: 12px;
-    margin: 20px 0;
-    overflow-x: auto;
-    align-items: stretch;
-}
-
-.kit-part {
-    background: white;
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    border: 1px solid #e8f0e2;
-    transition: 0.2s;
-    box-sizing: border-box;
-}
-
-.kit-part:hover {
-    transform: translateY(-4px);
-    border-color: #eab308;
-}
-
-.kit-part img {
-    width: 90%;
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 5px;
-    border-radius: 6px;
-}
-
-.kit-part p {
-    font-size: 0.85rem;
-    color: #2c4727;
-    line-height: 1.4;
-    margin: 0;
-}
-        
-/* Desktop: 7 parts 10% width, 8th part 30% width */
-@media (min-width: 901px) {
-    .kit-part {
-        width: calc(10% - 16px); /* 10% minus gap adjustment */
-    }
-    .kit-part:last-child {
-        width: calc(30% - 30px);
-    }
-}
-
-/* Tablet: fixed width for readability */
-@media (max-width: 900px) and (min-width: 601px) {
-    .kit-part {
-        width: 130px;
-    }
-    .kit-part img {
-        max-width: 100px;
-    }
-}
-
-/* Mobile: fixed smaller width, horizontal scroll */
-@media (max-width: 600px) {
-    .kit-parts-container {
-        gap: 10px;
-    }
-    .kit-part {
-        width: 130px;
-        padding: 6px 5px;
-    }
-    .kit-part img {
-        max-width: 80px;
-    }
-    .kit-part p {
-        font-size: 0.7rem;
-    }
-}
-
-        
-        
-/* Individual widths */
-.part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
-    flex: 0 0 calc(8% - 16px); /* 10% width minus gap adjustment */
-    min-width: 100px; /* fallback for very small screens */
-}
-.part-8 {
-    flex: 0 0 calc(40% - 16px);
-}
-
-/* Responsive: on smaller screens, maintain ratio but allow shrink */
-@media (max-width: 900px) {
-    .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
-        flex: 0 0 calc(12% - 16px);
-        min-width: 80px;
-    }
-    .part-8 {
-        flex: 0 0 calc(28% - 16px);
-    }
-    .kit-part img {
-        max-width: 80px;
-    }
-    .kit-part p {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .kit-parts-container {
-        gap: 12px;
-    }
-    .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
-        flex: 0 0 calc(15% - 12px);
-        min-width: 70px;
-    }
-    .part-8 {
-        flex: 0 0 calc(25% - 12px);
-    }
-    .kit-part img {
-        max-width: 60px;
-    }
-    .kit-part p {
-        font-size: 0.6rem;
-    }
-}
-
-@media (max-width: 550px) {
-    /* On very small screens, wrap into two rows but preserve ratios roughly */
-    .kit-parts-container {
-        justify-content: center;
-    }
-    .part-1, .part-2, .part-3, .part-4, .part-5, .part-6, .part-7 {
-        flex: 0 0 calc(22% - 10px);
-    }
-    .part-8 {
-        flex: 0 0 calc(40% - 10px);
-    }
-}
-   
-/* - - - - - - - - - - - - - - - - - - - - - */
-/* OUR 7 PRODUCTS - grid layout */
-/* - - - - - - - - - - - - - - - - - - - - - */
-.seven-products-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin: 15px 0;
-}
-.product-seven-item {
-    background: white;
-    border-radius: 12px;
-    padding: 8px 6px;
-    text-align: center;
-    border: 1px solid #e8f0e2;
-    transition: 0.2s;
-}
-.product-seven-item:hover {
-    transform: translateY(-4px);
-    border-color: #eab308;
-}
-.product-seven-item img {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 12px;
-    border-radius: 12px;
-}
-.product-seven-item h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #1e3a1e;
-}
-.product-seven-item p {
-    font-size: 0.8rem;
-    color: #3a5a36;
-    line-height: 1.4;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
-    .seven-products-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-    }
-}
-@media (max-width: 700px) {
-    .seven-products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-}
-@media (max-width: 480px) {
-    .seven-products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - */
-/* Combined Technical Specifications + How It Works */
-/* - - - - - - - - - - - - - - - - - - - - - */
-    /* Make Technical Specifications heading smaller */
-.section-title {
-    font-size: 1.2rem;   /* adjust as needed – 1.1rem, 1.2rem, 1.3rem */
-}
-.combined-spec-how {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    align-items: start;
-    margin: 5px 0;
-}
-.spec-left {
-    overflow-x: auto;
-    overflow-y: auto;
-    max-height: 500px;  /* limit height to match right part */
-}
-.spec-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    font-size: 0.75rem;  /* smaller font */
-
-}
-
-.spec-table th, .spec-table td {
-    border: 1px solid #ddecd2;
-    padding: 2px 4px;   /* reduced padding */
-    text-align: left;
-    line-height: 1.3;
-}
-.spec-table th {
-    background: #eaf4e4;
-    font-weight: 700;
-    color: #1e3a1e;
-}
-.how-right {
-    text-align: center;
-}
-.how-right h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1e3a1e;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-.how-right h2:after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 3px;
-    background: #eab308;
-    margin: 8px auto 0;
-}
-.howitworks-img {
-    max-width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    max-height: 400px;
-    object-fit: contain;
-}
-@media (max-width: 800px) {
-    .combined-spec-how {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .how-right {
-        order: 2;
-    }
-    .spec-left {
-        max-height: none; /* remove limit on mobile */
-    }
-}
-
-
-/* Use Cases Section - Two equal columns */
-.usecases-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin: 40px 0;
-}
-.usecase-left {
-    text-align: center;
-}
-.usecase-heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1e3a1e;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-}
-.usecase-heading:after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 3px;
-    background: #eab308;
-    margin: 8px auto 0;
-    border-radius: 4px;
-}
-.usecase-img {
-    max-width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-.usecase-right p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #2c4727;
-    margin-bottom: 16px;
-}
-.usecase-right p:last-child {
-    font-weight: 500;
-    line-height: 1.8;
-}
-@media (max-width: 800px) {
-    .usecases-section {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-    .usecase-left {
-        order: 1;
-    }
-    .usecase-right {
-        order: 2;
-        text-align: left;
-    }
-}
-
-/* Product Gallery + FAQ Section */
-.product-faq-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-    margin: 10px 0;
-    align-items: start;
-}
-.section-heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1e3a1e;
-    margin-bottom: 24px;
-    position: relative;
-    display: inline-block;
-}
-.section-heading:after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 3px;
-    background: #eab308;
-    margin-top: 8px;
-    border-radius: 4px;
-}
-/* Gallery Grid: 7 images in a responsive grid */
-.gallery-grid {
-    display: flex;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 5px;
-}
-.gallery-grid img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: 0.2s;
-    border: 1px solid #e8f0e2;
-}
-.gallery-grid img:hover {
-    transform: scale(1.02);
-    border-color: #eab308;
-}
-/* FAQ styling */
-.faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.faq-item {
-    background: white;
-    border-radius: 5px;
-    padding: 1px 2px;
-    border: 1px solid #e8f0e2;
-    transition: 0.2s;
-}
-.faq-item:hover {
-    border-color: #eab308;
-}
-.faq-question {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #1e3a1e;
-    margin-bottom: 8px;
-    cursor: pointer;
-}
-.faq-answer {
-    font-size: 0.9rem;
-    color: #3a5a36;
-    line-height: 1.4;
-}
-@media (max-width: 800px) {
-    .product-faq-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 500px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-        
+        /* Product Gallery + FAQ Section */
+        .product-faq-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            margin: 10px 0;
+            align-items: start;
+        }
+        .section-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a1e;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #eab308;
+            margin-top: 8px;
+            border-radius: 4px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 5px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 1px solid #e8f0e2;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            border-color: #eab308;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 5px;
+            padding: 1px 2px;
+            border: 1px solid #e8f0e2;
+            transition: 0.2s;
+        }
+        .faq-item:hover {
+            border-color: #eab308;
+        }
+        .faq-question {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e3a1e;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .faq-answer {
+            font-size: 0.9rem;
+            color: #3a5a36;
+            line-height: 1.4;
+        }
+        @media (max-width: 800px) {
+            .product-faq-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -616,223 +432,201 @@
 <main>
     <div class="container">
         <!-- Products Hero -->
-        <!-- Products Hero - Two Columns -->
-<div class="products-hero">
-    <div class="hero-two-columns">
-        <div class="hero-content-left">
-            <h3 data-i18n="products_heading">VIGRID PRODUCTS</h3>
-            <div class="kit-badge-large" data-i18n="kit_badge_large">7-in-1 Solar Home Kit <br> for Rural India</div>
-            <p class="kit-description" data-i18n="products_desc">Everything your home needs – power, lighting, charging, entertainment and safety – in one complete solar kit. Reliable. Affordable. Sustainable.</p>
-            <div class="btn-group">
-                <a href="#" class="btn-primary" id="downloadBrochureBtn"><i class="fas fa-download"></i> <span data-i18n="download_brochure">DOWNLOAD BROCHURE</span></a>
-               <!--  <a href="#" class="btn-outline" id="contactProductsBtn"><span data-i18n="contact_us_btn">CONTACT US</span></a> -->
+        <div class="products-hero">
+            <div class="hero-two-columns">
+                <div class="hero-content-left">
+                    <h3 data-i18n="products_heading">VIGRID PRODUCTS</h3>
+                    <div class="kit-badge-large" data-i18n="kit_badge_large">7-in-1 Solar Home Kit <br> for Rural India</div>
+                    <p class="kit-description" data-i18n="products_desc">Everything your home needs – power, lighting, charging, entertainment and safety – in one complete solar kit. Reliable. Affordable. Sustainable.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn-primary" id="downloadBrochureBtn"><i class="fas fa-download"></i> <span data-i18n="download_brochure">DOWNLOAD BROCHURE</span></a>
+                    </div>
+                </div>
+                <div class="hero-image-right">
+                    <img src="kits.jpg" alt="VIGRID Solar Home Kit" class="hero-kit-image">
+                </div>
             </div>
         </div>
-        <div class="hero-image-right">
-            <img src="kits.jpg" alt="VIGRID Solar Home Kit" class="hero-kit-image">
+
+        <!-- Features Highlight Section - Single Image -->
+        <div class="features-highlight-single">
+            <img src="features.jpg" alt="VIGRID Features" class="features-image">
         </div>
-    </div>
-</div>
 
-        <!-- 4 Features Highlight -->
-        
-       <!-- Features Highlight Section - Single Image -->
-<div class="features-highlight-single">
-    <img src="features.jpg" alt="VIGRID Features" class="features-image">
-</div>
-
-       
         <!-- Complete Kit Overview - 8 Parts -->
-<div>
-    <h2 class="section-title" data-i18n="complete_kit_title">COMPLETE KIT OVERVIEW</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 5px;" data-i18n="one_kit_solution">One Kit. Complete Solution.</p>
-    
-    <div class="kit-parts-container">
-        <div class="kit-part part-1">
-            <img src="solar.png" alt="Solar Panel">
-            <p data-i18n="kit_desc1">Solar Panel (35W)</p>
-        </div>
-        <div class="kit-part part-2">
-            <img src="radio.png" alt="Multipurpose Board">
-            <p data-i18n="kit_desc2">Multipurpose Board</p>
-        </div>
-        <div class="kit-part part-3">
-            <img src="fan.png" alt="Fan + Light">
-            <p data-i18n="kit_desc3">Fan + Light </p>
-        </div>
-        <div class="kit-part part-4">
-            <img src="sound.jpg" alt="Bluetooth Speaker">
-            <p data-i18n="kit_desc4">Bluetooth Speaker</p>
-        </div>
-        <div class="kit-part part-5">
-            <img src="bulb.jpg" alt="Emergency Light">
-            <p data-i18n="kit_desc5">Emergency Light</p>
-        </div>
-        <div class="kit-part part-6">
-            <img src="torch.jpg" alt="Torch">
-            <p data-i18n="kit_desc6">Torch </p>
-        </div>
-        <div class="kit-part part-7">
-            <img src="twoBulb.jpg" alt="LED Bulbs">
-            <p data-i18n="kit_desc7">2 LED Bulbs</p>
-        </div>
-        <div class="kit-part part-8">
-            <img src="kitboxEng.jpg" alt="Complete Kit Box">
-            <p data-i18n="kit_desc8">Complete 7-in-1 Solar Home Kit </p>
-        </div>
-    </div>
-</div>
-      
-
-<!-- OUR 7 PRODUCTS - New Section -->
-<div>
-    <h2 class="section-title" data-i18n="our_7_products_title">OUR 7 PRODUCTS</h2>
-    <div class="seven-products-grid">
-        <div class="product-seven-item">
-            <img src="solar.png" alt="Solar Panel">
-            <h3 data-i18n="prod7_name1">Solar Panel (35W)</h3>
-            <p data-i18n="prod7_desc1">High-efficiency monocrystalline panel, weather resistant.</p>
-        </div>
-        <div class="product-seven-item">
-            <img src="radio.png" alt="Multipurpose Board">
-            <h3 data-i18n="prod7_name2">Multipurpose Board</h3>
-            <p data-i18n="prod7_desc2">20000mAh battery, dual input, 2 USB outputs.</p>
-        </div>
-        <div class="product-seven-item">
-            <img src="fan.png" alt="Fan + Light">
-            <h3 data-i18n="prod7_name3">Fan + Light</h3>
-            <p data-i18n="prod7_desc3">3-speed fan, LED light, 10000mAh battery.</p>
-        </div>
-        <div class="product-seven-item">
-            <img src="sound.jpg" alt="Bluetooth Speaker">
-            <h3 data-i18n="prod7_name4">Bluetooth Speaker</h3>
-            <p data-i18n="prod7_desc4">5000mAh battery, FM, USB, loud & clear sound.</p>
-        </div>
-        <div class="product-seven-item">
-            <img src="bulb.jpg" alt="Emergency Light">
-            <h3 data-i18n="prod7_name5">Emergency Light</h3>
-            <p data-i18n="prod7_desc5">4000mAh, hanging hook, 4-6 hrs backup.</p>
-        </div>
-        <div class="product-seven-item">
-            <img src="torch.jpg" alt="Torch">
-            <h3 data-i18n="prod7_name6">Torch</h3>
-            <p data-i18n="prod7_desc6">3000mAh, long range beam, 2 light modes.</p>
-        </div>
-        <div class="product-seven-item">
-            <img src="twoBulb.jpg" alt="LED Bulbs">
-            <h3 data-i18n="prod7_name7">LED Bulbs (2 Pcs)</h3>
-            <p data-i18n="prod7_desc7">5W each, low power, long life.</p>
-        </div>
-    </div>
-</div>
-          
-        
-
- <!-- Technical Specifications + How It Works - Combined Section -->
-
-<div class="combined-spec-how">
-    <div class="spec-left">
-        <h3 class="section-title" data-i18n="tech_spec_title">TECHNICAL SPECIFICATIONS</h3>
-        <div style="overflow-x: auto;">
-            <table class="spec-table">
-                <thead>
-                    <tr><th data-i18n="table_product">Product</th><th data-i18n="table_battery">Battery Capacity</th><th data-i18n="table_backup">Backup Time*</th><th data-i18n="table_charging">Charging Time</th><th data-i18n="table_features">Output / Features</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td data-i18n="table_row1_prod">Fan + Light</td><td>10000mAh</td><td>4 – 6 Hours</td><td>3 – 4 Hours</td><td data-i18n="table_row1_feat">3 Speed Fan + LED Light</td></tr>
-                    <tr><td data-i18n="table_row2_prod">Bluetooth Speaker</td><td>5000mAh</td><td>5 – 6 Hours</td><td>2 – 3 Hours</td><td data-i18n="table_row2_feat">Bluetooth, FM, USB</td></tr>
-                    <tr><td data-i18n="table_row3_prod">Emergency Light</td><td>4000mAh</td><td>4 – 6 Hours</td><td>2 – 3 Hours</td><td data-i18n="table_row3_feat">LED Light</td></tr>
-                    <tr><td data-i18n="table_row4_prod">Torch</td><td>3000mAh</td><td>4 – 6 Hours</td><td>2 – 3 Hours</td><td data-i18n="table_row4_feat">High Beam / Low Beam</td></tr>
-                    <tr><td data-i18n="table_row5_prod">Multipurpose Board</td><td>20000mAh</td><td>4 – 5 Hours</td><td>4 – 5 Hours</td><td data-i18n="table_row5_feat">Dual Input, 2 USB Output</td></tr>
-                    <tr><td data-i18n="table_row6_prod">Solar Panel</td><td>35W</td><td>-</td><td data-i18n="table_row6_charging">(Sunlight)</td><td data-i18n="table_row6_feat">17-18V Output</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="font-size: 0.8rem; margin-top: 8px;" data-i18n="backup_note">*Backup time may vary depending on usage.</p>
-    </div>
-    <div class="how-right">
-        <h3 data-i18n="how_it_works_title" style="margin-bottom: 50px;">HOW IT WORKS</h3>
-        <img src="howitworks.jpg" alt="How VIGRID Solar Kit Works" class="howitworks-img">
-    </div>
-</div>
-          
-
-<!-- Use Cases Section - Two Parts -->
-<div class="usecases-section">
-    <div class="usecase-left">
-        <h3 class="usecase-heading" data-i18n="usecase_title">USE CASES</h3>
-        <img src="usecase.png" alt="VIGRID Use Cases" class="usecase-img">
-    </div>
-    <div class="usecase-right">
-        <h3 class="usecase-heading" data-i18n="whychoose_title">WHY CHOOSE VIGRID?</h3>
-        
-        <br>
- ✔ One Kit, Complete Solution
-
-✔ 100% Solar Powered<br>
-
-✔ Affordable for Every Family
-
-✔ Portable & Easy to Use<br>
-
-✔ Designed for Rural India
-
-✔ High Quality & Durable<br>
-
-✔ Low Maintenance
-
-✔ Made in India, Made for India<br>
-    </div>
-</div>
-
-    <!-- Section 7: Product Gallery + FAQs -->
-<div class="product-faq-section">
-    <div class="gallery-left">
-        <h3 class="section-heading" data-i18n="product_gallery_title">PRODUCT GALLERY</h3>
-        <div class="gallery-grid">
-            <img src="kitbox.png" alt="Product 1">
-            <img src="radio.png" alt="Product 2">
-            <img src="fan.png" alt="Product 3">
-            <img src="sound.jpg" alt="Product 4">
-            <img src="bulb.jpg" alt="Product 5">
-            <img src="torch.jpg" alt="Product 6">
-            <img src="solar.png" alt="Product 7">
-        </div>
-    </div>
-    <div class="faq-right">
-        <h3 class="section-heading" data-i18n="faq_title">FREQUENTLY ASKED QUESTIONS</h3>
-        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="faq_q1">Q1. Will it work without electricity?</div>
-                <div class="faq-answer" data-i18n="faq_a1">Yes, VIGRID works completely on solar power.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="faq_q2">Q2. How long will the products run on a full charge?</div>
-                <div class="faq-answer" data-i18n="faq_a2">Depending on usage, you can get 4–6 hours backup.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="faq_q3">Q3. Can we charge mobile phones?</div>
-                <div class="faq-answer" data-i18n="faq_a3">Yes, the multipurpose board has USB output for mobile charging.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="faq_q4">Q4. How long does it take to charge the kit?</div>
-                <div class="faq-answer" data-i18n="faq_a4">It takes 4–5 hours of good sunlight to fully charge.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="faq_q5">Q5. Is it safe for children?</div>
-                <div class="faq-answer" data-i18n="faq_a5">Yes, all products are safe, durable and designed for family use.</div>
+        <div>
+            <h2 class="section-heading" data-i18n="complete_kit_title">COMPLETE KIT OVERVIEW</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 5px;" data-i18n="one_kit_solution">One Kit. Complete Solution.</p>
+            <div class="kit-parts-container">
+                <div class="kit-part">
+                    <img src="solar.png" alt="Solar Panel">
+                    <p data-i18n="kit_desc1">Solar Panel (35W)</p>
+                </div>
+                <div class="kit-part">
+                    <img src="radio.png" alt="Multipurpose Board">
+                    <p data-i18n="kit_desc2">Multipurpose Board</p>
+                </div>
+                <div class="kit-part">
+                    <img src="fan.png" alt="Fan + Light">
+                    <p data-i18n="kit_desc3">Fan + Light</p>
+                </div>
+                <div class="kit-part">
+                    <img src="sound.jpg" alt="Bluetooth Speaker">
+                    <p data-i18n="kit_desc4">Bluetooth Speaker</p>
+                </div>
+                <div class="kit-part">
+                    <img src="bulb.jpg" alt="Emergency Light">
+                    <p data-i18n="kit_desc5">Emergency Light</p>
+                </div>
+                <div class="kit-part">
+                    <img src="torch.jpg" alt="Torch">
+                    <p data-i18n="kit_desc6">Torch</p>
+                </div>
+                <div class="kit-part">
+                    <img src="twoBulb.jpg" alt="LED Bulbs">
+                    <p data-i18n="kit_desc7">2 LED Bulbs</p>
+                </div>
+                <div class="kit-part">
+                    <img src="kitboxEng.jpg" alt="Complete Kit Box">
+                    <p data-i18n="kit_desc8">Complete 7-in-1 Solar Home Kit</p>
+                </div>
             </div>
         </div>
-    </div>
-</div>       
-        
 
-       
+        <!-- OUR 7 PRODUCTS -->
+        <div>
+            <h2 class="section-heading" data-i18n="our_7_products_title">OUR 7 PRODUCTS</h2>
+            <div class="seven-products-grid">
+                <div class="product-seven-item">
+                    <img src="solar.png" alt="Solar Panel">
+                    <h3 data-i18n="prod7_name1">Solar Panel (35W)</h3>
+                    <p data-i18n="prod7_desc1">High-efficiency monocrystalline panel, weather resistant.</p>
+                </div>
+                <div class="product-seven-item">
+                    <img src="radio.png" alt="Multipurpose Board">
+                    <h3 data-i18n="prod7_name2">Multipurpose Board</h3>
+                    <p data-i18n="prod7_desc2">20000mAh battery, dual input, 2 USB outputs.</p>
+                </div>
+                <div class="product-seven-item">
+                    <img src="fan.png" alt="Fan + Light">
+                    <h3 data-i18n="prod7_name3">Fan + Light</h3>
+                    <p data-i18n="prod7_desc3">3-speed fan, LED light, 10000mAh battery.</p>
+                </div>
+                <div class="product-seven-item">
+                    <img src="sound.jpg" alt="Bluetooth Speaker">
+                    <h3 data-i18n="prod7_name4">Bluetooth Speaker</h3>
+                    <p data-i18n="prod7_desc4">5000mAh battery, FM, USB, loud & clear sound.</p>
+                </div>
+                <div class="product-seven-item">
+                    <img src="bulb.jpg" alt="Emergency Light">
+                    <h3 data-i18n="prod7_name5">Emergency Light</h3>
+                    <p data-i18n="prod7_desc5">4000mAh, hanging hook, 4-6 hrs backup.</p>
+                </div>
+                <div class="product-seven-item">
+                    <img src="torch.jpg" alt="Torch">
+                    <h3 data-i18n="prod7_name6">Torch</h3>
+                    <p data-i18n="prod7_desc6">3000mAh, long range beam, 2 light modes.</p>
+                </div>
+                <div class="product-seven-item">
+                    <img src="twoBulb.jpg" alt="LED Bulbs">
+                    <h3 data-i18n="prod7_name7">LED Bulbs (2 Pcs)</h3>
+                    <p data-i18n="prod7_desc7">5W each, low power, long life.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Specifications + How It Works -->
+        <div class="combined-spec-how">
+            <div class="spec-left">
+                <h2 class="section-heading" data-i18n="tech_spec_title">TECHNICAL SPECIFICATIONS</h2>
+                <div style="overflow-x: auto;">
+                    <table class="spec-table">
+                        <thead>
+                            <tr><th data-i18n="table_product">Product</th><th data-i18n="table_battery">Battery Capacity</th><th data-i18n="table_backup">Backup Time*</th><th data-i18n="table_charging">Charging Time</th><th data-i18n="table_features">Output / Features</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td data-i18n="table_row1_prod">Fan + Light</td><td>10000mAh</td><td>4 – 6 Hours</td><td>3 – 4 Hours</td><td data-i18n="table_row1_feat">3 Speed Fan + LED Light</td></tr>
+                            <tr><td data-i18n="table_row2_prod">Bluetooth Speaker</td><td>5000mAh</td><td>5 – 6 Hours</td><td>2 – 3 Hours</td><td data-i18n="table_row2_feat">Bluetooth, FM, USB</td></tr>
+                            <tr><td data-i18n="table_row3_prod">Emergency Light</td><td>4000mAh</td><td>4 – 6 Hours</td><td>2 – 3 Hours</td><td data-i18n="table_row3_feat">LED Light</td></tr>
+                            <tr><td data-i18n="table_row4_prod">Torch</td><td>3000mAh</td><td>4 – 6 Hours</td><td>2 – 3 Hours</td><td data-i18n="table_row4_feat">High Beam / Low Beam</td></tr>
+                            <tr><td data-i18n="table_row5_prod">Multipurpose Board</td><td>20000mAh</td><td>4 – 5 Hours</td><td>4 – 5 Hours</td><td data-i18n="table_row5_feat">Dual Input, 2 USB Output</td></tr>
+                            <tr><td data-i18n="table_row6_prod">Solar Panel</td><td>35W</td><td>-</td><td data-i18n="table_row6_charging">(Sunlight)</td><td data-i18n="table_row6_feat">17-18V Output</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size: 0.8rem; margin-top: 8px;" data-i18n="backup_note">*Backup time may vary depending on usage.</p>
+            </div>
+            <div class="how-right">
+                <h2 class="how-works-heading" data-i18n="how_it_works_title">HOW IT WORKS</h2>
+                <img src="howitworks.jpg" alt="How VIGRID Solar Kit Works" class="howitworks-img">
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="usecases-section">
+            <div class="usecase-left">
+                <h2 class="usecase-heading" data-i18n="usecase_title">USE CASES</h2>
+                <img src="usecase.png" alt="VIGRID Use Cases" class="usecase-img">
+            </div>
+            <div class="usecase-right">
+                <h2 class="usecase-heading" data-i18n="whychoose_title">WHY CHOOSE VIGRID?</h2>
+                <div class="whychoose-list" data-i18n="whychoose_text">
+                    ✔ One Kit, Complete Solution<br>
+                    ✔ 100% Solar Powered<br>
+                    ✔ Affordable for Every Family<br>
+                    ✔ Portable & Easy to Use<br>
+                    ✔ Designed for Rural India<br>
+                    ✔ High Quality & Durable<br>
+                    ✔ Low Maintenance<br>
+                    ✔ Made in India, Made for India
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Gallery + FAQ -->
+        <div class="product-faq-section">
+            <div class="gallery-left">
+                <h2 class="section-heading" data-i18n="product_gallery_title">PRODUCT GALLERY</h2>
+                <div class="gallery-grid">
+                    <img src="kitbox.png" alt="Product 1">
+                    <img src="radio.png" alt="Product 2">
+                    <img src="fan.png" alt="Product 3">
+                    <img src="sound.jpg" alt="Product 4">
+                    <img src="bulb.jpg" alt="Product 5">
+                    <img src="torch.jpg" alt="Product 6">
+                    <img src="solar.png" alt="Product 7">
+                </div>
+            </div>
+            <div class="faq-right">
+                <h2 class="section-heading" data-i18n="faq_title">FREQUENTLY ASKED QUESTIONS</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" data-i18n="faq_q1">Q1. Will it work without electricity?</div>
+                        <div class="faq-answer" data-i18n="faq_a1">Yes, VIGRID works completely on solar power.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-i18n="faq_q2">Q2. How long will the products run on a full charge?</div>
+                        <div class="faq-answer" data-i18n="faq_a2">Depending on usage, you can get 4–6 hours backup.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-i18n="faq_q3">Q3. Can we charge mobile phones?</div>
+                        <div class="faq-answer" data-i18n="faq_a3">Yes, the multipurpose board has USB output for mobile charging.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-i18n="faq_q4">Q4. How long does it take to charge the kit?</div>
+                        <div class="faq-answer" data-i18n="faq_a4">It takes 4–5 hours of good sunlight to fully charge.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" data-i18n="faq_q5">Q5. Is it safe for children?</div>
+                        <div class="faq-answer" data-i18n="faq_a5">Yes, all products are safe, durable and designed for family use.</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>
 
-<!-- FOOTER (same as other pages) -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -877,27 +671,25 @@
     </div>
 </footer>
 
-
- <script>
+<script>
     // Translations for Products page (English + Hindi)
     const productsTranslations = {
         en: {
             nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_contact: "Contact", nav_impact: "Impact",
             products_heading: "VIGRID PRODUCTS", kit_badge_large: "7-in-1 Solar Home Kit for Rural India",
             products_desc: "Everything your home needs – power, lighting, charging, entertainment and safety – in one complete solar kit. Reliable. Affordable. Sustainable.",
-            download_brochure: "DOWNLOAD BROCHURE", contact_us_btn: "CONTACT US",
-            feat_clean_title: "Clean Energy", feat_clean_desc: "Sustainable for the future",
-            feat_affordable_title: "Affordable", feat_affordable_desc: "High-quality at low price",
-            feat_reliable_title: "Reliable", feat_reliable_desc: "Built for rural needs",
-            feat_impact_title: "Impact Driven", feat_impact_desc: "Creating real change in communities",
+            download_brochure: "DOWNLOAD BROCHURE",
             complete_kit_title: "COMPLETE KIT OVERVIEW", one_kit_solution: "One Kit. Complete Solution.",
-            prod1_name: "Solar Panel (35W)", prod1_spec1: "35W Monocrystalline", prod1_spec2: "17-18V Output", prod1_spec3: "High Efficiency", prod1_spec4: "Weather Resistant",
-            prod2_name: "Multipurpose Board", prod2_spec1: "20000mAh Battery", prod2_spec2: "Dual Input (Solar/DC)", prod2_spec3: "2 USB Output (5V)", prod2_spec4: "LED Indicators",
-            prod3_name: "Fan + Light", prod3_spec1: "10000mAh Battery", prod3_spec2: "4-6 Hours Backup", prod3_spec3: "3 Speed Fan", prod3_spec4: "LED Light",
-            prod4_name: "Bluetooth Speaker", prod4_spec1: "5000mAh Battery", prod4_spec2: "Bluetooth, FM, USB", prod4_spec3: "Clear & Loud Sound", prod4_spec4: "USB Charging",
-            prod5_name: "Emergency Light", prod5_spec1: "4000mAh Battery", prod5_spec2: "Hanging Hook", prod5_spec3: "4-6 Hours Backup", prod5_spec4: "Type-C Charging",
-            prod6_name: "Torch", prod6_spec1: "3000mAh Battery", prod6_spec2: "Long Range Beam", prod6_spec3: "2 Light Modes", prod6_spec4: "Type-C Charging",
-            prod7_name: "LED Bulbs (2 Pcs)", prod7_spec1: "Low Power Consumption", prod7_spec2: "Bright Illumination", prod7_spec3: "5W Each", prod7_spec4: "Long Life",
+            kit_desc1: "Solar Panel (35W)", kit_desc2: "Multipurpose Board", kit_desc3: "Fan + Light", kit_desc4: "Bluetooth Speaker",
+            kit_desc5: "Emergency Light", kit_desc6: "Torch", kit_desc7: "2 LED Bulbs", kit_desc8: "Complete 7-in-1 Solar Home Kit",
+            our_7_products_title: "OUR 7 PRODUCTS",
+            prod7_name1: "Solar Panel (35W)", prod7_desc1: "High-efficiency monocrystalline panel, weather resistant.",
+            prod7_name2: "Multipurpose Board", prod7_desc2: "20000mAh battery, dual input, 2 USB outputs.",
+            prod7_name3: "Fan + Light", prod7_desc3: "3-speed fan, LED light, 10000mAh battery.",
+            prod7_name4: "Bluetooth Speaker", prod7_desc4: "5000mAh battery, FM, USB, loud & clear sound.",
+            prod7_name5: "Emergency Light", prod7_desc5: "4000mAh, hanging hook, 4-6 hrs backup.",
+            prod7_name6: "Torch", prod7_desc6: "3000mAh, long range beam, 2 light modes.",
+            prod7_name7: "LED Bulbs (2 Pcs)", prod7_desc7: "5W each, low power, long life.",
             tech_spec_title: "TECHNICAL SPECIFICATIONS",
             table_product: "Product", table_battery: "Battery Capacity", table_backup: "Backup Time*", table_charging: "Charging Time", table_features: "Output / Features",
             table_row1_prod: "Fan + Light", table_row1_feat: "3 Speed Fan + LED Light",
@@ -907,29 +699,10 @@
             table_row5_prod: "Multipurpose Board", table_row5_feat: "Dual Input, 2 USB Output",
             table_row6_prod: "Solar Panel", table_row6_feat: "17-18V Output", table_row6_charging: "(Sunlight)",
             backup_note: "*Backup time may vary depending on usage.",
-            kit_desc1: "Solar Panel (35W) – High efficiency monocrystalline",
-            kit_desc2: "Multipurpose Board – 20000mAh battery, dual input",
-            kit_desc3: "Fan + Light – 3 speed fan, LED light, 10000mAh",
-            kit_desc4: "Bluetooth Speaker – 5000mAh, FM, USB",
-            kit_desc5: "Emergency Light – 4000mAh, hanging hook",
-            kit_desc6: "Torch – 3000mAh, long range beam, 2 modes",
-            kit_desc7: "LED Bulbs (2 Pcs) – 5W each, low power",
-            kit_desc8: "Complete 7-in-1 Solar Home Kit – Everything included",
-            // Our 7 Products section
-            our_7_products_title: "OUR 7 PRODUCTS",
-            prod7_name1: "Solar Panel (35W)", prod7_desc1: "High-efficiency monocrystalline panel, weather resistant.",
-            prod7_name2: "Multipurpose Board", prod7_desc2: "20000mAh battery, dual input, 2 USB outputs.",
-            prod7_name3: "Fan + Light", prod7_desc3: "3-speed fan, LED light, 10000mAh battery.",
-            prod7_name4: "Bluetooth Speaker", prod7_desc4: "5000mAh battery, FM, USB, loud & clear sound.",
-            prod7_name5: "Emergency Light", prod7_desc5: "4000mAh, hanging hook, 4-6 hrs backup.",
-            prod7_name6: "Torch", prod7_desc6: "3000mAh, long range beam, 2 light modes.",
-            prod7_name7: "LED Bulbs (2 Pcs)", prod7_desc7: "5W each, low power, long life.",
-            // Use Cases section
+            how_it_works_title: "HOW IT WORKS",
             usecase_title: "USE CASES",
             whychoose_title: "Why Choose VIGRID?",
-            whychoose_desc1: "VIGRID solar home kits are designed specifically for rural India – reliable, affordable, and easy to use.",
-            whychoose_desc2: "✔ 7 essential products in one complete kit\n✔ No electricity bills – free solar energy\n✔ Durable and weather-resistant design\n✔ Easy installation, no technical knowledge needed\n✔ Trusted by thousands of families across India",
-            // Product Gallery + FAQ section (Section 7)
+            whychoose_text: "✔ One Kit, Complete Solution\n✔ 100% Solar Powered\n✔ Affordable for Every Family\n✔ Portable & Easy to Use\n✔ Designed for Rural India\n✔ High Quality & Durable\n✔ Low Maintenance\n✔ Made in India, Made for India",
             product_gallery_title: "PRODUCT GALLERY",
             faq_title: "FREQUENTLY ASKED QUESTIONS",
             faq_q1: "Q1. Will it work without electricity?",
@@ -942,7 +715,6 @@
             faq_a4: "It takes 4–5 hours of good sunlight to fully charge.",
             faq_q5: "Q5. Is it safe for children?",
             faq_a5: "Yes, all products are safe, durable and designed for family use.",
-            // Footer
             footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_impact: "Impact", footer_contact: "Contact",
             footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
             footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
@@ -952,19 +724,18 @@
             nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_contact: "संपर्क करें", nav_impact: "प्रभाव",
             products_heading: "विग्रिड उत्पाद", kit_badge_large: "ग्रामीण भारत के लिए 7-इन-1 सोलर होम किट",
             products_desc: "आपके घर के लिए सब कुछ – बिजली, लाइटिंग, चार्जिंग, मनोरंजन और सुरक्षा – एक पूर्ण सोलर किट में। विश्वसनीय। किफायती। टिकाऊ।",
-            download_brochure: "ब्रोशर डाउनलोड करें", contact_us_btn: "संपर्क करें",
-            feat_clean_title: "स्वच्छ ऊर्जा", feat_clean_desc: "भविष्य के लिए टिकाऊ",
-            feat_affordable_title: "किफायती", feat_affordable_desc: "कम कीमत पर उच्च गुणवत्ता",
-            feat_reliable_title: "विश्वसनीय", feat_reliable_desc: "ग्रामीण जरूरतों के लिए निर्मित",
-            feat_impact_title: "प्रभाव संचालित", feat_impact_desc: "समुदायों में वास्तविक बदलाव",
+            download_brochure: "ब्रोशर डाउनलोड करें",
             complete_kit_title: "संपूर्ण किट अवलोकन", one_kit_solution: "एक किट। संपूर्ण समाधान।",
-            prod1_name: "सोलर पैनल (35W)", prod1_spec1: "35W मोनोक्रिस्टलाइन", prod1_spec2: "17-18V आउटपुट", prod1_spec3: "उच्च दक्षता", prod1_spec4: "मौसम प्रतिरोधी",
-            prod2_name: "मल्टीपर्पस बोर्ड", prod2_spec1: "20000mAh बैटरी", prod2_spec2: "ड्युअल इनपुट (सोलर/डीसी)", prod2_spec3: "2 USB आउटपुट (5V)", prod2_spec4: "एलईडी संकेतक",
-            prod3_name: "पंखा + लाइट", prod3_spec1: "10000mAh बैटरी", prod3_spec2: "4-6 घंटे बैकअप", prod3_spec3: "3 स्पीड पंखा", prod3_spec4: "एलईडी लाइट",
-            prod4_name: "ब्लूटूथ स्पीकर", prod4_spec1: "5000mAh बैटरी", prod4_spec2: "ब्लूटूथ, एफएम, यूएसबी", prod4_spec3: "स्पष्ट और तेज आवाज", prod4_spec4: "यूएसबी चार्जिंग",
-            prod5_name: "इमरजेंसी लाइट", prod5_spec1: "4000mAh बैटरी", prod5_spec2: "हुक के साथ", prod5_spec3: "4-6 घंटे बैकअप", prod5_spec4: "टाइप-सी चार्जिंग",
-            prod6_name: "टॉर्च", prod6_spec1: "3000mAh बैटरी", prod6_spec2: "लंबी रेंज बीम", prod6_spec3: "2 लाइट मोड", prod6_spec4: "टाइप-सी चार्जिंग",
-            prod7_name: "एलईडी बल्ब (2 पीस)", prod7_spec1: "कम बिजली खपत", prod7_spec2: "तेज रोशनी", prod7_spec3: "5W प्रत्येक", prod7_spec4: "लंबा जीवन",
+            kit_desc1: "सोलर पैनल (35W)", kit_desc2: "मल्टीपर्पस बोर्ड", kit_desc3: "पंखा + लाइट", kit_desc4: "ब्लूटूथ स्पीकर",
+            kit_desc5: "इमरजेंसी लाइट", kit_desc6: "टॉर्च", kit_desc7: "2 एलईडी बल्ब", kit_desc8: "संपूर्ण 7-इन-1 सोलर होम किट",
+            our_7_products_title: "हमारे 7 उत्पाद",
+            prod7_name1: "सोलर पैनल (35W)", prod7_desc1: "उच्च दक्षता मोनोक्रिस्टलाइन, मौसम प्रतिरोधी।",
+            prod7_name2: "मल्टीपर्पस बोर्ड", prod7_desc2: "20000mAh बैटरी, ड्युअल इनपुट, 2 यूएसबी आउटपुट।",
+            prod7_name3: "पंखा + लाइट", prod7_desc3: "3 स्पीड पंखा, एलईडी लाइट, 10000mAh बैटरी।",
+            prod7_name4: "ब्लूटूथ स्पीकर", prod7_desc4: "5000mAh बैटरी, एफएम, यूएसबी, तेज आवाज।",
+            prod7_name5: "इमरजेंसी लाइट", prod7_desc5: "4000mAh, हुक के साथ, 4-6 घंटे बैकअप।",
+            prod7_name6: "टॉर्च", prod7_desc6: "3000mAh, लंबी रेंज बीम, 2 लाइट मोड।",
+            prod7_name7: "एलईडी बल्ब (2 पीस)", prod7_desc7: "5W प्रत्येक, कम बिजली खपत, लंबा जीवन।",
             tech_spec_title: "तकनीकी विशिष्टताएँ",
             table_product: "उत्पाद", table_battery: "बैटरी क्षमता", table_backup: "बैकअप समय*", table_charging: "चार्जिंग समय", table_features: "आउटपुट / विशेषताएँ",
             table_row1_prod: "पंखा + लाइट", table_row1_feat: "3 स्पीड पंखा + एलईडी लाइट",
@@ -974,29 +745,10 @@
             table_row5_prod: "मल्टीपर्पस बोर्ड", table_row5_feat: "ड्युअल इनपुट, 2 यूएसबी आउटपुट",
             table_row6_prod: "सोलर पैनल", table_row6_feat: "17-18V आउटपुट", table_row6_charging: "(सूर्य प्रकाश)",
             backup_note: "*बैकअप समय उपयोग के अनुसार भिन्न हो सकता है।",
-            kit_desc1: "सोलर पैनल (35W) – उच्च दक्षता मोनोक्रिस्टलाइन",
-            kit_desc2: "मल्टीपर्पस बोर्ड – 20000mAh बैटरी, ड्युअल इनपुट",
-            kit_desc3: "पंखा + लाइट – 3 स्पीड पंखा, एलईडी लाइट, 10000mAh",
-            kit_desc4: "ब्लूटूथ स्पीकर – 5000mAh, एफएम, यूएसबी",
-            kit_desc5: "इमरजेंसी लाइट – 4000mAh, हुक के साथ",
-            kit_desc6: "टॉर्च – 3000mAh, लंबी रेंज बीम, 2 मोड",
-            kit_desc7: "एलईडी बल्ब (2 पीस) – 5W प्रत्येक, कम बिजली खपत",
-            kit_desc8: "संपूर्ण 7-इन-1 सोलर होम किट – सब कुछ शामिल",
-            // Our 7 Products section Hindi
-            our_7_products_title: "हमारे 7 उत्पाद",
-            prod7_name1: "सोलर पैनल (35W)", prod7_desc1: "उच्च दक्षता मोनोक्रिस्टलाइन, मौसम प्रतिरोधी।",
-            prod7_name2: "मल्टीपर्पस बोर्ड", prod7_desc2: "20000mAh बैटरी, ड्युअल इनपुट, 2 यूएसबी आउटपुट।",
-            prod7_name3: "पंखा + लाइट", prod7_desc3: "3 स्पीड पंखा, एलईडी लाइट, 10000mAh बैटरी।",
-            prod7_name4: "ब्लूटूथ स्पीकर", prod7_desc4: "5000mAh बैटरी, एफएम, यूएसबी, तेज आवाज।",
-            prod7_name5: "इमरजेंसी लाइट", prod7_desc5: "4000mAh, हुक के साथ, 4-6 घंटे बैकअप।",
-            prod7_name6: "टॉर्च", prod7_desc6: "3000mAh, लंबी रेंज बीम, 2 लाइट मोड।",
-            prod7_name7: "एलईडी बल्ब (2 पीस)", prod7_desc7: "5W प्रत्येक, कम बिजली खपत, लंबा जीवन।",
-            // Use Cases section Hindi
+            how_it_works_title: "यह कैसे काम करता है",
             usecase_title: "उपयोग के मामले",
             whychoose_title: "विग्रिड क्यों चुनें?",
-            whychoose_desc1: "विग्रिड सोलर होम किट विशेष रूप से ग्रामीण भारत के लिए डिज़ाइन किए गए हैं – विश्वसनीय, किफायती और उपयोग में आसान।",
-            whychoose_desc2: "✔ एक पूर्ण किट में 7 आवश्यक उत्पाद\n✔ कोई बिजली बिल नहीं – मुफ्त सौर ऊर्जा\n✔ टिकाऊ और मौसम प्रतिरोधी डिज़ाइन\n✔ आसान स्थापना, किसी तकनीकी ज्ञान की आवश्यकता नहीं\n✔ भारत भर में हजारों परिवारों द्वारा भरोसा किया गया",
-            // Product Gallery + FAQ section Hindi (Section 7)
+            whychoose_text: "✔ एक किट, संपूर्ण समाधान\n✔ 100% सौर ऊर्जा\n✔ हर परिवार के लिए किफायती\n✔ पोर्टेबल और उपयोग में आसान\n✔ ग्रामीण भारत के लिए डिज़ाइन किया गया\n✔ उच्च गुणवत्ता और टिकाऊ\n✔ कम रखरखाव\n✔ भारत में निर्मित, भारत के लिए निर्मित",
             product_gallery_title: "उत्पाद गैलरी",
             faq_title: "अक्सर पूछे जाने वाले प्रश्न",
             faq_q1: "प्रश्न 1. क्या यह बिना बिजली के काम करेगा?",
@@ -1009,7 +761,6 @@
             faq_a4: "पूरी तरह चार्ज होने में 4–5 घंटे की अच्छी धूप लगती है।",
             faq_q5: "प्रश्न 5. क्या यह बच्चों के लिए सुरक्षित है?",
             faq_a5: "हाँ, सभी उत्पाद सुरक्षित, टिकाऊ और परिवारिक उपयोग के लिए डिज़ाइन किए गए हैं।",
-            // Footer Hindi
             footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_impact: "प्रभाव", footer_contact: "संपर्क करें",
             footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
             footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
@@ -1050,13 +801,11 @@
         if (saved && (saved === 'en' || saved === 'hi')) currentLang = saved;
         updateProductsPage(currentLang);
         
-        // Language toggle buttons
         const desktopLangBtn = document.getElementById('langToggleBtn');
         const mobileLangBtn = document.getElementById('mobileLangSwitch');
         if (desktopLangBtn) desktopLangBtn.addEventListener('click', toggleLang);
         if (mobileLangBtn) mobileLangBtn.addEventListener('click', toggleLang);
         
-        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         if (menuToggle && navLinks) {
@@ -1074,7 +823,6 @@
                     }
                 }
             });
-            // Close menu when clicking outside
             document.addEventListener('click', (event) => {
                 if (navLinks.classList.contains('active') && !navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
                     navLinks.classList.remove('active');
@@ -1085,7 +833,6 @@
                     }
                 }
             });
-            // Close menu after clicking a link
             navLinks.querySelectorAll('a, .mobile-lang-switch').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
@@ -1098,7 +845,6 @@
             });
         }
         
-        // Buttons demo
         const brochureBtn = document.getElementById('downloadBrochureBtn');
         if (brochureBtn) {
             brochureBtn.addEventListener('click', (e) => {
@@ -1106,15 +852,7 @@
                 alert(currentLang === 'en' ? '📄 Brochure download demo: Contact sales@vigrid.com' : '📄 ब्रोशर डाउनलोड डेमो: संपर्क करें sales@vigrid.com');
             });
         }
-        const contactBtn = document.getElementById('contactProductsBtn');
-        if (contactBtn) {
-            contactBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert(currentLang === 'en' ? '📞 Contact us: +91 12345 67890 or info@vigrid.com' : '📞 हमसे संपर्क करें: +91 12345 67890 या info@vigrid.com');
-            });
-        }
         
-        // Footer newsletter
         const footerBtn = document.getElementById('footerNewsBtn');
         const footerEmail = document.getElementById('footerNewsEmail');
         const footerFeed = document.getElementById('footerNewsFeedback');
@@ -1132,15 +870,11 @@
             });
         }
         
-        // Social icons alert
         document.querySelectorAll('.copyright i').forEach(icon => {
             icon.style.cursor = 'pointer';
             icon.addEventListener('click', () => alert('🌍 ' + (currentLang === 'en' ? 'Connect with VIGRID on social media!' : 'सोशल मीडिया पर विग्रिड से जुड़ें!')));
         });
     });
 </script>
-                
-   
-            
 </body>
 </html>
