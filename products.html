@@ -158,11 +158,13 @@
  /* - - - - - - - - - - - - - - - - - - - - - */       
    /* Complete Kit Overview - 8 parts (7x10%, 1x30%) */
         
-.kit-parts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin: 5px 0;
+
+       .kit-parts-container {
+    display: grid;
+    grid-template-columns: repeat(7, 8%) 40%; /* 7×8% = 56% + 40% = 96% */
+    gap: 12px;
+    margin: 30px 0;
+    overflow-x: auto;
     align-items: stretch;
 }
 
