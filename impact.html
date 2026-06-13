@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Impact page specific styles */
-        .impact-hero {
+       /*  .impact-hero {
             text-align: center;
             padding: 40px 0 20px;
         }
@@ -230,6 +230,50 @@
         @media (max-width: 500px) {
             .stats-grid-impact { grid-template-columns: 1fr; }
         }
+
+*/
+/* Impact Hero - Two Columns */
+.impact-hero-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 40px 0 20px;
+}
+.impact-hero-left h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1e3a1e;
+    margin-bottom: 8px;
+}
+.impact-hero-left .tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #eab308;
+    margin-bottom: 16px;
+}
+.impact-hero-left p {
+    font-size: 1.05rem;
+    color: #2c4727;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+.impact-hero-right img {
+    width: 100%;
+    border-radius: 32px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: block;
+}
+@media (max-width: 800px) {
+    .impact-hero-two-col {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    .impact-hero-left {
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -272,7 +316,18 @@
             <p data-i18n="impact_desc">VIGRID is more than a product – it’s a movement to bring clean energy, education, and better lives to every rural home in India.</p>
             <a href="#" class="btn-primary" id="seeJourneyBtn" style="margin-top: 16px;"><span data-i18n="see_journey">SEE OUR JOURNEY</span> →</a>
         </div>
-
+<!-- Impact Hero - Two Columns -->
+<div class="impact-hero-two-col">
+    <div class="impact-hero-left">
+        <h1 data-i18n="impact_heading">OUR IMPACT</h1>
+        <div class="tagline" data-i18n="impact_tagline">Lighting Homes. Transforming Lives.</div>
+        <p data-i18n="impact_desc">VIGRID is more than a product – it’s a movement to bring clean energy, education, and better lives to every rural home in India.</p>
+        <a href="#" class="btn-primary" id="seeJourneyBtn"><span data-i18n="see_journey">SEE OUR JOURNEY</span> →</a>
+    </div>
+    <div class="impact-hero-right">
+        <img src="impact-hero.jpg" alt="VIGRID Impact" class="impact-hero-img">
+    </div>
+</div>
         <!-- Stats -->
         <div class="stats-grid-impact">
             <div class="stat-card-impact"><div class="stat-number-impact">250+</div><div class="stat-label-impact" data-i18n="stat_villages">Villages Reached<br>And counting...</div></div>
