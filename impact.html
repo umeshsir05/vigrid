@@ -322,6 +322,24 @@
         height: 100px;
     }
 }
+     .impact-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.impact-bullet-list li {
+    padding: 4px 0 4px 20px;
+    position: relative;
+    font-size: 0.8rem;
+    color: #2c4727;
+}
+.impact-bullet-list li:before {
+    content: "✓";
+    color: #2c5e2a;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -486,57 +504,68 @@
         </div>
     </div>
     <div class="story-row">
-        <!-- Row 2: 4 stories -->
-        <div class="story-card-seven">
-            <div class="story-header">
-                <i class="fas fa-info-circle"></i>
-                <h3 data-i18n="story4_title">EDUCATION IMPACT</h3>
-            </div>
-            <div class="story-body">
-                <img src="image4.png" alt="Farmer Story">
-                <div class="story-desc">
-                    <p data-i18n="story4_quote">“Solar power has changed my life. No more kerosene lamps.”</p>
-                    <div class="story-name" data-i18n="story4_name">— Mohan, Farmer<br>Village – Koraput, Odisha</div>
-                </div>
+    <!-- EDUCATION IMPACT -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            <i class="fas fa-info-circle"></i>
+            <h3 data-i18n="story4_title">EDUCATION IMPACT</h3>
+        </div>
+        <div class="story-body">
+            <img src="image4.png" alt="Education Impact">
+            <div class="story-desc">
+                <p data-i18n="education_desc">Children Can Study At Night – VIGRID brings light so that every child can study, learn and create a better future.</p>
             </div>
         </div>
-        <div class="story-card-seven">
-            <div class="story-header">
-                <i class="fas fa-info-circle"></i>
-                <h3 data-i18n="story5_title">WOMEN EMPOWERMENT</h3>
-            </div>
-            <div class="story-body">
-                <img src="image5.png" alt="Teacher Story">
-                <div class="story-desc">
-                    <p data-i18n="story5_quote">“My students can now study at night and do their homework.”</p>
-                    <div class="story-name" data-i18n="story5_name">— Anita, Teacher<br>Village – Jashpur, Chhattisgarh</div>
-                </div>
+    </div>
+
+    <!-- WOMEN EMPOWERMENT -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            <i class="fas fa-info-circle"></i>
+            <h3 data-i18n="story5_title">WOMEN EMPOWERMENT</h3>
+        </div>
+        <div class="story-body">
+            <img src="image5.png" alt="Women Empowerment">
+            <div class="story-desc">
+                <ul class="impact-bullet-list">
+                    <li data-i18n="women1">Easy lighting for household work</li>
+                    <li data-i18n="women2">Mobile charging for communication</li>
+                    <li data-i18n="women3">Safe and secure homes at night</li>
+                    <li data-i18n="women4">More time for self development</li>
+                </ul>
             </div>
         </div>
-        <div class="story-card-seven">
-            <div class="story-header">
-                <i class="fas fa-info-circle"></i>
-                <h3 data-i18n="story6_title">ENVIRONMENT IMPACT</h3>
-            </div>
-            <div class="story-body">
-                <img src="image6.png" alt="Tailor Story">
-                <div class="story-desc">
-                    <p data-i18n="story6_quote">“I can work on my sewing machine even after sunset.”</p>
-                    <div class="story-name" data-i18n="story6_name">— Kamla, Tailor<br>Village – Mayurbhanj, Odisha</div>
-                </div>
+    </div>
+
+    <!-- ENVIRONMENT IMPACT -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            <i class="fas fa-info-circle"></i>
+            <h3 data-i18n="story6_title">ENVIRONMENT IMPACT</h3>
+        </div>
+        <div class="story-body">
+            <img src="image6.png" alt="Environment Impact">
+            <div class="story-desc">
+                <ul class="impact-bullet-list">
+                    <li data-i18n="env1">100% Clean Energy</li>
+                    <li data-i18n="env2">No Diesel, No Kerosene</li>
+                    <li data-i18n="env3">Less Pollution</li>
+                    <li data-i18n="env4">Reduced Carbon Emission</li>
+                </ul>
             </div>
         </div>
-        <div class="story-card-seven">
-            <div class="story-header">
-                <i class="fas fa-info-circle"></i>
-                <h3 data-i18n="story7_title">BETTER LIFE FOR ALL</h3>
-            </div>
-            <div class="story-body">
-                <img src="image7.png" alt="Business Owner Story">
-                <div class="story-desc">
-                    <p data-i18n="story7_quote">“VIGRID helped me extend my shop hours and double my income.”</p>
-                    <div class="story-name" data-i18n="story7_name">— Prakash, Shopkeeper<br>Village – Ranchi, Jharkhand</div>
-                </div>
+    </div>
+
+    <!-- BETTER LIFE FOR ALL -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            <i class="fas fa-info-circle"></i>
+            <h3 data-i18n="story7_title">BETTER LIFE FOR ALL</h3>
+        </div>
+        <div class="story-body">
+            <img src="image7.png" alt="Better Life">
+            <div class="story-desc">
+                <p data-i18n="better_life_desc">Better health, better education, better income and a better tomorrow — VIGRID is building stronger rural India.</p>
             </div>
         </div>
     </div>
