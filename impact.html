@@ -105,7 +105,89 @@
         gap: 16px;
     }
 }
-
+/* Before vs After - New two column layout with arrow */
+.before-after-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 40px 0;
+    background: #fafdf5;
+    border-radius: 48px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+.before-col, .after-col {
+    flex: 1;
+    min-width: 250px;
+}
+.before-col {
+    text-align: center;
+}
+.after-col {
+    text-align: center;
+}
+.before-img, .after-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.before-box, .after-box {
+    background: white;
+    border-radius: 28px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.before-box h3, .after-box h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #1e3a1e;
+    text-align: center;
+}
+.before-box ul, .after-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+.before-box li, .after-box li {
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.before-box li:before {
+    content: "✗";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.after-box li:before {
+    content: "✓";
+    color: #2c5e2a;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.arrow-icon {
+    font-size: 3rem;
+    color: #eab308;
+    font-weight: bold;
+    text-align: center;
+    min-width: 60px;
+}
+@media (max-width: 800px) {
+    .before-after-new {
+        flex-direction: column;
+    }
+    .arrow-icon {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
         
     </style>
 </head>
@@ -181,29 +263,36 @@
     </div>
 </div>
 
-        <!-- Before vs After -->
-        <div class="before-after">
-            <div class="before-box">
-                <h3 data-i18n="before_title">BEFORE VIGRID</h3>
-                <ul>
-                    <li data-i18n="before1">Dark homes</li>
-                    <li data-i18n="before2">No mobile charging</li>
-                    <li data-i18n="before3">Children can’t study at night</li>
-                    <li data-i18n="before4">Power cuts & outages</li>
-                    <li data-i18n="before5">Dependence on candles</li>
-                </ul>
-            </div>
-            <div class="after-box">
-                <h3 data-i18n="after_title">AFTER VIGRID</h3>
-                <ul>
-                    <li data-i18n="after1">Bright light in every home</li>
-                    <li data-i18n="after2">Mobile charging anytime</li>
-                    <li data-i18n="after3">Children can study at night</li>
-                    <li data-i18n="after4">Fan & comfort in summer</li>
-                    <li data-i18n="after5">Entertainment & better life</li>
-                </ul>
-            </div>
+        <!-- Before vs After - Two Parts with Arrow -->
+<div class="before-after-new">
+    <div class="before-col">
+        <img src="img1.jpg" alt="Before VIGRID" class="before-img">
+        <div class="before-box">
+            <h3 data-i18n="before_title">BEFORE VIGRID</h3>
+            <ul>
+                <li data-i18n="before1">Dark homes</li>
+                <li data-i18n="before2">No mobile charging</li>
+                <li data-i18n="before3">Children can’t study at night</li>
+                <li data-i18n="before4">Power cuts & outages</li>
+                <li data-i18n="before5">Dependence on candles</li>
+            </ul>
         </div>
+    </div>
+    <div class="arrow-icon">➡️</div>
+    <div class="after-col">
+        <div class="after-box">
+            <h3 data-i18n="after_title">AFTER VIGRID</h3>
+            <ul>
+                <li data-i18n="after1">Bright light in every home</li>
+                <li data-i18n="after2">Mobile charging anytime</li>
+                <li data-i18n="after3">Children can study at night</li>
+                <li data-i18n="after4">Fan & comfort in summer</li>
+                <li data-i18n="after5">Entertainment & better life</li>
+            </ul>
+        </div>
+        <img src="img2.jpg" alt="After VIGRID" class="after-img">
+    </div>
+</div>
 
         <!-- Real Life Impact Stories -->
         <h2 class="section-title" data-i18n="stories_title">REAL LIFE IMPACT STORIES</h2>
