@@ -666,7 +666,9 @@
         </div>
     </div>
 </footer>
-<script>
+    
+    
+    <script>
     // Translations for Impact page (English + Hindi)
     const impactTranslations = {
         en: {
@@ -680,17 +682,18 @@
             before1: "Dark homes", before2: "No mobile charging", before3: "Children can’t study at night", before4: "Power cuts & outages", before5: "Dependence on candles",
             after1: "Bright light in every home", after2: "Mobile charging anytime", after3: "Children can study at night", after4: "Fan & comfort in summer", after5: "Entertainment & better life",
             stories_title: "REAL LIFE IMPACT STORIES",
+            // First row (3 stories)
             story1_title: "STUDENT", story1_quote: "“Now I can study at night and focus on my dreams.”", story1_name: "— Suresh, Class 9<br>Village – Kanker, Chhattisgarh",
             story2_title: "SHOP OWNER", story2_quote: "“My shop stays open late and I can serve more customers.”", story2_name: "— Ramesh Sahu<br>Village – Dantewada",
             story3_title: "FAMILY", story3_quote: "“Even during power cuts, our home stays bright.”", story3_name: "— Lata & Family<br>Village – Bastar",
-            story4_title: "FARMER", story4_quote: "“Solar power has changed my life. No more kerosene lamps.”", story4_name: "— Mohan, Farmer<br>Village – Koraput, Odisha",
-            story5_title: "TEACHER", story5_quote: "“My students can now study at night and do their homework.”", story5_name: "— Anita, Teacher<br>Village – Jashpur, Chhattisgarh",
-            story6_title: "TAILOR", story6_quote: "“I can work on my sewing machine even after sunset.”", story6_name: "— Kamla, Tailor<br>Village – Mayurbhanj, Odisha",
-            story7_title: "SMALL BUSINESS OWNER", story7_quote: "“VIGRID helped me extend my shop hours and double my income.”", story7_name: "— Prakash, Shopkeeper<br>Village – Ranchi, Jharkhand",
-            education_title: "EDUCATION IMPACT", education_desc: "Children Can Study At Night – VIGRID brings light so that every child can study, learn and create a better future.",
-            women_title: "WOMEN EMPOWERMENT", women1: "Easy lighting for household work", women2: "Mobile charging for communication", women3: "Safe and secure homes at night", women4: "More time for self development",
-            environment_title: "ENVIRONMENT IMPACT", env1: "100% Clean Energy", env2: "No Diesel, No Kerosene", env3: "Less Pollution", env4: "Reduced Carbon Emission",
-            better_life_title: "BETTER LIFE FOR ALL", better_life_desc: "Better health, better education, better income and a better tomorrow — VIGRID is building stronger rural India.",
+            // Second row (4 stories)
+            story4_title: "EDUCATION IMPACT", education_desc: "Children Can Study At Night – VIGRID brings light so that every child can study, learn and create a better future.",
+            story5_title: "WOMEN EMPOWERMENT",
+            women1: "Easy lighting for household work", women2: "Mobile charging for communication", women3: "Safe and secure homes at night", women4: "More time for self development",
+            story6_title: "ENVIRONMENT IMPACT",
+            env1: "100% Clean Energy", env2: "No Diesel, No Kerosene", env3: "Less Pollution", env4: "Reduced Carbon Emission",
+            story7_title: "BETTER LIFE FOR ALL", better_life_desc: "Better health, better education, better income and a better tomorrow — VIGRID is building stronger rural India.",
+            // Other sections
             vision_title: "VIGRID 2030 VISION", vision1: "1,00,000+ Homes to be empowered", vision2: "Multiple States across India", vision3: "Better Education for every child", vision4: "Solar First Adoption movement",
             where_title: "WHERE WE ARE MAKING AN IMPACT", where1: "Chhattisgarh – Reaching deep rural areas", where2: "Odisha – Empowering tribal communities", where3: "Jharkhand – Bringing light to villages without electricity",
             expansion_title: "OUR EXPANSION PLAN", exp1: "More Villages", exp2: "More Families", exp3: "More Livelihoods", exp4: "More Impact", exp5: "Expanding every year to reach more people.",
@@ -715,14 +718,12 @@
             story1_title: "छात्र", story1_quote: "“अब मैं रात में पढ़ सकता हूँ और अपने सपनों पर ध्यान केंद्रित कर सकता हूँ।”", story1_name: "— सुरेश, कक्षा 9<br>गाँव – कांकेर, छत्तीसगढ़",
             story2_title: "दुकानदार", story2_quote: "“मेरी दुकान देर तक खुली रहती है और मैं अधिक ग्राहकों को सेवा दे सकता हूँ।”", story2_name: "— रमेश साहू<br>गाँव – दंतेवाड़ा",
             story3_title: "परिवार", story3_quote: "“बिजली कटौती के दौरान भी, हमारा घर रोशन रहता है।”", story3_name: "— लता और परिवार<br>गाँव – बस्तर",
-            story4_title: "किसान", story4_quote: "“सौर ऊर्जा ने मेरा जीवन बदल दिया। अब मिट्टी के तेल के लैंप नहीं।”", story4_name: "— मोहन, किसान<br>गाँव – कोरापुट, ओडिशा",
-            story5_title: "शिक्षक", story5_quote: "“मेरे छात्र अब रात में पढ़ सकते हैं और अपना होमवर्क कर सकते हैं।”", story5_name: "— अनीता, शिक्षक<br>गाँव – जशपुर, छत्तीसगढ़",
-            story6_title: "दर्जी", story6_quote: "“मैं सूर्यास्त के बाद भी अपनी सिलाई मशीन पर काम कर सकती हूँ।”", story6_name: "— कमला, दर्जी<br>गाँव – मयूरभंज, ओडिशा",
-            story7_title: "छोटे व्यवसायी", story7_quote: "“विग्रिड ने मुझे अपनी दुकान के घंटे बढ़ाने और अपनी आय दोगुनी करने में मदद की।”", story7_name: "— प्रकाश, दुकानदार<br>गाँव – रांची, झारखंड",
-            education_title: "शिक्षा प्रभाव", education_desc: "बच्चे रात में पढ़ सकते हैं – विग्रिड रोशनी लाता है ताकि हर बच्चा पढ़ सके, सीख सके और बेहतर भविष्य बना सके।",
-            women_title: "महिला सशक्तिकरण", women1: "घरेलू कामों के लिए आसान रोशनी", women2: "संचार के लिए मोबाइल चार्जिंग", women3: "रात में सुरक्षित घर", women4: "आत्म विकास के लिए अधिक समय",
-            environment_title: "पर्यावरण प्रभाव", env1: "100% स्वच्छ ऊर्जा", env2: "न डीजल, न मिट्टी का तेल", env3: "कम प्रदूषण", env4: "कम कार्बन उत्सर्जन",
-            better_life_title: "सभी के लिए बेहतर जीवन", better_life_desc: "बेहतर स्वास्थ्य, बेहतर शिक्षा, बेहतर आय और एक बेहतर कल — विग्रिड मजबूत ग्रामीण भारत का निर्माण कर रहा है।",
+            story4_title: "शिक्षा प्रभाव", education_desc: "बच्चे रात में पढ़ सकते हैं – विग्रिड रोशनी लाता है ताकि हर बच्चा पढ़ सके, सीख सके और बेहतर भविष्य बना सके।",
+            story5_title: "महिला सशक्तिकरण",
+            women1: "घरेलू कामों के लिए आसान रोशनी", women2: "संचार के लिए मोबाइल चार्जिंग", women3: "रात में सुरक्षित घर", women4: "आत्म विकास के लिए अधिक समय",
+            story6_title: "पर्यावरण प्रभाव",
+            env1: "100% स्वच्छ ऊर्जा", env2: "न डीजल, न मिट्टी का तेल", env3: "कम प्रदूषण", env4: "कम कार्बन उत्सर्जन",
+            story7_title: "सभी के लिए बेहतर जीवन", better_life_desc: "बेहतर स्वास्थ्य, बेहतर शिक्षा, बेहतर आय और एक बेहतर कल — विग्रिड मजबूत ग्रामीण भारत का निर्माण कर रहा है।",
             vision_title: "विग्रिड 2030 विजन", vision1: "1,00,000+ घर सशक्त होंगे", vision2: "भारत भर के कई राज्य", vision3: "हर बच्चे के लिए बेहतर शिक्षा", vision4: "सोलर फर्स्ट अपनाने का आंदोलन",
             where_title: "हम कहाँ प्रभाव बना रहे हैं", where1: "छत्तीसगढ़ – गहरे ग्रामीण क्षेत्रों तक पहुँच", where2: "ओडिशा – जनजातीय समुदायों को सशक्त बनाना", where3: "झारखंड – बिना बिजली वाले गाँवों में रोशनी लाना",
             expansion_title: "हमारी विस्तार योजना", exp1: "अधिक गाँव", exp2: "अधिक परिवार", exp3: "अधिक आजीविका", exp4: "अधिक प्रभाव", exp5: "हर साल अधिक लोगों तक पहुँचने के लिए विस्तार।",
@@ -834,6 +835,8 @@
         });
     });
 </script>
+    
+              
 
 </body>
 </html>
