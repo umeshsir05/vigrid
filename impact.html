@@ -232,10 +232,21 @@
     gap: 12px;
     justify-content: center;
 }
-.story-row:first-child .story-card-seven {
+/*.story-row:first-child .story-card-seven {
     flex: 1 1 calc(33.33% - 24px);
-    min-width: 250px;
+    min-width: 250px; 
+}*/
+        /* Make all cards same width - both rows use 25% basis */
+.story-row:first-child .story-card-seven,
+.story-row:last-child .story-card-seven {
+    flex: 1 1 calc(25% - 24px);
+    min-width: 220px;
 }
+    .story-row:first-child
+        {
+    justify-content: center;
+}
+        
 .story-row:last-child .story-card-seven {
     flex: 1 1 calc(24% - 24px);
     min-width: 250px;
