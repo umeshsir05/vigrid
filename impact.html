@@ -226,31 +226,34 @@
     gap: 5px;
     margin: 5px 0;
 }
-.story-row {
+
+/* First row (3 cards) – flexible, can wrap */
+.story-row:first-child {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
 }
-/*.story-row:first-child .story-card-seven {
-    flex: 1 1 calc(33.33% - 24px);
-    min-width: 250px; 
-}*/
-        /* Make all cards same width - both rows use 25% basis */
-.story-row:first-child .story-card-seven,
-.story-row:last-child .story-card-seven {
+.story-row:first-child .story-card-seven {
     flex: 1 1 calc(25% - 24px);
     min-width: 220px;
 }
-    .story-row:first-child
-        {
-    justify-content: center;
+
+/* Second row (4 cards) – always one horizontal row, no wrap, horizontal scroll if needed */
+.story-row:last-child {
+    display: flex;
+    flex-wrap: nowrap;          /* never wrap */
+    gap: 12px;
+    overflow-x: auto;           /* horizontal scroll on small screens */
+    padding-bottom: 10px;       /* space for scrollbar */
+    justify-content: flex-start;
 }
-        
 .story-row:last-child .story-card-seven {
-    flex: 1 1 calc(24% - 24px);
-    min-width: 250px;
+    flex: 0 0 calc(24% - 12px); /* fixed width for 4 cards (accounting for gap) */
+    min-width: 220px;
 }
+
+/* Common card styles */
 .story-card-seven {
     background: white;
     border-radius: 14px;
@@ -307,16 +310,28 @@
     font-size: 0.75rem;
     color: #1e3a1e;
 }
+
+/* Responsive adjustments */
 @media (max-width: 900px) {
-    .story-row:first-child .story-card-seven,
-    .story-row:last-child .story-card-seven {
+    /* First row: 2 cards per row */
+    .story-row:first-child .story-card-seven {
         flex: 1 1 calc(50% - 24px);
+    }
+    /* Second row: remains one horizontal row, but cards shrink a bit */
+    .story-row:last-child .story-card-seven {
+        flex: 0 0 calc(45% - 12px);
+        min-width: 200px;
     }
 }
 @media (max-width: 600px) {
-    .story-row:first-child .story-card-seven,
-    .story-row:last-child .story-card-seven {
+    /* First row: 1 card per row */
+    .story-row:first-child .story-card-seven {
         flex: 1 1 100%;
+    }
+    /* Second row: still one horizontal row (scroll), but cards slightly narrower */
+    .story-row:last-child .story-card-seven {
+        flex: 0 0 calc(70% - 12px);
+        min-width: 180px;
     }
     .story-body {
         flex-direction: column;
@@ -324,16 +339,13 @@
     }
     .story-body img {
         margin-bottom: 10px;
-    }
-}
-        
-        @media (max-width: 600px) {
-    .story-body img {
         width: 100px;
         height: 100px;
     }
 }
-     .impact-bullet-list {
+
+/* Bullet list styles (unchanged) */
+.impact-bullet-list {
     list-style: none;
     padding-left: 0;
     margin: 0;
