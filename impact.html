@@ -219,68 +219,100 @@
 }
 
 /* Real Life Impact Stories - 7 parts: 3+4 grid */
-.stories-grid-new {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+/* Real Life Impact Stories - 7 parts (3+4) */
+.stories-grid-seven {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     margin: 40px 0;
 }
-.story-item {
+.story-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+.story-row:first-child .story-card-seven {
+    flex: 1 1 calc(33.33% - 24px);
+    min-width: 250px;
+}
+.story-row:last-child .story-card-seven {
+    flex: 1 1 calc(25% - 24px);
+    min-width: 230px;
+}
+.story-card-seven {
     background: white;
-    border-radius: 24px;
+    border-radius: 28px;
     padding: 20px;
-    text-align: center;
     border: 1px solid #e8f0e2;
     transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
-.story-item:hover {
+.story-card-seven:hover {
     transform: translateY(-4px);
     border-color: #eab308;
 }
-.story-item img {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    border-radius: 16px;
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-bottom: 2px solid #eab308;
+    padding-bottom: 8px;
 }
-.story-item p {
+.story-header i {
+    font-size: 1.8rem;
+    color: #eab308;
+}
+.story-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1e3a1e;
+}
+.story-body {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.story-body img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+.story-desc {
+    flex: 1;
+}
+.story-desc p {
     font-size: 0.9rem;
+    line-height: 1.4;
     color: #2c4727;
-    line-height: 1.5;
+    margin-bottom: 8px;
 }
-/* First row: 3 items - span first 3 columns */
-.story-item:nth-child(1),
-.story-item:nth-child(2),
-.story-item:nth-child(3) {
-    grid-row: 1;
+.story-name {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #1e3a1e;
 }
-.story-item:nth-child(1) { grid-column: 1 / 2; }
-.story-item:nth-child(2) { grid-column: 2 / 3; }
-.story-item:nth-child(3) { grid-column: 3 / 4; }
-/* Second row: 4 items - span all 4 columns */
-.story-item:nth-child(4) { grid-row: 2; grid-column: 1 / 2; }
-.story-item:nth-child(5) { grid-row: 2; grid-column: 2 / 3; }
-.story-item:nth-child(6) { grid-row: 2; grid-column: 3 / 4; }
-.story-item:nth-child(7) { grid-row: 2; grid-column: 4 / 5; }
-
-/* Responsive: tablet - 2 columns, mobile - 1 column */
-@media (max-width: 800px) {
-    .stories-grid-new {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .story-item {
-        width: calc(50% - 20px);
-        margin: 10px;
+@media (max-width: 900px) {
+    .story-row:first-child .story-card-seven,
+    .story-row:last-child .story-card-seven {
+        flex: 1 1 calc(50% - 24px);
     }
 }
-@media (max-width: 550px) {
-    .story-item {
-        width: calc(100% - 20px);
+@media (max-width: 600px) {
+    .story-row:first-child .story-card-seven,
+    .story-row:last-child .story-card-seven {
+        flex: 1 1 100%;
+    }
+    .story-body {
+        flex-direction: column;
+        text-align: center;
+    }
+    .story-body img {
+        margin-bottom: 10px;
     }
 }
         
@@ -402,36 +434,107 @@
     </div>
 </div>
 
-        <!-- Real Life Impact Stories - 7 parts (3+4) -->
+
+        
+<!-- Real Life Impact Stories - 7 parts (3+4) -->
 <h2 class="section-title" data-i18n="stories_title">REAL LIFE IMPACT STORIES</h2>
-<div class="stories-grid-new">
-    <div class="story-item">
-        <img src="image1.jpg" alt="Story 1">
-        <p data-i18n="story1_desc">“Now I can study at night and focus on my dreams.”<br>— Suresh, Class 9, Chhattisgarh</p>
+<div class="stories-grid-seven">
+    <div class="story-row">
+        <!-- Row 1: 3 stories -->
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story1_title">STUDENT</h3>
+            </div>
+            <div class="story-body">
+                <img src="image1.jpg" alt="Student Story">
+                <div class="story-desc">
+                    <p data-i18n="story1_quote">“Now I can study at night and focus on my dreams.”</p>
+                    <div class="story-name" data-i18n="story1_name">— Suresh, Class 9<br>Village – Kanker, Chhattisgarh</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story2_title">SHOP OWNER</h3>
+            </div>
+            <div class="story-body">
+                <img src="image2.jpg" alt="Shop Owner Story">
+                <div class="story-desc">
+                    <p data-i18n="story2_quote">“My shop stays open late and I can serve more customers.”</p>
+                    <div class="story-name" data-i18n="story2_name">— Ramesh Sahu<br>Village – Dantewada</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story3_title">FAMILY</h3>
+            </div>
+            <div class="story-body">
+                <img src="image3.jpg" alt="Family Story">
+                <div class="story-desc">
+                    <p data-i18n="story3_quote">“Even during power cuts, our home stays bright.”</p>
+                    <div class="story-name" data-i18n="story3_name">— Lata & Family<br>Village – Bastar</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="story-item">
-        <img src="image2.jpg" alt="Story 2">
-        <p data-i18n="story2_desc">“My shop stays open late and I can serve more customers.”<br>— Ramesh Sahu, Dantewada</p>
-    </div>
-    <div class="story-item">
-        <img src="image3.jpg" alt="Story 3">
-        <p data-i18n="story3_desc">“Even during power cuts, our home stays bright.”<br>— Lata & Family, Bastar</p>
-    </div>
-    <div class="story-item">
-        <img src="image4.jpg" alt="Story 4">
-        <p data-i18n="story4_desc">“Solar light helped my children study after sunset.”<br>— Meena Bai, Korba</p>
-    </div>
-    <div class="story-item">
-        <img src="image5.jpg" alt="Story 5">
-        <p data-i18n="story5_desc">“I can charge my phone and stay connected with family.”<br>— Sanjay, Raigarh</p>
-    </div>
-    <div class="story-item">
-        <img src="image6.jpg" alt="Story 6">
-        <p data-i18n="story6_desc">“No more kerosene lamps – clean and bright light.”<br>— Anita, Jashpur</p>
-    </div>
-    <div class="story-item">
-        <img src="image7.jpg" alt="Story 7">
-        <p data-i18n="story7_desc">“VIGRID gave us hope and a better future.”<br>— Village Council, Kanker</p>
+    <div class="story-row">
+        <!-- Row 2: 4 stories -->
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story4_title">FARMER</h3>
+            </div>
+            <div class="story-body">
+                <img src="image4.jpg" alt="Farmer Story">
+                <div class="story-desc">
+                    <p data-i18n="story4_quote">“Solar power has changed my life. No more kerosene lamps.”</p>
+                    <div class="story-name" data-i18n="story4_name">— Mohan, Farmer<br>Village – Koraput, Odisha</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story5_title">TEACHER</h3>
+            </div>
+            <div class="story-body">
+                <img src="image5.jpg" alt="Teacher Story">
+                <div class="story-desc">
+                    <p data-i18n="story5_quote">“My students can now study at night and do their homework.”</p>
+                    <div class="story-name" data-i18n="story5_name">— Anita, Teacher<br>Village – Jashpur, Chhattisgarh</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story6_title">TAILOR</h3>
+            </div>
+            <div class="story-body">
+                <img src="image6.jpg" alt="Tailor Story">
+                <div class="story-desc">
+                    <p data-i18n="story6_quote">“I can work on my sewing machine even after sunset.”</p>
+                    <div class="story-name" data-i18n="story6_name">— Kamla, Tailor<br>Village – Mayurbhanj, Odisha</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 data-i18n="story7_title">SMALL BUSINESS OWNER</h3>
+            </div>
+            <div class="story-body">
+                <img src="image7.jpg" alt="Business Owner Story">
+                <div class="story-desc">
+                    <p data-i18n="story7_quote">“VIGRID helped me extend my shop hours and double my income.”</p>
+                    <div class="story-name" data-i18n="story7_name">— Prakash, Shopkeeper<br>Village – Ranchi, Jharkhand</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
