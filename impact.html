@@ -106,7 +106,8 @@
     }
 }
 /* Before vs After - New two column layout with arrow */
-.before-after-new {
+/* Before vs After - Complex 4-part layout */
+.before-after-complex {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,46 +118,51 @@
     padding: 40px;
     flex-wrap: wrap;
 }
-.before-col, .after-col {
-    flex: 1;
-    min-width: 250px;
-}
-.before-col {
-    text-align: center;
-}
-.after-col {
-    text-align: center;
-}
-.before-img, .after-img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-.before-box, .after-box {
+.before-wrapper, .after-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 2;
     background: white;
-    border-radius: 28px;
+    border-radius: 32px;
     padding: 20px;
-    text-align: left;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+.before-wrapper {
+    flex: 2;
+}
+.after-wrapper {
+    flex: 2;
+}
+.before-image img, .after-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.before-description, .after-description {
+    flex: 1;
+}
+.before-box, .after-box {
+    text-align: left;
+}
 .before-box h3, .after-box h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: #1e3a1e;
-    text-align: center;
 }
 .before-box ul, .after-box ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 .before-box li, .after-box li {
-    padding: 8px 0;
-    padding-left: 28px;
+    padding: 6px 0;
+    padding-left: 24px;
     position: relative;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 .before-box li:before {
     content: "✗";
@@ -172,23 +178,41 @@
     left: 0;
     font-weight: bold;
 }
-.arrow-icon {
+.middle-arrow {
     font-size: 3rem;
     color: #eab308;
     font-weight: bold;
     text-align: center;
     min-width: 60px;
 }
-@media (max-width: 800px) {
-    .before-after-new {
+@media (max-width: 1000px) {
+    .before-after-complex {
         flex-direction: column;
     }
-    .arrow-icon {
+    .before-wrapper, .after-wrapper {
+        width: 100%;
+    }
+    .middle-arrow {
         transform: rotate(90deg);
         margin: 10px 0;
     }
 }
-        
+@media (max-width: 600px) {
+    .before-wrapper, .after-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .before-image img, .after-image img {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+    .before-box, .after-box {
+        text-align: center;
+    }
+    .before-box li, .after-box li {
+        text-align: left;
+    }
+}
     </style>
 </head>
 <body>
@@ -263,34 +287,47 @@
     </div>
 </div>
 
-        <!-- Before vs After - Two Parts with Arrow -->
-<div class="before-after-new">
-    <div class="before-col">
-        <img src="img1.jpg" alt="Before VIGRID" class="before-img">
-        <div class="before-box">
-            <h3 data-i18n="before_title">BEFORE VIGRID</h3>
-            <ul>
-                <li data-i18n="before1">Dark homes</li>
-                <li data-i18n="before2">No mobile charging</li>
-                <li data-i18n="before3">Children can’t study at night</li>
-                <li data-i18n="before4">Power cuts & outages</li>
-                <li data-i18n="before5">Dependence on candles</li>
-            </ul>
+        <!-- Before vs After - Four Columns with Arrow -->
+<div class="before-after-complex">
+    <!-- Left Part: Before (image + description) -->
+    <div class="before-wrapper">
+        <div class="before-image">
+            <img src="img1.jpg" alt="Before VIGRID">
+        </div>
+        <div class="before-description">
+            <div class="before-box">
+                <h3 data-i18n="before_title">BEFORE VIGRID</h3>
+                <ul>
+                    <li data-i18n="before1">Dark homes</li>
+                    <li data-i18n="before2">No mobile charging</li>
+                    <li data-i18n="before3">Children can’t study at night</li>
+                    <li data-i18n="before4">Power cuts & outages</li>
+                    <li data-i18n="before5">Dependence on candles</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="arrow-icon">➡️</div>
-    <div class="after-col">
-        <div class="after-box">
-            <h3 data-i18n="after_title">AFTER VIGRID</h3>
-            <ul>
-                <li data-i18n="after1">Bright light in every home</li>
-                <li data-i18n="after2">Mobile charging anytime</li>
-                <li data-i18n="after3">Children can study at night</li>
-                <li data-i18n="after4">Fan & comfort in summer</li>
-                <li data-i18n="after5">Entertainment & better life</li>
-            </ul>
+
+    <!-- Arrow in the middle -->
+    <div class="middle-arrow">➡️</div>
+
+    <!-- Right Part: After (description + image) -->
+    <div class="after-wrapper">
+        <div class="after-description">
+            <div class="after-box">
+                <h3 data-i18n="after_title">AFTER VIGRID</h3>
+                <ul>
+                    <li data-i18n="after1">Bright light in every home</li>
+                    <li data-i18n="after2">Mobile charging anytime</li>
+                    <li data-i18n="after3">Children can study at night</li>
+                    <li data-i18n="after4">Fan & comfort in summer</li>
+                    <li data-i18n="after5">Entertainment & better life</li>
+                </ul>
+            </div>
         </div>
-        <img src="img2.jpg" alt="After VIGRID" class="after-img">
+        <div class="after-image">
+            <img src="img2.jpg" alt="After VIGRID">
+        </div>
     </div>
 </div>
 
