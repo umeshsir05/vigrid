@@ -274,6 +274,55 @@
         text-align: center;
     }
 }
+        /* Stats Grid - improved responsive design */
+.stats-grid-impact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 40px 0;
+}
+.stat-card-impact {
+    background: white;
+    border-radius: 28px;
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+}
+.stat-card-impact:hover {
+    transform: translateY(-4px);
+    border-color: #eab308;
+}
+.stat-card-impact i {
+    font-size: 2rem;
+    color: #eab308;
+    margin-bottom: 12px;
+}
+.stat-number-impact {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e3a1e;
+    margin-bottom: 8px;
+}
+.stat-label-impact {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #2a5526;
+    line-height: 1.4;
+}
+@media (max-width: 900px) {
+    .stats-grid-impact {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+@media (max-width: 500px) {
+    .stats-grid-impact {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
     </style>
 </head>
 <body>
