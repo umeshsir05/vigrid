@@ -634,7 +634,6 @@
         </div>
     </div>
 </footer>
-
 <script>
     // Translations for Impact page (English + Hindi)
     const impactTranslations = {
@@ -652,6 +651,10 @@
             story1_title: "STUDENT", story1_quote: "“Now I can study at night and focus on my dreams.”", story1_name: "— Suresh, Class 9<br>Village – Kanker, Chhattisgarh",
             story2_title: "SHOP OWNER", story2_quote: "“My shop stays open late and I can serve more customers.”", story2_name: "— Ramesh Sahu<br>Village – Dantewada",
             story3_title: "FAMILY", story3_quote: "“Even during power cuts, our home stays bright.”", story3_name: "— Lata & Family<br>Village – Bastar",
+            story4_title: "FARMER", story4_quote: "“Solar power has changed my life. No more kerosene lamps.”", story4_name: "— Mohan, Farmer<br>Village – Koraput, Odisha",
+            story5_title: "TEACHER", story5_quote: "“My students can now study at night and do their homework.”", story5_name: "— Anita, Teacher<br>Village – Jashpur, Chhattisgarh",
+            story6_title: "TAILOR", story6_quote: "“I can work on my sewing machine even after sunset.”", story6_name: "— Kamla, Tailor<br>Village – Mayurbhanj, Odisha",
+            story7_title: "SMALL BUSINESS OWNER", story7_quote: "“VIGRID helped me extend my shop hours and double my income.”", story7_name: "— Prakash, Shopkeeper<br>Village – Ranchi, Jharkhand",
             education_title: "EDUCATION IMPACT", education_desc: "Children Can Study At Night – VIGRID brings light so that every child can study, learn and create a better future.",
             women_title: "WOMEN EMPOWERMENT", women1: "Easy lighting for household work", women2: "Mobile charging for communication", women3: "Safe and secure homes at night", women4: "More time for self development",
             environment_title: "ENVIRONMENT IMPACT", env1: "100% Clean Energy", env2: "No Diesel, No Kerosene", env3: "Less Pollution", env4: "Reduced Carbon Emission",
@@ -680,6 +683,10 @@
             story1_title: "छात्र", story1_quote: "“अब मैं रात में पढ़ सकता हूँ और अपने सपनों पर ध्यान केंद्रित कर सकता हूँ।”", story1_name: "— सुरेश, कक्षा 9<br>गाँव – कांकेर, छत्तीसगढ़",
             story2_title: "दुकानदार", story2_quote: "“मेरी दुकान देर तक खुली रहती है और मैं अधिक ग्राहकों को सेवा दे सकता हूँ।”", story2_name: "— रमेश साहू<br>गाँव – दंतेवाड़ा",
             story3_title: "परिवार", story3_quote: "“बिजली कटौती के दौरान भी, हमारा घर रोशन रहता है।”", story3_name: "— लता और परिवार<br>गाँव – बस्तर",
+            story4_title: "किसान", story4_quote: "“सौर ऊर्जा ने मेरा जीवन बदल दिया। अब मिट्टी के तेल के लैंप नहीं।”", story4_name: "— मोहन, किसान<br>गाँव – कोरापुट, ओडिशा",
+            story5_title: "शिक्षक", story5_quote: "“मेरे छात्र अब रात में पढ़ सकते हैं और अपना होमवर्क कर सकते हैं।”", story5_name: "— अनीता, शिक्षक<br>गाँव – जशपुर, छत्तीसगढ़",
+            story6_title: "दर्जी", story6_quote: "“मैं सूर्यास्त के बाद भी अपनी सिलाई मशीन पर काम कर सकती हूँ।”", story6_name: "— कमला, दर्जी<br>गाँव – मयूरभंज, ओडिशा",
+            story7_title: "छोटे व्यवसायी", story7_quote: "“विग्रिड ने मुझे अपनी दुकान के घंटे बढ़ाने और अपनी आय दोगुनी करने में मदद की।”", story7_name: "— प्रकाश, दुकानदार<br>गाँव – रांची, झारखंड",
             education_title: "शिक्षा प्रभाव", education_desc: "बच्चे रात में पढ़ सकते हैं – विग्रिड रोशनी लाता है ताकि हर बच्चा पढ़ सके, सीख सके और बेहतर भविष्य बना सके।",
             women_title: "महिला सशक्तिकरण", women1: "घरेलू कामों के लिए आसान रोशनी", women2: "संचार के लिए मोबाइल चार्जिंग", women3: "रात में सुरक्षित घर", women4: "आत्म विकास के लिए अधिक समय",
             environment_title: "पर्यावरण प्रभाव", env1: "100% स्वच्छ ऊर्जा", env2: "न डीजल, न मिट्टी का तेल", env3: "कम प्रदूषण", env4: "कम कार्बन उत्सर्जन",
@@ -725,11 +732,8 @@
         const saved = localStorage.getItem('vigrid_lang_impact');
         if (saved && (saved === 'en' || saved === 'hi')) currentLang = saved;
         updateImpactPage(currentLang);
-
         document.getElementById('langToggleBtn')?.addEventListener('click', toggleLang);
         document.getElementById('mobileLangSwitch')?.addEventListener('click', toggleLang);
-
-        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         if (menuToggle && navLinks) {
@@ -768,8 +772,6 @@
                 });
             });
         }
-
-        // Button alerts
         document.getElementById('seeJourneyBtn')?.addEventListener('click', (e) => {
             e.preventDefault();
             alert(currentLang === 'en' ? '📖 Discover our journey of bringing light to rural India!' : '📖 ग्रामीण भारत में रोशनी लाने की हमारी यात्रा देखें!');
@@ -778,8 +780,6 @@
             e.preventDefault();
             alert(currentLang === 'en' ? '🤝 Join VIGRID movement – contact us at info@vigrid.com' : '🤝 विग्रिड आंदोलन से जुड़ें – हमसे संपर्क करें info@vigrid.com');
         });
-
-        // Footer newsletter
         const footerBtn = document.getElementById('footerNewsBtn');
         const footerEmail = document.getElementById('footerNewsEmail');
         const footerFeed = document.getElementById('footerNewsFeedback');
@@ -796,13 +796,12 @@
                 setTimeout(() => footerFeed.innerHTML = '', 3000);
             });
         }
-
-        // Social icons
         document.querySelectorAll('.copyright i').forEach(icon => {
             icon.style.cursor = 'pointer';
             icon.addEventListener('click', () => alert('🌍 ' + (currentLang === 'en' ? 'Connect with VIGRID on social media!' : 'सोशल मीडिया पर विग्रिड से जुड़ें!')));
         });
     });
 </script>
+
 </body>
 </html>
