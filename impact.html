@@ -10,228 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Impact page specific styles */
-       /*  .impact-hero {
-            text-align: center;
-            padding: 20px 0 20px;
-        }
-        .impact-hero h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1e3a1e;
-            margin-bottom: 8px;
-        }
-        .impact-hero .tagline {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #eab308;
-        }
-        .impact-hero p {
-            max-width: 700px;
-            margin: 10px auto;
-            font-size: 1.1rem;
-            color: #2c4727;
-        }
-        .stats-grid-impact {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 20px 0;
-        }
-        .stat-card-impact {
-            background: white;
-            border-radius: 32px;
-            padding: 24px 16px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            border: 1px solid #e8f0e2;
-        }
-        .stat-number-impact {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #eab308;
-        }
-        .stat-label-impact {
-            font-weight: 600;
-            font-size: 1rem;
-            color: #2a5526;
-        }
-        .before-after {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            background: #fafdf5;
-            border-radius: 48px;
-            padding: 40px;
-            margin: 40px 0;
-        }
-        .before-box, .after-box {
-            background: white;
-            border-radius: 32px;
-            padding: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .before-box h3, .after-box h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #1e3a1e;
-        }
-        .before-box ul, .after-box ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .before-box li, .after-box li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            font-size: 1rem;
-        }
-        .before-box li:before {
-            content: "✗";
-            color: #e74c3c;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        .after-box li:before {
-            content: "✓";
-            color: #2c5e2a;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .story-card {
-            background: white;
-            border-radius: 28px;
-            padding: 24px;
-            border: 1px solid #e8f0e2;
-            transition: 0.2s;
-        }
-        .story-card:hover {
-            transform: translateY(-4px);
-            border-color: #eab308;
-        }
-        .story-card i {
-            font-size: 2rem;
-            color: #eab308;
-            margin-bottom: 12px;
-        }
-        .story-card h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .story-card p {
-            font-size: 0.95rem;
-            color: #3a5a36;
-            line-height: 1.5;
-        }
-        .story-card .name {
-            font-weight: 600;
-            margin-top: 12px;
-            color: #1e3a1e;
-        }
-        .impact-single {
-            background: #eaf4e4;
-            border-radius: 40px;
-            padding: 32px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        .impact-single h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #1e3a1e;
-            margin-bottom: 16px;
-        }
-        .two-col-impact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin: 40px 0;
-        }
-        .impact-list {
-            background: white;
-            border-radius: 28px;
-            padding: 24px;
-            border: 1px solid #e8f0e2;
-        }
-        .impact-list h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #eab308;
-        }
-        .impact-list ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .impact-list li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-        }
-        .impact-list li:before {
-            content: "🌱";
-            position: absolute;
-            left: 0;
-        }
-        .vision-box {
-            background: #fef5e7;
-            border-radius: 32px;
-            padding: 32px;
-            text-align: center;
-        }
-        .vision-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .vision-item {
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-        .timeline {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            margin: 30px 0;
-        }
-        .timeline-year {
-            flex: 1;
-            background: white;
-            border-radius: 24px;
-            padding: 16px;
-            text-align: center;
-            border: 1px solid #e8f0e2;
-        }
-        .timeline-year .year {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: #eab308;
-        }
-        @media (max-width: 900px) {
-            .stats-grid-impact { grid-template-columns: repeat(2, 1fr); }
-            .before-after { grid-template-columns: 1fr; }
-            .stories-grid { grid-template-columns: 1fr; }
-            .two-col-impact { grid-template-columns: 1fr; }
-            .timeline { flex-direction: column; }
-        }
-        @media (max-width: 500px) {
-            .stats-grid-impact { grid-template-columns: 1fr; }
-        }
-
-*/
+        
+        
+        
 /* Impact Hero - Two Columns */
 .impact-hero-two-col {
     display: grid;
@@ -275,6 +56,8 @@
     }
 }
         /* Stats Grid - improved responsive design */
+.
+/* Stats Grid - matching the image design */
 .stats-grid-impact {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -284,9 +67,9 @@
 .stat-card-impact {
     background: white;
     border-radius: 28px;
-    padding: 24px 16px;
+    padding: 28px 16px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid #e8f0e2;
     transition: 0.2s;
 }
@@ -295,19 +78,19 @@
     border-color: #eab308;
 }
 .stat-card-impact i {
-    font-size: 2rem;
-    color: #eab308;
+    font-size: 2.2rem;
+    color: #2c5e2a;        /* green icons as in image */
     margin-bottom: 12px;
 }
 .stat-number-impact {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #1e3a1e;
+    color: #eab308;        /* gold numbers */
     margin-bottom: 8px;
 }
 .stat-label-impact {
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #2a5526;
     line-height: 1.4;
 }
@@ -323,6 +106,8 @@
         gap: 16px;
     }
 }
+
+        
     </style>
 </head>
 <body>
@@ -374,6 +159,7 @@
 </div>
         <!-- Stats -->
         <!-- Stats Grid -->
+<!-- Stats Grid -->
 <div class="stats-grid-impact">
     <div class="stat-card-impact">
         <i class="fas fa-map-marker-alt"></i>
